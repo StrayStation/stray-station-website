@@ -1,3 +1,11 @@
+/* TEMPORARY: Hide Stray AI tab until ready for public */
+.tab-button:nth-child(2) {
+    display: none !important;
+}
+
+.tab-content#ai {
+    display: none !important;
+}
 /* About Page Specific Styles */
 
 /* Smaller Hero for Internal Pages */
