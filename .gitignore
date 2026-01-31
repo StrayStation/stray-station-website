@@ -1,0 +1,25 @@
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Node modules (if you add JavaScript build tools later)
+node_modules/
+
+# Environment variables
+.env
+.env.local
