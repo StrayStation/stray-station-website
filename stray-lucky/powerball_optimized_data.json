@@ -1,0 +1,9499 @@
+{
+  "total_draws": 2337,
+  "date_range": "05/31/2006 to 01/31/2026",
+  "recent_draws": [
+    {
+      "date": "01/31/2026",
+      "day": "Saturday",
+      "balls": [
+        2,
+        8,
+        14,
+        40,
+        63
+      ],
+      "powerball": 23
+    },
+    {
+      "date": "01/31/2026",
+      "day": "Saturday",
+      "balls": [
+        14,
+        18,
+        19,
+        31,
+        59
+      ],
+      "powerball": 13
+    },
+    {
+      "date": "01/28/2026",
+      "day": "Wednesday",
+      "balls": [
+        21,
+        35,
+        40,
+        46,
+        68
+      ],
+      "powerball": 11
+    },
+    {
+      "date": "01/28/2026",
+      "day": "Wednesday",
+      "balls": [
+        3,
+        27,
+        34,
+        42,
+        47
+      ],
+      "powerball": 3
+    },
+    {
+      "date": "01/26/2026",
+      "day": "Monday",
+      "balls": [
+        21,
+        31,
+        51,
+        60,
+        63
+      ],
+      "powerball": 18
+    },
+    {
+      "date": "01/26/2026",
+      "day": "Monday",
+      "balls": [
+        8,
+        25,
+        27,
+        46,
+        67
+      ],
+      "powerball": 21
+    },
+    {
+      "date": "01/24/2026",
+      "day": "Saturday",
+      "balls": [
+        2,
+        16,
+        35,
+        61,
+        63
+      ],
+      "powerball": 5
+    },
+    {
+      "date": "01/24/2026",
+      "day": "Saturday",
+      "balls": [
+        8,
+        17,
+        29,
+        30,
+        62
+      ],
+      "powerball": 11
+    },
+    {
+      "date": "01/21/2026",
+      "day": "Wednesday",
+      "balls": [
+        11,
+        26,
+        27,
+        53,
+        55
+      ],
+      "powerball": 12
+    },
+    {
+      "date": "01/21/2026",
+      "day": "Wednesday",
+      "balls": [
+        16,
+        20,
+        28,
+        36,
+        52
+      ],
+      "powerball": 12
+    },
+    {
+      "date": "01/19/2026",
+      "day": "Monday",
+      "balls": [
+        5,
+        28,
+        34,
+        37,
+        55
+      ],
+      "powerball": 17
+    },
+    {
+      "date": "01/19/2026",
+      "day": "Monday",
+      "balls": [
+        2,
+        9,
+        25,
+        26,
+        63
+      ],
+      "powerball": 8
+    },
+    {
+      "date": "01/17/2026",
+      "day": "Saturday",
+      "balls": [
+        5,
+        8,
+        27,
+        49,
+        57
+      ],
+      "powerball": 14
+    },
+    {
+      "date": "01/17/2026",
+      "day": "Saturday",
+      "balls": [
+        1,
+        4,
+        6,
+        34,
+        56
+      ],
+      "powerball": 19
+    },
+    {
+      "date": "01/14/2026",
+      "day": "Wednesday",
+      "balls": [
+        6,
+        24,
+        39,
+        43,
+        51
+      ],
+      "powerball": 2
+    },
+    {
+      "date": "01/14/2026",
+      "day": "Wednesday",
+      "balls": [
+        6,
+        20,
+        28,
+        47,
+        48
+      ],
+      "powerball": 3
+    },
+    {
+      "date": "01/12/2026",
+      "day": "Monday",
+      "balls": [
+        5,
+        27,
+        45,
+        56,
+        59
+      ],
+      "powerball": 4
+    },
+    {
+      "date": "01/12/2026",
+      "day": "Monday",
+      "balls": [
+        11,
+        23,
+        24,
+        54,
+        56
+      ],
+      "powerball": 5
+    },
+    {
+      "date": "01/10/2026",
+      "day": "Saturday",
+      "balls": [
+        5,
+        19,
+        21,
+        28,
+        64
+      ],
+      "powerball": 14
+    },
+    {
+      "date": "01/10/2026",
+      "day": "Saturday",
+      "balls": [
+        10,
+        19,
+        39,
+        47,
+        67
+      ],
+      "powerball": 18
+    },
+    {
+      "date": "01/07/2026",
+      "day": "Wednesday",
+      "balls": [
+        15,
+        28,
+        57,
+        58,
+        63
+      ],
+      "powerball": 23
+    },
+    {
+      "date": "01/07/2026",
+      "day": "Wednesday",
+      "balls": [
+        28,
+        41,
+        50,
+        61,
+        68
+      ],
+      "powerball": 5
+    },
+    {
+      "date": "01/05/2026",
+      "day": "Monday",
+      "balls": [
+        4,
+        18,
+        24,
+        51,
+        56
+      ],
+      "powerball": 14
+    },
+    {
+      "date": "01/05/2026",
+      "day": "Monday",
+      "balls": [
+        15,
+        22,
+        39,
+        41,
+        62
+      ],
+      "powerball": 9
+    },
+    {
+      "date": "01/03/2026",
+      "day": "Saturday",
+      "balls": [
+        18,
+        21,
+        40,
+        53,
+        60
+      ],
+      "powerball": 23
+    },
+    {
+      "date": "01/03/2026",
+      "day": "Saturday",
+      "balls": [
+        28,
+        40,
+        52,
+        53,
+        54
+      ],
+      "powerball": 12
+    },
+    {
+      "date": "12/31/2025",
+      "day": "Wednesday",
+      "balls": [
+        11,
+        18,
+        21,
+        24,
+        38
+      ],
+      "powerball": 26
+    },
+    {
+      "date": "12/31/2025",
+      "day": "Wednesday",
+      "balls": [
+        24,
+        35,
+        42,
+        46,
+        68
+      ],
+      "powerball": 14
+    },
+    {
+      "date": "12/29/2025",
+      "day": "Monday",
+      "balls": [
+        11,
+        19,
+        34,
+        48,
+        53
+      ],
+      "powerball": 21
+    },
+    {
+      "date": "12/29/2025",
+      "day": "Monday",
+      "balls": [
+        5,
+        9,
+        38,
+        62,
+        64
+      ],
+      "powerball": 4
+    },
+    {
+      "date": "12/27/2025",
+      "day": "Saturday",
+      "balls": [
+        5,
+        20,
+        34,
+        39,
+        62
+      ],
+      "powerball": 1
+    },
+    {
+      "date": "12/27/2025",
+      "day": "Saturday",
+      "balls": [
+        13,
+        22,
+        33,
+        61,
+        62
+      ],
+      "powerball": 20
+    },
+    {
+      "date": "12/24/2025",
+      "day": "Wednesday",
+      "balls": [
+        4,
+        25,
+        31,
+        52,
+        59
+      ],
+      "powerball": 19
+    },
+    {
+      "date": "12/24/2025",
+      "day": "Wednesday",
+      "balls": [
+        3,
+        15,
+        19,
+        29,
+        35
+      ],
+      "powerball": 21
+    },
+    {
+      "date": "12/22/2025",
+      "day": "Monday",
+      "balls": [
+        3,
+        18,
+        36,
+        41,
+        54
+      ],
+      "powerball": 7
+    },
+    {
+      "date": "12/22/2025",
+      "day": "Monday",
+      "balls": [
+        14,
+        32,
+        47,
+        48,
+        69
+      ],
+      "powerball": 17
+    },
+    {
+      "date": "12/20/2025",
+      "day": "Saturday",
+      "balls": [
+        4,
+        5,
+        28,
+        52,
+        69
+      ],
+      "powerball": 20
+    },
+    {
+      "date": "12/20/2025",
+      "day": "Saturday",
+      "balls": [
+        5,
+        8,
+        19,
+        23,
+        43
+      ],
+      "powerball": 6
+    },
+    {
+      "date": "12/17/2025",
+      "day": "Wednesday",
+      "balls": [
+        25,
+        33,
+        53,
+        62,
+        66
+      ],
+      "powerball": 17
+    },
+    {
+      "date": "12/17/2025",
+      "day": "Wednesday",
+      "balls": [
+        24,
+        43,
+        65,
+        66,
+        68
+      ],
+      "powerball": 3
+    },
+    {
+      "date": "12/15/2025",
+      "day": "Monday",
+      "balls": [
+        23,
+        35,
+        59,
+        63,
+        68
+      ],
+      "powerball": 2
+    },
+    {
+      "date": "12/15/2025",
+      "day": "Monday",
+      "balls": [
+        20,
+        23,
+        38,
+        42,
+        65
+      ],
+      "powerball": 19
+    },
+    {
+      "date": "12/13/2025",
+      "day": "Saturday",
+      "balls": [
+        1,
+        28,
+        31,
+        57,
+        58
+      ],
+      "powerball": 16
+    },
+    {
+      "date": "12/13/2025",
+      "day": "Saturday",
+      "balls": [
+        7,
+        11,
+        20,
+        52,
+        60
+      ],
+      "powerball": 24
+    },
+    {
+      "date": "12/10/2025",
+      "day": "Wednesday",
+      "balls": [
+        10,
+        16,
+        29,
+        33,
+        69
+      ],
+      "powerball": 22
+    },
+    {
+      "date": "12/10/2025",
+      "day": "Wednesday",
+      "balls": [
+        13,
+        15,
+        51,
+        67,
+        68
+      ],
+      "powerball": 8
+    },
+    {
+      "date": "12/08/2025",
+      "day": "Monday",
+      "balls": [
+        8,
+        32,
+        52,
+        56,
+        64
+      ],
+      "powerball": 23
+    },
+    {
+      "date": "12/08/2025",
+      "day": "Monday",
+      "balls": [
+        22,
+        26,
+        54,
+        64,
+        65
+      ],
+      "powerball": 1
+    },
+    {
+      "date": "12/06/2025",
+      "day": "Saturday",
+      "balls": [
+        13,
+        14,
+        26,
+        28,
+        44
+      ],
+      "powerball": 7
+    },
+    {
+      "date": "12/06/2025",
+      "day": "Saturday",
+      "balls": [
+        4,
+        17,
+        29,
+        55,
+        56
+      ],
+      "powerball": 3
+    },
+    {
+      "date": "12/03/2025",
+      "day": "Wednesday",
+      "balls": [
+        1,
+        14,
+        20,
+        46,
+        51
+      ],
+      "powerball": 26
+    },
+    {
+      "date": "12/03/2025",
+      "day": "Wednesday",
+      "balls": [
+        9,
+        31,
+        35,
+        37,
+        58
+      ],
+      "powerball": 11
+    },
+    {
+      "date": "12/01/2025",
+      "day": "Monday",
+      "balls": [
+        5,
+        18,
+        26,
+        47,
+        59
+      ],
+      "powerball": 1
+    },
+    {
+      "date": "12/01/2025",
+      "day": "Monday",
+      "balls": [
+        14,
+        25,
+        38,
+        47,
+        55
+      ],
+      "powerball": 19
+    },
+    {
+      "date": "11/29/2025",
+      "day": "Saturday",
+      "balls": [
+        19,
+        22,
+        30,
+        32,
+        59
+      ],
+      "powerball": 1
+    },
+    {
+      "date": "11/29/2025",
+      "day": "Saturday",
+      "balls": [
+        16,
+        18,
+        20,
+        23,
+        61
+      ],
+      "powerball": 22
+    },
+    {
+      "date": "11/26/2025",
+      "day": "Wednesday",
+      "balls": [
+        7,
+        8,
+        15,
+        19,
+        28
+      ],
+      "powerball": 3
+    },
+    {
+      "date": "11/26/2025",
+      "day": "Wednesday",
+      "balls": [
+        6,
+        19,
+        28,
+        39,
+        53
+      ],
+      "powerball": 15
+    },
+    {
+      "date": "11/24/2025",
+      "day": "Monday",
+      "balls": [
+        8,
+        16,
+        26,
+        30,
+        58
+      ],
+      "powerball": 14
+    },
+    {
+      "date": "11/24/2025",
+      "day": "Monday",
+      "balls": [
+        4,
+        7,
+        48,
+        65,
+        68
+      ],
+      "powerball": 24
+    },
+    {
+      "date": "11/22/2025",
+      "day": "Saturday",
+      "balls": [
+        28,
+        32,
+        36,
+        51,
+        69
+      ],
+      "powerball": 2
+    },
+    {
+      "date": "11/22/2025",
+      "day": "Saturday",
+      "balls": [
+        5,
+        6,
+        24,
+        44,
+        58
+      ],
+      "powerball": 12
+    },
+    {
+      "date": "11/19/2025",
+      "day": "Wednesday",
+      "balls": [
+        10,
+        31,
+        49,
+        51,
+        68
+      ],
+      "powerball": 19
+    },
+    {
+      "date": "11/19/2025",
+      "day": "Wednesday",
+      "balls": [
+        17,
+        19,
+        47,
+        53,
+        61
+      ],
+      "powerball": 8
+    },
+    {
+      "date": "11/17/2025",
+      "day": "Monday",
+      "balls": [
+        7,
+        33,
+        50,
+        57,
+        66
+      ],
+      "powerball": 23
+    },
+    {
+      "date": "11/17/2025",
+      "day": "Monday",
+      "balls": [
+        11,
+        18,
+        23,
+        59,
+        69
+      ],
+      "powerball": 5
+    },
+    {
+      "date": "11/15/2025",
+      "day": "Saturday",
+      "balls": [
+        6,
+        7,
+        12,
+        47,
+        53
+      ],
+      "powerball": 21
+    },
+    {
+      "date": "11/15/2025",
+      "day": "Saturday",
+      "balls": [
+        8,
+        25,
+        46,
+        51,
+        58
+      ],
+      "powerball": 19
+    },
+    {
+      "date": "11/12/2025",
+      "day": "Wednesday",
+      "balls": [
+        29,
+        39,
+        43,
+        51,
+        65
+      ],
+      "powerball": 23
+    },
+    {
+      "date": "11/12/2025",
+      "day": "Wednesday",
+      "balls": [
+        7,
+        31,
+        32,
+        39,
+        65
+      ],
+      "powerball": 11
+    },
+    {
+      "date": "11/10/2025",
+      "day": "Monday",
+      "balls": [
+        6,
+        28,
+        44,
+        48,
+        58
+      ],
+      "powerball": 23
+    },
+    {
+      "date": "11/10/2025",
+      "day": "Monday",
+      "balls": [
+        26,
+        39,
+        43,
+        47,
+        66
+      ],
+      "powerball": 19
+    },
+    {
+      "date": "11/08/2025",
+      "day": "Saturday",
+      "balls": [
+        3,
+        53,
+        60,
+        62,
+        68
+      ],
+      "powerball": 11
+    },
+    {
+      "date": "11/08/2025",
+      "day": "Saturday",
+      "balls": [
+        16,
+        18,
+        20,
+        54,
+        59
+      ],
+      "powerball": 6
+    },
+    {
+      "date": "11/05/2025",
+      "day": "Wednesday",
+      "balls": [
+        9,
+        17,
+        29,
+        61,
+        66
+      ],
+      "powerball": 26
+    },
+    {
+      "date": "11/05/2025",
+      "day": "Wednesday",
+      "balls": [
+        7,
+        10,
+        18,
+        21,
+        61
+      ],
+      "powerball": 11
+    },
+    {
+      "date": "11/03/2025",
+      "day": "Monday",
+      "balls": [
+        3,
+        32,
+        40,
+        43,
+        57
+      ],
+      "powerball": 18
+    },
+    {
+      "date": "11/03/2025",
+      "day": "Monday",
+      "balls": [
+        11,
+        27,
+        55,
+        62,
+        68
+      ],
+      "powerball": 2
+    },
+    {
+      "date": "11/01/2025",
+      "day": "Saturday",
+      "balls": [
+        2,
+        26,
+        43,
+        44,
+        62
+      ],
+      "powerball": 22
+    },
+    {
+      "date": "11/01/2025",
+      "day": "Saturday",
+      "balls": [
+        7,
+        10,
+        19,
+        42,
+        59
+      ],
+      "powerball": 26
+    },
+    {
+      "date": "10/29/2025",
+      "day": "Wednesday",
+      "balls": [
+        4,
+        24,
+        49,
+        60,
+        65
+      ],
+      "powerball": 1
+    },
+    {
+      "date": "10/29/2025",
+      "day": "Wednesday",
+      "balls": [
+        7,
+        12,
+        24,
+        38,
+        67
+      ],
+      "powerball": 26
+    },
+    {
+      "date": "10/27/2025",
+      "day": "Monday",
+      "balls": [
+        17,
+        39,
+        43,
+        51,
+        66
+      ],
+      "powerball": 20
+    },
+    {
+      "date": "10/27/2025",
+      "day": "Monday",
+      "balls": [
+        16,
+        31,
+        60,
+        63,
+        65
+      ],
+      "powerball": 17
+    },
+    {
+      "date": "10/25/2025",
+      "day": "Saturday",
+      "balls": [
+        2,
+        12,
+        22,
+        39,
+        67
+      ],
+      "powerball": 15
+    },
+    {
+      "date": "10/25/2025",
+      "day": "Saturday",
+      "balls": [
+        3,
+        24,
+        46,
+        58,
+        61
+      ],
+      "powerball": 7
+    },
+    {
+      "date": "10/22/2025",
+      "day": "Wednesday",
+      "balls": [
+        18,
+        37,
+        52,
+        54,
+        60
+      ],
+      "powerball": 12
+    },
+    {
+      "date": "10/22/2025",
+      "day": "Wednesday",
+      "balls": [
+        23,
+        37,
+        43,
+        60,
+        64
+      ],
+      "powerball": 5
+    },
+    {
+      "date": "10/20/2025",
+      "day": "Monday",
+      "balls": [
+        32,
+        38,
+        66,
+        67,
+        69
+      ],
+      "powerball": 19
+    },
+    {
+      "date": "10/20/2025",
+      "day": "Monday",
+      "balls": [
+        33,
+        48,
+        52,
+        55,
+        68
+      ],
+      "powerball": 9
+    },
+    {
+      "date": "10/18/2025",
+      "day": "Saturday",
+      "balls": [
+        3,
+        11,
+        27,
+        40,
+        58
+      ],
+      "powerball": 10
+    },
+    {
+      "date": "10/18/2025",
+      "day": "Saturday",
+      "balls": [
+        2,
+        9,
+        10,
+        14,
+        36
+      ],
+      "powerball": 23
+    },
+    {
+      "date": "10/15/2025",
+      "day": "Wednesday",
+      "balls": [
+        10,
+        13,
+        28,
+        34,
+        47
+      ],
+      "powerball": 15
+    },
+    {
+      "date": "10/15/2025",
+      "day": "Wednesday",
+      "balls": [
+        5,
+        20,
+        27,
+        44,
+        51
+      ],
+      "powerball": 21
+    },
+    {
+      "date": "10/13/2025",
+      "day": "Monday",
+      "balls": [
+        13,
+        14,
+        32,
+        52,
+        64
+      ],
+      "powerball": 12
+    },
+    {
+      "date": "10/13/2025",
+      "day": "Monday",
+      "balls": [
+        12,
+        13,
+        46,
+        49,
+        68
+      ],
+      "powerball": 7
+    },
+    {
+      "date": "10/11/2025",
+      "day": "Saturday",
+      "balls": [
+        13,
+        16,
+        18,
+        20,
+        27
+      ],
+      "powerball": 10
+    },
+    {
+      "date": "10/11/2025",
+      "day": "Saturday",
+      "balls": [
+        12,
+        22,
+        41,
+        46,
+        56
+      ],
+      "powerball": 15
+    },
+    {
+      "date": "10/08/2025",
+      "day": "Wednesday",
+      "balls": [
+        8,
+        10,
+        44,
+        48,
+        54
+      ],
+      "powerball": 14
+    },
+    {
+      "date": "10/08/2025",
+      "day": "Wednesday",
+      "balls": [
+        8,
+        13,
+        19,
+        34,
+        53
+      ],
+      "powerball": 24
+    }
+  ],
+  "white_ball_frequency": {
+    "2": 181,
+    "8": 192,
+    "14": 185,
+    "40": 191,
+    "63": 111,
+    "18": 180,
+    "19": 194,
+    "31": 181,
+    "59": 169,
+    "21": 195,
+    "35": 164,
+    "46": 160,
+    "68": 102,
+    "3": 181,
+    "27": 185,
+    "34": 162,
+    "42": 174,
+    "47": 195,
+    "51": 172,
+    "60": 90,
+    "25": 160,
+    "67": 102,
+    "16": 196,
+    "61": 125,
+    "17": 175,
+    "29": 161,
+    "30": 182,
+    "62": 114,
+    "11": 186,
+    "26": 174,
+    "53": 191,
+    "55": 174,
+    "20": 199,
+    "28": 206,
+    "36": 196,
+    "52": 195,
+    "5": 176,
+    "37": 184,
+    "9": 171,
+    "49": 174,
+    "57": 144,
+    "1": 173,
+    "4": 167,
+    "6": 170,
+    "56": 150,
+    "24": 184,
+    "39": 206,
+    "43": 176,
+    "48": 173,
+    "45": 185,
+    "23": 209,
+    "54": 183,
+    "64": 113,
+    "10": 177,
+    "15": 170,
+    "58": 150,
+    "41": 182,
+    "50": 170,
+    "22": 185,
+    "38": 178,
+    "13": 172,
+    "33": 187,
+    "32": 214,
+    "69": 114,
+    "66": 99,
+    "65": 87,
+    "7": 187,
+    "44": 178,
+    "12": 197
+  },
+  "powerball_frequency": {
+    "23": 82,
+    "13": 71,
+    "11": 81,
+    "3": 78,
+    "18": 92,
+    "21": 86,
+    "5": 93,
+    "12": 73,
+    "17": 75,
+    "8": 75,
+    "14": 89,
+    "19": 82,
+    "2": 81,
+    "4": 82,
+    "9": 83,
+    "26": 79,
+    "1": 79,
+    "20": 86,
+    "7": 70,
+    "6": 76,
+    "16": 66,
+    "24": 91,
+    "22": 64,
+    "15": 74,
+    "10": 67,
+    "25": 82,
+    "27": 25,
+    "28": 18,
+    "35": 21,
+    "33": 27,
+    "29": 36,
+    "32": 24,
+    "30": 25,
+    "34": 18,
+    "31": 20,
+    "37": 18,
+    "36": 16,
+    "38": 11,
+    "39": 10,
+    "41": 4,
+    "40": 4,
+    "42": 3
+  },
+  "optimized_companions": {
+    "1": [
+      {
+        "num": 7,
+        "freq": 17,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 8,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 21,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 3,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 5,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 25,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 28,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 6,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 20,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 26,
+        "freq": 14,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 5,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 27,
+        "freq": 14,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 7,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 40,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 1,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 49,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 5,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 57,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 9,
+          "Monday": 2,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 2,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 2,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 4,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 12,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 9,
+          "Monday": 1,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 37,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 3,
+          "Monday": 1
+        }
+      }
+    ],
+    "2": [
+      {
+        "num": 23,
+        "freq": 21,
+        "by_day": {
+          "Saturday": 13,
+          "Monday": 4,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 9,
+        "freq": 17,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 8,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 39,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 9,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 40,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 11,
+          "Monday": 2,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 12,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 16,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 2,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 50,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 19,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 22,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 6,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 54,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 11,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 7,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 21,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 2,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 35,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 36,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 3,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 41,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 7
+        }
+      }
+    ],
+    "3": [
+      {
+        "num": 27,
+        "freq": 19,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 14,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 7,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 10,
+          "Monday": 1,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 20,
+        "freq": 18,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 12,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 16,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 6,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 32,
+        "freq": 16,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 10,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 42,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 9,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 9,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 13,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 6,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 10,
+          "Monday": 1,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 14,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 21,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 8,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 40,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 5,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 48,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 51,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 11,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 1,
+          "Wednesday": 4
+        }
+      }
+    ],
+    "4": [
+      {
+        "num": 39,
+        "freq": 17,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 7,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 32,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 11,
+          "Monday": 1,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 49,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 2,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 33,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 8,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 23,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 5,
+          "Monday": 2,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 46,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 6,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 6,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 9,
+          "Monday": 2,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 8,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 11,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 26,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 7,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 35,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 43,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 44,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 47,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 8,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 52,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 4,
+          "Monday": 2
+        }
+      }
+    ],
+    "5": [
+      {
+        "num": 28,
+        "freq": 22,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 14,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 38,
+        "freq": 18,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 11,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 39,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 10,
+          "Wednesday": 6,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 36,
+        "freq": 17,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 10,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 43,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 11,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 32,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 1,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 20,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 6,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 22,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 6,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 23,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 9,
+        "freq": 14,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 7,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 16,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 45,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 5,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 49,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 10,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 25,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 1,
+          "Saturday": 7
+        }
+      }
+    ],
+    "6": [
+      {
+        "num": 51,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 8,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 20,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 4,
+          "Monday": 1,
+          "Saturday": 12
+        }
+      },
+      {
+        "num": 35,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 4,
+          "Monday": 2,
+          "Wednesday": 11
+        }
+      },
+      {
+        "num": 36,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 9,
+          "Monday": 2,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 16,
+        "freq": 16,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 7,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 34,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 47,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 37,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 48,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 2,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 24,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 28,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 2,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 32,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 10,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 42,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 15,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 39,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 4,
+          "Monday": 3,
+          "Saturday": 6
+        }
+      }
+    ],
+    "7": [
+      {
+        "num": 24,
+        "freq": 19,
+        "by_day": {
+          "Wednesday": 13,
+          "Saturday": 4,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 39,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 10,
+          "Saturday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 8,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 11,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 23,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 10,
+          "Monday": 1,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 17,
+        "freq": 16,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 9,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 33,
+        "freq": 16,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 9,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 36,
+        "freq": 16,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 5,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 40,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 8,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 10,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 11,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 15,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 2,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 21,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 10,
+          "Saturday": 4,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 32,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 8,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 50,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 8,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 11,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 9,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 12,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 5,
+          "Monday": 1
+        }
+      }
+    ],
+    "8": [
+      {
+        "num": 29,
+        "freq": 21,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 14
+        }
+      },
+      {
+        "num": 12,
+        "freq": 20,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 9,
+          "Saturday": 10
+        }
+      },
+      {
+        "num": 27,
+        "freq": 19,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 11,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 53,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 11,
+          "Monday": 2,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 19,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 9,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 52,
+        "freq": 17,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 7,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 32,
+        "freq": 16,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 6,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 39,
+        "freq": 16,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 7,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 40,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 9,
+          "Monday": 1,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 46,
+        "freq": 16,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 6,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 49,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 17,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 30,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 9,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 58,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 6,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 18,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 7
+        }
+      }
+    ],
+    "9": [
+      {
+        "num": 31,
+        "freq": 21,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 4,
+          "Saturday": 10
+        }
+      },
+      {
+        "num": 17,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 9,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 23,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 11,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 11,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 4,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 29,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 10,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 36,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 6,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 43,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 9,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 38,
+        "freq": 14,
+        "by_day": {
+          "Monday": 4,
+          "Wednesday": 7,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 19,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 8,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 33,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 7,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 42,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 10,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 52,
+        "freq": 13,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 8,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 54,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 56,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 57,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 6,
+          "Wednesday": 5
+        }
+      }
+    ],
+    "10": [
+      {
+        "num": 53,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 1,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 23,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 12
+        }
+      },
+      {
+        "num": 11,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 8,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 12,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 11,
+          "Monday": 1,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 20,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 4,
+          "Wednesday": 10
+        }
+      },
+      {
+        "num": 22,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 9,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 24,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 10,
+          "Monday": 1,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 32,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 33,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 2,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 52,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 9,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 41,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 7,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 45,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 13,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 11,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 14,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 18,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 6
+        }
+      }
+    ],
+    "11": [
+      {
+        "num": 21,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 10
+        }
+      },
+      {
+        "num": 33,
+        "freq": 18,
+        "by_day": {
+          "Monday": 4,
+          "Wednesday": 5,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 27,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 3,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 23,
+        "freq": 15,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 7,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 24,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 9,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 47,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 7,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 16,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 10,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 19,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 7,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 20,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 5,
+          "Monday": 2,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 38,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 9,
+          "Monday": 2,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 55,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 1,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 58,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 3,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 18,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 4,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 22,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 6,
+          "Monday": 3
+        }
+      },
+      {
+        "num": 28,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 7,
+          "Saturday": 5
+        }
+      }
+    ],
+    "12": [
+      {
+        "num": 20,
+        "freq": 20,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 11,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 22,
+        "freq": 20,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 9,
+          "Monday": 3
+        }
+      },
+      {
+        "num": 44,
+        "freq": 19,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 11,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 21,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 10,
+          "Wednesday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 43,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 12,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 17,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 11,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 34,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 10,
+          "Wednesday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 47,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 3,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 13,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 8,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 15,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 31,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 6,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 46,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 5,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 50,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 1,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 27,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 2,
+          "Monday": 2,
+          "Saturday": 10
+        }
+      },
+      {
+        "num": 38,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 8
+        }
+      }
+    ],
+    "13": [
+      {
+        "num": 19,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 12,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 33,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 13,
+          "Monday": 2,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 27,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 13,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 51,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 52,
+        "freq": 16,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 6,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 20,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 2,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 32,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 9,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 35,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 4,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 54,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 9,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 23,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 5,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 16,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 24,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 38,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 44,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 1,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 17,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 6
+        }
+      }
+    ],
+    "14": [
+      {
+        "num": 32,
+        "freq": 20,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 11,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 41,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 12,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 39,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 11,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 15,
+        "freq": 16,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 7,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 47,
+        "freq": 16,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 7,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 16,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 9,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 18,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 2,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 26,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 12,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 46,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 49,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 9,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 53,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 34,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 2,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 38,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 8,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 40,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 52,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 8,
+          "Wednesday": 5
+        }
+      }
+    ],
+    "15": [
+      {
+        "num": 27,
+        "freq": 20,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 11
+        }
+      },
+      {
+        "num": 31,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 9,
+          "Monday": 3,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 32,
+        "freq": 18,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 11,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 28,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 11,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 43,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 9,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 26,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 2,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 16,
+        "freq": 14,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 9,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 47,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 7,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 21,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 8,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 36,
+        "freq": 13,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 7,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 42,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 8,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 46,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 4,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 19,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 45,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 4,
+          "Monday": 2,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 49,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 1,
+          "Saturday": 4
+        }
+      }
+    ],
+    "16": [
+      {
+        "num": 18,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 11
+        }
+      },
+      {
+        "num": 20,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 13
+        }
+      },
+      {
+        "num": 29,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 14,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 30,
+        "freq": 17,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 9,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 48,
+        "freq": 17,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 7,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 54,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 2,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 42,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 23,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 1,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 27,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 41,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 8,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 53,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 58,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 8,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 33,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 2,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 40,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 5,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 50,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      }
+    ],
+    "17": [
+      {
+        "num": 45,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 10,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 53,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 21,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 7,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 39,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 8,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 49,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 51,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 11,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 52,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 8,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 54,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 7,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 29,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 38,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 1,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 43,
+        "freq": 14,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 6,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 20,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 4,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 32,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 40,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 6,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 19,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 6
+        }
+      }
+    ],
+    "18": [
+      {
+        "num": 45,
+        "freq": 19,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 9,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 36,
+        "freq": 18,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 8,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 20,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 9,
+          "Monday": 2,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 37,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 11,
+          "Saturday": 4,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 39,
+        "freq": 16,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 8,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 23,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 3,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 27,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 9,
+          "Monday": 3,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 33,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 8,
+          "Monday": 3
+        }
+      },
+      {
+        "num": 43,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 5,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 21,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 7,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 29,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 9,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 48,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 2,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 53,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 1,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 19,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 8,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 25,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 6,
+          "Monday": 1
+        }
+      }
+    ],
+    "19": [
+      {
+        "num": 21,
+        "freq": 20,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 10,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 42,
+        "freq": 20,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 13,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 39,
+        "freq": 19,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 7,
+          "Monday": 4
+        }
+      },
+      {
+        "num": 32,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 11
+        }
+      },
+      {
+        "num": 30,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 8,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 37,
+        "freq": 17,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 10,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 46,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 10,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 47,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 12
+        }
+      },
+      {
+        "num": 28,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 2,
+          "Wednesday": 12,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 36,
+        "freq": 15,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 5,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 43,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 9,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 33,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 7,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 34,
+        "freq": 14,
+        "by_day": {
+          "Monday": 4,
+          "Wednesday": 6,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 45,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 2,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 53,
+        "freq": 14,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 8,
+          "Saturday": 3
+        }
+      }
+    ],
+    "20": [
+      {
+        "num": 39,
+        "freq": 22,
+        "by_day": {
+          "Saturday": 11,
+          "Wednesday": 8,
+          "Monday": 3
+        }
+      },
+      {
+        "num": 42,
+        "freq": 21,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 11,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 22,
+        "freq": 18,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 9,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 21,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 10
+        }
+      },
+      {
+        "num": 38,
+        "freq": 16,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 8,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 36,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 4,
+          "Monday": 1,
+          "Saturday": 10
+        }
+      },
+      {
+        "num": 54,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 2,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 23,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 5,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 40,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 11,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 43,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 47,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 1,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 48,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 1,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 26,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 27,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 33,
+        "freq": 13,
+        "by_day": {
+          "Monday": 5,
+          "Wednesday": 1,
+          "Saturday": 7
+        }
+      }
+    ],
+    "21": [
+      {
+        "num": 32,
+        "freq": 21,
+        "by_day": {
+          "Wednesday": 10,
+          "Saturday": 9,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 23,
+        "freq": 18,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 8,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 49,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 2,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 22,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 6,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 28,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 45,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 1,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 47,
+        "freq": 14,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 3,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 27,
+        "freq": 13,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 7,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 36,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 3,
+          "Monday": 1,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 38,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 5,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 40,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 4,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 41,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 44,
+        "freq": 13,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 2,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 50,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 6,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 55,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 2,
+          "Saturday": 4
+        }
+      }
+    ],
+    "22": [
+      {
+        "num": 32,
+        "freq": 24,
+        "by_day": {
+          "Saturday": 12,
+          "Wednesday": 12
+        }
+      },
+      {
+        "num": 26,
+        "freq": 19,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 6,
+          "Saturday": 12
+        }
+      },
+      {
+        "num": 45,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 12,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 47,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 37,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 49,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 52,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 23,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 7,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 27,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 29,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 10,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 30,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 41,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 9,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 36,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 6,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 42,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 5,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 43,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 7
+        }
+      }
+    ],
+    "23": [
+      {
+        "num": 32,
+        "freq": 20,
+        "by_day": {
+          "Wednesday": 10,
+          "Saturday": 10
+        }
+      },
+      {
+        "num": 47,
+        "freq": 20,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 8,
+          "Wednesday": 11
+        }
+      },
+      {
+        "num": 28,
+        "freq": 19,
+        "by_day": {
+          "Wednesday": 11,
+          "Monday": 1,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 35,
+        "freq": 18,
+        "by_day": {
+          "Monday": 4,
+          "Wednesday": 9,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 25,
+        "freq": 16,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 7,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 27,
+        "freq": 16,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 6,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 42,
+        "freq": 16,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 10,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 43,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 59,
+        "freq": 16,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 8,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 30,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 31,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 49,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 50,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 9,
+          "Monday": 1,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 55,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 37,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 7
+        }
+      }
+    ],
+    "24": [
+      {
+        "num": 39,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 38,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 10
+        }
+      },
+      {
+        "num": 43,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 56,
+        "freq": 16,
+        "by_day": {
+          "Monday": 5,
+          "Saturday": 4,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 33,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 9,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 51,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 9,
+          "Monday": 2,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 49,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 36,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 48,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 52,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 6,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 28,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 30,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 35,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 2,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 42,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 3,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 45,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 6
+        }
+      }
+    ],
+    "25": [
+      {
+        "num": 53,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 10,
+          "Monday": 2,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 54,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 27,
+        "freq": 14,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 5,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 30,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 40,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 7,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 44,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 5,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 28,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 36,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 37,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 2,
+          "Saturday": 8,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 46,
+        "freq": 12,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 4,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 55,
+        "freq": 12,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 7,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 57,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 5,
+          "Monday": 1,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 32,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 38,
+        "freq": 11,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 8,
+          "Wednesday": 1
+        }
+      },
+      {
+        "num": 45,
+        "freq": 11,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 4,
+          "Wednesday": 5
+        }
+      }
+    ],
+    "26": [
+      {
+        "num": 45,
+        "freq": 19,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 10
+        }
+      },
+      {
+        "num": 32,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 11,
+          "Monday": 1,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 28,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 3,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 41,
+        "freq": 16,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 8,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 47,
+        "freq": 16,
+        "by_day": {
+          "Monday": 4,
+          "Wednesday": 6,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 46,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 1,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 54,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 9,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 55,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 27,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 6,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 38,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 3,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 39,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 5,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 44,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 10,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 34,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 5,
+          "Monday": 1,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 43,
+        "freq": 12,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 5,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 51,
+        "freq": 12,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 4,
+          "Wednesday": 6
+        }
+      }
+    ],
+    "27": [
+      {
+        "num": 44,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 5,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 41,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 8,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 47,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 2,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 28,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 2,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 36,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 11,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 59,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 6,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 29,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 4,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 53,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 8,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 42,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 1,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 35,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 38,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 52,
+        "freq": 11,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 6,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 56,
+        "freq": 11,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 5,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 67,
+        "freq": 11,
+        "by_day": {
+          "Monday": 5,
+          "Wednesday": 4,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 31,
+        "freq": 10,
+        "by_day": {
+          "Monday": 4,
+          "Wednesday": 3,
+          "Saturday": 3
+        }
+      }
+    ],
+    "28": [
+      {
+        "num": 53,
+        "freq": 19,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 11,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 49,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 3,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 52,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 11,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 40,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 47,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 48,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 55,
+        "freq": 16,
+        "by_day": {
+          "Monday": 4,
+          "Wednesday": 3,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 59,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 11,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 31,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 10,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 38,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 1,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 58,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 8,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 30,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 11,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 36,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 11
+        }
+      },
+      {
+        "num": 44,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 5,
+          "Monday": 3,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 51,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 6,
+          "Monday": 2
+        }
+      }
+    ],
+    "29": [
+      {
+        "num": 31,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 43,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 41,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 42,
+        "freq": 12,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 2,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 45,
+        "freq": 12,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 7,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 53,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 47,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 1,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 50,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 54,
+        "freq": 11,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 7,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 59,
+        "freq": 11,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 4,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 34,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 37,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 40,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 44,
+        "freq": 10,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 6,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 51,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 4,
+          "Monday": 2,
+          "Saturday": 4
+        }
+      }
+    ],
+    "30": [
+      {
+        "num": 48,
+        "freq": 22,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 10,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 59,
+        "freq": 19,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 10,
+          "Monday": 3
+        }
+      },
+      {
+        "num": 33,
+        "freq": 18,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 11,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 53,
+        "freq": 17,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 5,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 47,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 9,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 52,
+        "freq": 16,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 5,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 40,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 9,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 32,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 5,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 39,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 2,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 62,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 8,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 37,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 7,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 42,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 44,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 9,
+          "Monday": 1,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 51,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 10,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 54,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 4,
+          "Monday": 1,
+          "Saturday": 8
+        }
+      }
+    ],
+    "31": [
+      {
+        "num": 48,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 11
+        }
+      },
+      {
+        "num": 40,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 10,
+          "Monday": 1,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 43,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 10,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 50,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 9,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 38,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 6,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 52,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 2,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 55,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 34,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 6,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 36,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 2,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 45,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 7,
+          "Monday": 3
+        }
+      },
+      {
+        "num": 49,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 1,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 51,
+        "freq": 12,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 4,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 56,
+        "freq": 12,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 5,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 59,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 6,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 33,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 2,
+          "Saturday": 3
+        }
+      }
+    ],
+    "32": [
+      {
+        "num": 49,
+        "freq": 24,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 11,
+          "Saturday": 11
+        }
+      },
+      {
+        "num": 36,
+        "freq": 19,
+        "by_day": {
+          "Saturday": 12,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 37,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 10,
+          "Monday": 1,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 38,
+        "freq": 18,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 6,
+          "Wednesday": 11
+        }
+      },
+      {
+        "num": 47,
+        "freq": 16,
+        "by_day": {
+          "Monday": 4,
+          "Wednesday": 7,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 58,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 10,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 48,
+        "freq": 15,
+        "by_day": {
+          "Monday": 5,
+          "Wednesday": 4,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 52,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 6,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 45,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 56,
+        "freq": 14,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 5,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 34,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 7,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 39,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 6,
+          "Monday": 3
+        }
+      },
+      {
+        "num": 44,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 5,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 46,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 5,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 50,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 7,
+          "Monday": 1
+        }
+      }
+    ],
+    "33": [
+      {
+        "num": 39,
+        "freq": 18,
+        "by_day": {
+          "Monday": 6,
+          "Wednesday": 8,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 52,
+        "freq": 17,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 5,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 54,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 10,
+          "Wednesday": 6,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 45,
+        "freq": 16,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 5,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 59,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 3,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 42,
+        "freq": 15,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 8,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 41,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 1,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 55,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 8,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 35,
+        "freq": 13,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 3,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 36,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 40,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 7,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 38,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 43,
+        "freq": 11,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 6,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 44,
+        "freq": 11,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 6,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 46,
+        "freq": 11,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 8,
+          "Saturday": 2
+        }
+      }
+    ],
+    "34": [
+      {
+        "num": 38,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 9,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 36,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 42,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 44,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 1,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 51,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 37,
+        "freq": 13,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 4,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 45,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 6,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 47,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 4,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 39,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 5,
+          "Monday": 2,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 48,
+        "freq": 12,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 7,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 50,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 52,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 9,
+          "Monday": 1,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 58,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 5,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 59,
+        "freq": 12,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 7,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 43,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 5
+        }
+      }
+    ],
+    "35": [
+      {
+        "num": 47,
+        "freq": 18,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 11,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 36,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 9,
+          "Monday": 3,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 45,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 5,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 46,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 2,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 49,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 58,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 1,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 38,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 37,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 4,
+          "Monday": 2,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 57,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 10,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 50,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 51,
+        "freq": 11,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 5,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 52,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 5,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 39,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 40,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 1,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 54,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 3,
+          "Monday": 4,
+          "Saturday": 3
+        }
+      }
+    ],
+    "36": [
+      {
+        "num": 49,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 10,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 52,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 8,
+          "Monday": 3
+        }
+      },
+      {
+        "num": 47,
+        "freq": 16,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 7,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 58,
+        "freq": 16,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 3,
+          "Saturday": 10
+        }
+      },
+      {
+        "num": 51,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 48,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 38,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 1,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 54,
+        "freq": 12,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 8,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 55,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 59,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 6,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 37,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 41,
+        "freq": 11,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 5,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 43,
+        "freq": 11,
+        "by_day": {
+          "Monday": 5,
+          "Saturday": 3,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 45,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 3,
+          "Monday": 3,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 50,
+        "freq": 11,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 6,
+          "Wednesday": 2
+        }
+      }
+    ],
+    "37": [
+      {
+        "num": 39,
+        "freq": 23,
+        "by_day": {
+          "Saturday": 11,
+          "Monday": 3,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 44,
+        "freq": 21,
+        "by_day": {
+          "Saturday": 12,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 40,
+        "freq": 20,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 7,
+          "Wednesday": 10
+        }
+      },
+      {
+        "num": 53,
+        "freq": 20,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 14,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 50,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 10,
+          "Monday": 2,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 52,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 10,
+          "Monday": 2,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 45,
+        "freq": 16,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 8,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 55,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 8,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 46,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 54,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 4,
+          "Monday": 2,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 63,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 3,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 51,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 2,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 58,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 47,
+        "freq": 10,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 2,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 41,
+        "freq": 9,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 5
+        }
+      }
+    ],
+    "38": [
+      {
+        "num": 42,
+        "freq": 18,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 9,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 39,
+        "freq": 16,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 8,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 52,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 1,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 48,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 6,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 54,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 1,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 50,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 3,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 40,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 51,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 55,
+        "freq": 10,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 5,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 66,
+        "freq": 10,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 41,
+        "freq": 9,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 47,
+        "freq": 9,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 2,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 56,
+        "freq": 9,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 62,
+        "freq": 9,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 4,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 68,
+        "freq": 9,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 3,
+          "Monday": 1
+        }
+      }
+    ],
+    "39": [
+      {
+        "num": 47,
+        "freq": 19,
+        "by_day": {
+          "Saturday": 11,
+          "Monday": 3,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 43,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 4,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 53,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 11,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 44,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 3,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 40,
+        "freq": 16,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 5,
+          "Wednesday": 10
+        }
+      },
+      {
+        "num": 41,
+        "freq": 15,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 9,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 51,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 11,
+          "Monday": 1,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 55,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 7,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 46,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 6,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 59,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 6,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 49,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 5,
+          "Monday": 2,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 42,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 7,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 48,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 54,
+        "freq": 11,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 4,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 67,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 4
+        }
+      }
+    ],
+    "40": [
+      {
+        "num": 52,
+        "freq": 21,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 2,
+          "Wednesday": 11
+        }
+      },
+      {
+        "num": 48,
+        "freq": 19,
+        "by_day": {
+          "Wednesday": 12,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 50,
+        "freq": 18,
+        "by_day": {
+          "Wednesday": 10,
+          "Monday": 2,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 53,
+        "freq": 18,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 2,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 55,
+        "freq": 16,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 6,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 42,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 4,
+          "Monday": 2,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 43,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 7,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 51,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 6,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 41,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 45,
+        "freq": 12,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 6,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 47,
+        "freq": 12,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 6,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 49,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 59,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 4,
+          "Monday": 1,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 44,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 58,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 4
+        }
+      }
+    ],
+    "41": [
+      {
+        "num": 59,
+        "freq": 19,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 11
+        }
+      },
+      {
+        "num": 53,
+        "freq": 17,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 13,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 54,
+        "freq": 16,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 9,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 44,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 6,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 56,
+        "freq": 15,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 2,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 42,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 58,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 52,
+        "freq": 12,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 6,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 55,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 64,
+        "freq": 12,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 7,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 57,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 47,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 2,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 48,
+        "freq": 10,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 5,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 49,
+        "freq": 10,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 5,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 45,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 3
+        }
+      }
+    ],
+    "42": [
+      {
+        "num": 50,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 1,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 48,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 8,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 52,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 53,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 1,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 51,
+        "freq": 12,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 5,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 59,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 3,
+          "Monday": 1,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 46,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 2,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 49,
+        "freq": 11,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 7,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 45,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 54,
+        "freq": 10,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 4,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 44,
+        "freq": 9,
+        "by_day": {
+          "Monday": 5,
+          "Saturday": 1,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 56,
+        "freq": 9,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 3,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 55,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 43,
+        "freq": 7,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 47,
+        "freq": 7,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 3
+        }
+      }
+    ],
+    "43": [
+      {
+        "num": 45,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 48,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 53,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 1,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 52,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 2,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 55,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 1,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 51,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 7,
+          "Monday": 2,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 60,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 2,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 56,
+        "freq": 10,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 7,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 44,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 47,
+        "freq": 8,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 3,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 61,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 1,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 65,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 69,
+        "freq": 8,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 3,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 46,
+        "freq": 7,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 49,
+        "freq": 7,
+        "by_day": {
+          "Wednesday": 3,
+          "Monday": 1,
+          "Saturday": 3
+        }
+      }
+    ],
+    "44": [
+      {
+        "num": 50,
+        "freq": 17,
+        "by_day": {
+          "Wednesday": 11,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 51,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 2,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 52,
+        "freq": 14,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 7,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 45,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 55,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 10,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 54,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 57,
+        "freq": 11,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 4,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 58,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 2,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 59,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 46,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 6,
+          "Monday": 1,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 53,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 64,
+        "freq": 10,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 2,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 47,
+        "freq": 9,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 6,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 49,
+        "freq": 9,
+        "by_day": {
+          "Saturday": 3,
+          "Monday": 2,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 69,
+        "freq": 9,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 4,
+          "Monday": 1
+        }
+      }
+    ],
+    "45": [
+      {
+        "num": 51,
+        "freq": 16,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 4,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 53,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 10,
+          "Saturday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 55,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 1,
+          "Saturday": 9
+        }
+      },
+      {
+        "num": 56,
+        "freq": 15,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 10,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 47,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 11,
+          "Monday": 1,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 46,
+        "freq": 11,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 5,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 48,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 49,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 1,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 50,
+        "freq": 10,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 4,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 54,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 5,
+          "Monday": 2,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 58,
+        "freq": 9,
+        "by_day": {
+          "Saturday": 5,
+          "Monday": 1,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 64,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 4,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 57,
+        "freq": 7,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 5,
+          "Wednesday": 1
+        }
+      },
+      {
+        "num": 61,
+        "freq": 7,
+        "by_day": {
+          "Saturday": 3,
+          "Monday": 1,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 69,
+        "freq": 7,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 2,
+          "Monday": 1
+        }
+      }
+    ],
+    "46": [
+      {
+        "num": 52,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 6,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 56,
+        "freq": 13,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 47,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 50,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 51,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 6,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 54,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 49,
+        "freq": 9,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 4,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 59,
+        "freq": 9,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 3,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 62,
+        "freq": 7,
+        "by_day": {
+          "Saturday": 2,
+          "Monday": 1,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 68,
+        "freq": 7,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 1,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 48,
+        "freq": 6,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 4,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 53,
+        "freq": 6,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 2,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 55,
+        "freq": 6,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 4,
+          "Wednesday": 1
+        }
+      },
+      {
+        "num": 57,
+        "freq": 5,
+        "by_day": {
+          "Saturday": 2,
+          "Wednesday": 2,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 58,
+        "freq": 5,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 2
+        }
+      }
+    ],
+    "47": [
+      {
+        "num": 55,
+        "freq": 17,
+        "by_day": {
+          "Monday": 5,
+          "Wednesday": 7,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 48,
+        "freq": 16,
+        "by_day": {
+          "Wednesday": 10,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 54,
+        "freq": 14,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 3,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 57,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 5,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 50,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 7,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 53,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 5,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 58,
+        "freq": 10,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 5,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 68,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 52,
+        "freq": 9,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 4,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 60,
+        "freq": 9,
+        "by_day": {
+          "Monday": 5,
+          "Saturday": 2,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 61,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 2,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 63,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 2,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 67,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 3,
+          "Monday": 3,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 49,
+        "freq": 7,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 51,
+        "freq": 7,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 2
+        }
+      }
+    ],
+    "48": [
+      {
+        "num": 52,
+        "freq": 17,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 7,
+          "Wednesday": 8
+        }
+      },
+      {
+        "num": 53,
+        "freq": 16,
+        "by_day": {
+          "Monday": 5,
+          "Saturday": 5,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 50,
+        "freq": 14,
+        "by_day": {
+          "Wednesday": 8,
+          "Monday": 1,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 54,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 8
+        }
+      },
+      {
+        "num": 55,
+        "freq": 11,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 4,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 49,
+        "freq": 9,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 56,
+        "freq": 9,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 58,
+        "freq": 9,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 4,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 59,
+        "freq": 8,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 5,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 60,
+        "freq": 8,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 4,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 68,
+        "freq": 8,
+        "by_day": {
+          "Monday": 4,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 51,
+        "freq": 7,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 64,
+        "freq": 7,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 4,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 57,
+        "freq": 6,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 1
+        }
+      },
+      {
+        "num": 61,
+        "freq": 5,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 1
+        }
+      }
+    ],
+    "49": [
+      {
+        "num": 59,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 9,
+          "Monday": 2,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 50,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 52,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 55,
+        "freq": 12,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 6,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 53,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 57,
+        "freq": 9,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 65,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 69,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 54,
+        "freq": 7,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 58,
+        "freq": 7,
+        "by_day": {
+          "Wednesday": 1,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 67,
+        "freq": 7,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 51,
+        "freq": 6,
+        "by_day": {
+          "Wednesday": 3,
+          "Monday": 1,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 56,
+        "freq": 6,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 62,
+        "freq": 5,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 61,
+        "freq": 4,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 1
+        }
+      }
+    ],
+    "50": [
+      {
+        "num": 52,
+        "freq": 13,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 6,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 57,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 5,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 58,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 51,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 59,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 5,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 61,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 4,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 55,
+        "freq": 10,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 6,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 54,
+        "freq": 9,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 53,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 3,
+          "Monday": 1,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 62,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 64,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 56,
+        "freq": 6,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 3,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 65,
+        "freq": 6,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 67,
+        "freq": 6,
+        "by_day": {
+          "Wednesday": 2,
+          "Monday": 1,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 63,
+        "freq": 5,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 2,
+          "Saturday": 1
+        }
+      }
+    ],
+    "51": [
+      {
+        "num": 58,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 6,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 61,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 5,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 52,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 9,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 53,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 56,
+        "freq": 12,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 5,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 54,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 7,
+          "Monday": 3
+        }
+      },
+      {
+        "num": 55,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 5,
+          "Monday": 1,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 69,
+        "freq": 9,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 2,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 57,
+        "freq": 7,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 3,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 59,
+        "freq": 7,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 60,
+        "freq": 7,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 1,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 63,
+        "freq": 5,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 3,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 68,
+        "freq": 5,
+        "by_day": {
+          "Wednesday": 4,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 67,
+        "freq": 4,
+        "by_day": {
+          "Wednesday": 2,
+          "Saturday": 1,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 66,
+        "freq": 3,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 2
+        }
+      }
+    ],
+    "52": [
+      {
+        "num": 53,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 8,
+          "Wednesday": 9
+        }
+      },
+      {
+        "num": 54,
+        "freq": 17,
+        "by_day": {
+          "Saturday": 13,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 55,
+        "freq": 14,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 7,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 64,
+        "freq": 12,
+        "by_day": {
+          "Monday": 4,
+          "Saturday": 4,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 58,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 56,
+        "freq": 9,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 57,
+        "freq": 9,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 3,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 59,
+        "freq": 9,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 62,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 3,
+          "Monday": 1,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 67,
+        "freq": 8,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 3,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 60,
+        "freq": 6,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 68,
+        "freq": 6,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 69,
+        "freq": 6,
+        "by_day": {
+          "Saturday": 3,
+          "Monday": 2,
+          "Wednesday": 1
+        }
+      },
+      {
+        "num": 61,
+        "freq": 5,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 1
+        }
+      },
+      {
+        "num": 63,
+        "freq": 5,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 2,
+          "Wednesday": 1
+        }
+      }
+    ],
+    "53": [
+      {
+        "num": 54,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 56,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 8,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 58,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 6,
+          "Monday": 2,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 57,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 59,
+        "freq": 10,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 8,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 55,
+        "freq": 9,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 1,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 66,
+        "freq": 9,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 2,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 60,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 62,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 68,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 2,
+          "Monday": 1,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 67,
+        "freq": 7,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 3,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 63,
+        "freq": 6,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 4,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 69,
+        "freq": 6,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 3,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 64,
+        "freq": 5,
+        "by_day": {
+          "Wednesday": 3,
+          "Monday": 1,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 65,
+        "freq": 3,
+        "by_day": {
+          "Saturday": 2,
+          "Wednesday": 1
+        }
+      }
+    ],
+    "54": [
+      {
+        "num": 55,
+        "freq": 16,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 1,
+          "Wednesday": 7
+        }
+      },
+      {
+        "num": 57,
+        "freq": 14,
+        "by_day": {
+          "Saturday": 10,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 56,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 7,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 69,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 8,
+          "Monday": 1,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 59,
+        "freq": 9,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 60,
+        "freq": 9,
+        "by_day": {
+          "Wednesday": 2,
+          "Monday": 2,
+          "Saturday": 5
+        }
+      },
+      {
+        "num": 61,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 62,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 64,
+        "freq": 8,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 4,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 63,
+        "freq": 7,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 68,
+        "freq": 7,
+        "by_day": {
+          "Saturday": 3,
+          "Monday": 1,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 65,
+        "freq": 5,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 4
+        }
+      },
+      {
+        "num": 66,
+        "freq": 5,
+        "by_day": {
+          "Wednesday": 2,
+          "Monday": 1,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 58,
+        "freq": 4,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 67,
+        "freq": 4,
+        "by_day": {
+          "Saturday": 2,
+          "Monday": 1,
+          "Wednesday": 1
+        }
+      }
+    ],
+    "55": [
+      {
+        "num": 56,
+        "freq": 10,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 6
+        }
+      },
+      {
+        "num": 67,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 4,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 59,
+        "freq": 9,
+        "by_day": {
+          "Saturday": 4,
+          "Monday": 2,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 57,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 68,
+        "freq": 8,
+        "by_day": {
+          "Monday": 4,
+          "Wednesday": 3,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 58,
+        "freq": 7,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 4,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 63,
+        "freq": 7,
+        "by_day": {
+          "Saturday": 2,
+          "Monday": 1,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 61,
+        "freq": 6,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 2,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 62,
+        "freq": 6,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 2,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 66,
+        "freq": 6,
+        "by_day": {
+          "Saturday": 4,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 69,
+        "freq": 6,
+        "by_day": {
+          "Saturday": 2,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 64,
+        "freq": 5,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 2,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 60,
+        "freq": 4,
+        "by_day": {
+          "Wednesday": 2,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 65,
+        "freq": 3,
+        "by_day": {
+          "Wednesday": 1,
+          "Monday": 1,
+          "Saturday": 1
+        }
+      }
+    ],
+    "56": [
+      {
+        "num": 57,
+        "freq": 12,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 59,
+        "freq": 8,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 4,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 68,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 7,
+          "Wednesday": 1
+        }
+      },
+      {
+        "num": 60,
+        "freq": 7,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 3,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 61,
+        "freq": 7,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 1,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 64,
+        "freq": 7,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 4,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 69,
+        "freq": 7,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 5,
+          "Wednesday": 1
+        }
+      },
+      {
+        "num": 58,
+        "freq": 6,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 2,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 66,
+        "freq": 5,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 62,
+        "freq": 4,
+        "by_day": {
+          "Saturday": 2,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 63,
+        "freq": 4,
+        "by_day": {
+          "Wednesday": 2,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 67,
+        "freq": 4,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 65,
+        "freq": 3,
+        "by_day": {
+          "Wednesday": 1,
+          "Saturday": 2
+        }
+      }
+    ],
+    "57": [
+      {
+        "num": 58,
+        "freq": 13,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 9,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 59,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 60,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 5,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 66,
+        "freq": 8,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 5,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 62,
+        "freq": 7,
+        "by_day": {
+          "Saturday": 4,
+          "Monday": 2,
+          "Wednesday": 1
+        }
+      },
+      {
+        "num": 63,
+        "freq": 7,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 69,
+        "freq": 7,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 3,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 64,
+        "freq": 6,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 2,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 65,
+        "freq": 6,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 67,
+        "freq": 5,
+        "by_day": {
+          "Saturday": 3,
+          "Monday": 1,
+          "Wednesday": 1
+        }
+      },
+      {
+        "num": 61,
+        "freq": 4,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 68,
+        "freq": 4,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 2,
+          "Saturday": 1
+        }
+      }
+    ],
+    "58": [
+      {
+        "num": 59,
+        "freq": 13,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 6,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 60,
+        "freq": 5,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 2,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 66,
+        "freq": 5,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 1,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 68,
+        "freq": 5,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 69,
+        "freq": 5,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 1,
+          "Wednesday": 1
+        }
+      },
+      {
+        "num": 64,
+        "freq": 4,
+        "by_day": {
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 65,
+        "freq": 4,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 2,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 61,
+        "freq": 3,
+        "by_day": {
+          "Saturday": 2,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 62,
+        "freq": 3,
+        "by_day": {
+          "Wednesday": 1,
+          "Saturday": 1,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 63,
+        "freq": 3,
+        "by_day": {
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 67,
+        "freq": 3,
+        "by_day": {
+          "Saturday": 1,
+          "Wednesday": 2
+        }
+      }
+    ],
+    "59": [
+      {
+        "num": 62,
+        "freq": 11,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 5,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 66,
+        "freq": 10,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 4,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 68,
+        "freq": 9,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 6,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 69,
+        "freq": 9,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 6,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 63,
+        "freq": 8,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 6,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 60,
+        "freq": 6,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 61,
+        "freq": 6,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 3,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 64,
+        "freq": 6,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 65,
+        "freq": 4,
+        "by_day": {
+          "Wednesday": 2,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 67,
+        "freq": 4,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 2,
+          "Wednesday": 1
+        }
+      }
+    ],
+    "60": [
+      {
+        "num": 64,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 65,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 3,
+          "Monday": 2,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 68,
+        "freq": 6,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 61,
+        "freq": 5,
+        "by_day": {
+          "Saturday": 2,
+          "Wednesday": 1,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 69,
+        "freq": 5,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 2,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 62,
+        "freq": 4,
+        "by_day": {
+          "Saturday": 2,
+          "Wednesday": 2
+        }
+      },
+      {
+        "num": 63,
+        "freq": 4,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 1
+        }
+      },
+      {
+        "num": 66,
+        "freq": 4,
+        "by_day": {
+          "Wednesday": 2,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 67,
+        "freq": 1,
+        "by_day": {
+          "Wednesday": 1
+        }
+      }
+    ],
+    "61": [
+      {
+        "num": 69,
+        "freq": 15,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 4,
+          "Monday": 4
+        }
+      },
+      {
+        "num": 63,
+        "freq": 12,
+        "by_day": {
+          "Saturday": 4,
+          "Monday": 3,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 62,
+        "freq": 11,
+        "by_day": {
+          "Saturday": 6,
+          "Wednesday": 5
+        }
+      },
+      {
+        "num": 64,
+        "freq": 11,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 7,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 68,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 7,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 66,
+        "freq": 7,
+        "by_day": {
+          "Wednesday": 1,
+          "Saturday": 4,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 65,
+        "freq": 6,
+        "by_day": {
+          "Wednesday": 4,
+          "Monday": 1,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 67,
+        "freq": 6,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 2,
+          "Wednesday": 3
+        }
+      }
+    ],
+    "62": [
+      {
+        "num": 63,
+        "freq": 9,
+        "by_day": {
+          "Wednesday": 6,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 64,
+        "freq": 9,
+        "by_day": {
+          "Monday": 4,
+          "Wednesday": 3,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 69,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 68,
+        "freq": 7,
+        "by_day": {
+          "Saturday": 2,
+          "Monday": 1,
+          "Wednesday": 4
+        }
+      },
+      {
+        "num": 65,
+        "freq": 5,
+        "by_day": {
+          "Wednesday": 2,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 66,
+        "freq": 5,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 67,
+        "freq": 1,
+        "by_day": {
+          "Wednesday": 1
+        }
+      }
+    ],
+    "63": [
+      {
+        "num": 68,
+        "freq": 11,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 4,
+          "Saturday": 6
+        }
+      },
+      {
+        "num": 64,
+        "freq": 8,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 3,
+          "Saturday": 3
+        }
+      },
+      {
+        "num": 69,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 5,
+          "Monday": 1,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 65,
+        "freq": 7,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 3,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 67,
+        "freq": 6,
+        "by_day": {
+          "Wednesday": 5,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 66,
+        "freq": 5,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 2
+        }
+      }
+    ],
+    "64": [
+      {
+        "num": 69,
+        "freq": 10,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 7
+        }
+      },
+      {
+        "num": 67,
+        "freq": 8,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 3,
+          "Monday": 2
+        }
+      },
+      {
+        "num": 68,
+        "freq": 8,
+        "by_day": {
+          "Monday": 1,
+          "Saturday": 4,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 66,
+        "freq": 7,
+        "by_day": {
+          "Saturday": 4,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 65,
+        "freq": 5,
+        "by_day": {
+          "Monday": 1,
+          "Wednesday": 3,
+          "Saturday": 1
+        }
+      }
+    ],
+    "65": [
+      {
+        "num": 67,
+        "freq": 6,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 2,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 68,
+        "freq": 6,
+        "by_day": {
+          "Wednesday": 4,
+          "Monday": 1,
+          "Saturday": 1
+        }
+      },
+      {
+        "num": 66,
+        "freq": 4,
+        "by_day": {
+          "Wednesday": 2,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 69,
+        "freq": 4,
+        "by_day": {
+          "Saturday": 3,
+          "Wednesday": 1
+        }
+      }
+    ],
+    "66": [
+      {
+        "num": 67,
+        "freq": 11,
+        "by_day": {
+          "Monday": 3,
+          "Saturday": 5,
+          "Wednesday": 3
+        }
+      },
+      {
+        "num": 69,
+        "freq": 10,
+        "by_day": {
+          "Monday": 3,
+          "Wednesday": 5,
+          "Saturday": 2
+        }
+      },
+      {
+        "num": 68,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 3,
+          "Saturday": 4,
+          "Monday": 1
+        }
+      }
+    ],
+    "67": [
+      {
+        "num": 68,
+        "freq": 8,
+        "by_day": {
+          "Wednesday": 4,
+          "Saturday": 3,
+          "Monday": 1
+        }
+      },
+      {
+        "num": 69,
+        "freq": 6,
+        "by_day": {
+          "Monday": 2,
+          "Wednesday": 4
+        }
+      }
+    ],
+    "68": [
+      {
+        "num": 69,
+        "freq": 7,
+        "by_day": {
+          "Monday": 2,
+          "Saturday": 2,
+          "Wednesday": 3
+        }
+      }
+    ]
+  },
+  "day_hot_numbers": {
+    "Saturday": [
+      32,
+      36,
+      23,
+      14,
+      12,
+      20,
+      28,
+      3,
+      27,
+      54,
+      21,
+      8,
+      22,
+      41,
+      45,
+      40,
+      39,
+      52,
+      16,
+      5
+    ],
+    "Wednesday": [
+      19,
+      53,
+      7,
+      28,
+      39,
+      29,
+      8,
+      32,
+      47,
+      16,
+      24,
+      23,
+      11,
+      40,
+      42,
+      52,
+      4,
+      20,
+      50,
+      37
+    ],
+    "Monday": [
+      39,
+      47,
+      33,
+      55,
+      36,
+      27,
+      31,
+      67,
+      69,
+      52,
+      21,
+      46,
+      2,
+      45,
+      18,
+      64,
+      16,
+      61,
+      34,
+      9
+    ]
+  },
+  "day_totals": {
+    "Saturday": 1044,
+    "Wednesday": 1044,
+    "Monday": 249
+  }
+}
