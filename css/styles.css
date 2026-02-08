@@ -223,7 +223,7 @@ h1 {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 320px;
+    height: 100%;
     overflow: hidden;
 }
 
