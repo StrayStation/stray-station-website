@@ -204,6 +204,7 @@ h1 {
 /* Project Cards */
 .projects-grid {
     display: grid;
+    align-items: stretch;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-bottom: 50px;
@@ -220,7 +221,14 @@ h1 {
     transition: all 0.4s ease;
     cursor: pointer;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
     overflow: hidden;
+}
+
+.project-card > div:last-child {
+    margin-top: auto;
 }
 
 .project-card::before {
