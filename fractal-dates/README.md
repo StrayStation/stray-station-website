@@ -1,0 +1,1 @@
+# Fractal Dates\n\nThis folder contains the fractal date generation logic and algorithms.
