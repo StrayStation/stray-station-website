@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Throughline — A goal-setting and daily execution system. From True North to Daily 3, nothing slips.">
+    <title>Throughline — StrayStation Lab</title>
+    <link rel="icon" type="image/png" href="../images/straystation_final.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy-deep:   #0a0f1e;
+            --navy-card:   #161d2e;
+            --navy-light:  #1e2a40;
+            --navy-border: rgba(255,255,255,0.07);
+            --teal:        #0fbfad;
+            --teal-dim:    rgba(15,191,173,0.18);
+            --coral:       #f4623a;
+            --white:       #f0f4f8;
+            --white-dim:   rgba(240,244,248,0.45);
+            --white-faint: rgba(240,244,248,0.10);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--navy-deep);
+            color: var(--white);
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Back nav ── */
+        .back-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 28px;
+            background: rgba(10,15,30,0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--navy-border);
+        }
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--white-dim);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--teal); }
+        .back-link svg { width: 14px; height: 14px; }
+
+        .nav-wordmark {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.01em;
+        }
+        .nav-wordmark span { color: var(--teal); }
+
+        .nav-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border: 1px solid rgba(15,191,173,0.4);
+            border-radius: 12px;
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--teal);
+        }
+        .nav-badge-dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--teal);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+        /* ── Hero ── */
+        .hero {
+            padding: 120px 28px 80px;
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hero-eyebrow {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 18px;
+        }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.0;
+            color: var(--white);
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+        .hero-sub {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--white-dim);
+            line-height: 1.6;
+            max-width: 520px;
+            margin: 0 auto 36px;
+        }
+        .hero-cta-row {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 24px;
+            background: var(--teal);
+            color: var(--navy-deep);
+            border: none;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.15s;
+        }
+        .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 24px;
+            background: transparent;
+            color: var(--white-dim);
+            border: 1px solid var(--navy-border);
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        .btn-secondary:hover { color: var(--white); border-color: rgba(240,244,248,0.2); }
+
+        /* ── Thread Visual ── */
+        .thread-visual {
+            max-width: 540px;
+            margin: 0 auto 80px;
+            padding: 0 28px;
+        }
+        .thread-diagram {
+            background: var(--navy-card);
+            border: 1px solid var(--navy-border);
+            border-radius: 16px;
+            padding: 32px 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        .thread-diagram::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--teal), transparent);
+            opacity: 0.5;
+        }
+        .thread-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 0;
+            position: relative;
+        }
+        .thread-spine {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+            width: 20px;
+        }
+        .t-node {
+            border-radius: 50%;
+            border: 2px solid var(--teal);
+            background: var(--navy-deep);
+            flex-shrink: 0;
+        }
+        .t-node.lg { width: 18px; height: 18px; box-shadow: 0 0 12px rgba(15,191,173,0.35); }
+        .t-node.sm { width: 12px; height: 12px; }
+        .t-node.drift { border-color: var(--coral); border-style: dashed; box-shadow: 0 0 10px rgba(244,98,58,0.3); }
+        .t-node.dim  { border-color: rgba(15,191,173,0.2); }
+        .t-seg {
+            width: 2px;
+            background: var(--teal);
+            flex: 1;
+            min-height: 28px;
+        }
+        .t-seg.dim  { background: rgba(15,191,173,0.15); }
+        .t-seg.break { background: linear-gradient(to bottom, var(--teal), var(--coral)); }
+        .thread-info { padding-top: 1px; padding-bottom: 24px; }
+        .t-label {
+            font-size: 0.58rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 3px;
+        }
+        .t-label.drift { color: var(--coral); }
+        .t-label.dim   { color: rgba(15,191,173,0.3); }
+        .t-value {
+            font-size: 0.82rem;
+            color: var(--white);
+            line-height: 1.4;
+        }
+        .t-value.dim { color: rgba(240,244,248,0.2); }
+
+        /* Two-state demo */
+        .demo-toggle {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .demo-btn {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: 1.5px solid;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s;
+        }
+        .demo-btn.teal { border-color: var(--teal); color: var(--teal); background: var(--teal-dim); }
+        .demo-btn.coral { border-color: var(--coral); color: var(--coral); background: rgba(244,98,58,0.12); }
+        .demo-btn.active-btn { opacity: 1; }
+        .demo-btn.inactive-btn { opacity: 0.4; }
+
+        /* ── How It Works ── */
+        .section {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 28px 80px;
+        }
+        .section-label {
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .section-body {
+            font-size: 0.92rem;
+            color: var(--white-dim);
+            line-height: 1.75;
+            max-width: 580px;
+            margin-bottom: 36px;
+        }
+
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 560px) { .tracks-grid { grid-template-columns: 1fr; } }
+
+        .track-card {
+            background: var(--navy-card);
+            border: 1px solid var(--navy-border);
+            border-radius: 12px;
+            padding: 22px;
+        }
+        .track-card-label {
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 8px;
+        }
+        .track-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        .track-card-body {
+            font-size: 0.8rem;
+            color: var(--white-dim);
+            line-height: 1.6;
+        }
+
+        /* ── Cascade Levels ── */
+        .cascade-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-left: 2px solid rgba(15,191,173,0.2);
+            padding-left: 24px;
+            margin-bottom: 40px;
+        }
+        .cascade-item {
+            padding-bottom: 28px;
+            position: relative;
+        }
+        .cascade-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            border: 2px solid var(--teal);
+            background: var(--navy-deep);
+        }
+        .cascade-item:last-child { padding-bottom: 0; }
+        .cascade-level {
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 4px;
+        }
+        .cascade-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+        .cascade-desc {
+            font-size: 0.8rem;
+            color: var(--white-dim);
+            line-height: 1.55;
+        }
+
+        /* ── Vocabulary ── */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 500px) { .vocab-grid { grid-template-columns: 1fr; } }
+
+        .vocab-item {
+            padding: 14px 16px;
+            background: var(--navy-card);
+            border: 1px solid var(--navy-border);
+            border-radius: 8px;
+        }
+        .vocab-term {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 4px;
+        }
+        .vocab-def {
+            font-size: 0.78rem;
+            color: var(--white-dim);
+            line-height: 1.5;
+        }
+
+        /* ── Coaching Prompt ── */
+        .coaching-card {
+            background: var(--navy-card);
+            border: 1px solid var(--navy-border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 40px;
+            border-left: 3px solid rgba(15,191,173,0.35);
+        }
+        .coaching-label {
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-bottom: 10px;
+        }
+        .coaching-prompt {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--white);
+            line-height: 1.65;
+        }
+
+        /* ── Status badges ── */
+        .status-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 1.5px solid;
+        }
+        .status-badge.teal {
+            border-color: var(--teal);
+            color: var(--teal);
+            background: rgba(15,191,173,0.1);
+        }
+        .status-badge.coral {
+            border-color: var(--coral);
+            color: var(--coral);
+            background: rgba(244,98,58,0.1);
+        }
+        .status-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+        }
+        .status-badge.teal .status-dot { background: var(--teal); animation: pulse 2s ease-in-out infinite; }
+        .status-badge.coral .status-dot { background: var(--coral); animation: pulse 1.5s ease-in-out infinite; }
+
+        /* ── Lab status strip ── */
+        .lab-strip {
+            max-width: 760px;
+            margin: 0 auto 60px;
+            padding: 0 28px;
+        }
+        .lab-strip-inner {
+            background: var(--navy-card);
+            border: 1px solid var(--navy-border);
+            border-radius: 10px;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .lab-strip-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+        }
+        .lab-strip-info {
+            font-size: 0.8rem;
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+        .lab-strip-badge {
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--teal);
+            border: 1px solid rgba(15,191,173,0.3);
+            border-radius: 8px;
+            padding: 4px 10px;
+            white-space: nowrap;
+        }
+
+        /* ── Footer ── */
+        .page-footer {
+            border-top: 1px solid var(--navy-border);
+            padding: 28px;
+            text-align: center;
+        }
+        .footer-wordmark {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-bottom: 6px;
+        }
+        .footer-ethos {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.8rem;
+            color: rgba(240,244,248,0.2);
+        }
+
+        /* ── Thread demo JS ── */
+        .thread-diagram[data-state="drifted"] .seg-q-w { background: linear-gradient(to bottom, #0fbfad, #f4623a); }
+        .thread-diagram[data-state="drifted"] .seg-w-d { background: rgba(15,191,173,0.1); }
+        .thread-diagram[data-state="drifted"] .node-weekly { border-color: #f4623a; border-style: dashed; box-shadow: 0 0 10px rgba(244,98,58,0.35); }
+        .thread-diagram[data-state="drifted"] .label-weekly { color: #f4623a; }
+        .thread-diagram[data-state="drifted"] .node-daily  { border-color: rgba(15,191,173,0.2); }
+        .thread-diagram[data-state="drifted"] .value-daily { color: rgba(240,244,248,0.2); }
+
+        @media (max-width: 480px) {
+            .back-nav { padding: 12px 18px; }
+            .hero { padding: 100px 18px 60px; }
+            .section, .thread-visual, .lab-strip { padding-left: 18px; padding-right: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Nav -->
+    <nav class="back-nav">
+        <a href="../index.html" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            StrayStation
+        </a>
+        <div class="nav-wordmark">Through<span>line</span></div>
+        <div class="nav-badge">
+            <div class="nav-badge-dot"></div>
+            In Development
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-eyebrow">StrayStation Lab — Preview</div>
+        <h1 class="hero-title">Throughline</h1>
+        <p class="hero-sub">The invisible thread from True North to Daily 3. Every daily action connects to an annual goal connects to a vision that matters.</p>
+        <div class="hero-cta-row">
+            <a href="#how-it-works" class="btn-primary">See How It Works</a>
+            <a href="#vocabulary" class="btn-secondary">Read the Vocabulary</a>
+        </div>
+    </section>
+
+    <!-- Thread Diagram -->
+    <div class="thread-visual">
+        <div class="thread-diagram" id="threadDiagram" data-state="on_track">
+
+            <div class="thread-row">
+                <div class="thread-spine">
+                    <div class="t-node lg"></div>
+                    <div class="t-seg" id="seg-tn-a"></div>
+                </div>
+                <div class="thread-info">
+                    <div class="t-label">True North</div>
+                    <div class="t-value">Build something that outlasts the role</div>
+                </div>
+            </div>
+
+            <div class="thread-row">
+                <div class="thread-spine">
+                    <div class="t-node sm"></div>
+                    <div class="t-seg" id="seg-a-q"></div>
+                </div>
+                <div class="thread-info">
+                    <div class="t-label">Annual Goal</div>
+                    <div class="t-value">Launch Throughline in StrayStation lab</div>
+                </div>
+            </div>
+
+            <div class="thread-row">
+                <div class="thread-spine">
+                    <div class="t-node sm"></div>
+                    <div class="t-seg" id="seg-q-w" class="seg-q-w"></div>
+                </div>
+                <div class="thread-info">
+                    <div class="t-label">Q2 Milestone</div>
+                    <div class="t-value">Complete design + build v1</div>
+                </div>
+            </div>
+
+            <div class="thread-row">
+                <div class="thread-spine">
+                    <div class="t-node sm" id="node-weekly"></div>
+                    <div class="t-seg" id="seg-w-d"></div>
+                </div>
+                <div class="thread-info">
+                    <div class="t-label" id="label-weekly">This Week</div>
+                    <div class="t-value" id="value-weekly">Lock visual treatment</div>
+                </div>
+            </div>
+
+            <div class="thread-row">
+                <div class="thread-spine">
+                    <div class="t-node lg" id="node-daily"></div>
+                </div>
+                <div class="thread-info" style="padding-bottom: 0;">
+                    <div class="t-label" id="label-daily">Daily 3</div>
+                    <div class="t-value" id="value-daily">Finalize color + type direction</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- State toggle demo -->
+        <div class="demo-toggle">
+            <button class="demo-btn teal active-btn" id="btnOnTrack" onclick="setThreadState('on_track')">
+                On the Throughline
+            </button>
+            <button class="demo-btn coral inactive-btn" id="btnDrifted" onclick="setThreadState('drifted')">
+                Drifted
+            </button>
+        </div>
+    </div>
+
+    <!-- Status Badges -->
+    <div class="section" style="padding-bottom: 32px;">
+        <div class="status-row">
+            <div class="status-badge teal">
+                <div class="status-dot"></div>
+                On the Throughline
+            </div>
+            <div class="status-badge coral">
+                <div class="status-dot"></div>
+                Drifted
+            </div>
+        </div>
+        <p style="font-size: 0.78rem; color: var(--white-dim); line-height: 1.6; max-width: 520px;">
+            Two signal states. Only two. On track shows the full thread lit from True North to Daily 3. Drifted breaks the thread at the exact point of misalignment — showing how far the disconnection has traveled downstream.
+        </p>
+    </div>
+
+    <!-- How It Works -->
+    <div class="section" id="how-it-works">
+        <div class="section-label">The Architecture</div>
+        <h2 class="section-title">Two Tracks. One System.</h2>
+        <p class="section-body">
+            Ideal results require ideal behaviors — and your process and systems drive that behavior. Throughline runs two parallel tracks that reflect exactly that.
+        </p>
+
+        <div class="tracks-grid">
+            <div class="track-card">
+                <div class="track-card-label">Goal Track</div>
+                <div class="track-card-title">The Ideal Results</div>
+                <div class="track-card-body">Cascades from your annual goal down through quarterly milestones, weekly commitments, and the Daily 3. Every action is traceable to a vision that matters.</div>
+            </div>
+            <div class="track-card">
+                <div class="track-card-label">Non-Negotiables Track</div>
+                <div class="track-card-title">The Ideal Behaviors</div>
+                <div class="track-card-body">Runs in parallel. These are the recurring behaviors that make goals inevitable rather than hopeful. Not tasks — commitments. They don't cascade. They anchor.</div>
+            </div>
+        </div>
+
+        <div class="section-label" style="margin-top: 8px;">The Cascade</div>
+        <div class="cascade-list">
+            <div class="cascade-item">
+                <div class="cascade-level">True North</div>
+                <div class="cascade-title">Your Personal Vision Statement</div>
+                <div class="cascade-desc">Set at onboarding. Permanent anchor. Everything else flows from here. Never changes unless you've fundamentally changed what winning looks like.</div>
+            </div>
+            <div class="cascade-item">
+                <div class="cascade-level">Annual Goal</div>
+                <div class="cascade-title">What Winning Looks Like This Year</div>
+                <div class="cascade-desc">Four-question structure captures the goal, the arrival picture, the evidence, and the measure. Guided or manual — same output either way.</div>
+            </div>
+            <div class="cascade-item">
+                <div class="cascade-level">Quarterly Milestone</div>
+                <div class="cascade-title">What Needs to Be True in 90 Days</div>
+                <div class="cascade-desc">Default planning cadence. Week X of 13 shown for orientation. Monthly bucketing is visual only — no additional planning layer to manage.</div>
+            </div>
+            <div class="cascade-item">
+                <div class="cascade-level">Weekly Commitments</div>
+                <div class="cascade-title">What Needs to Happen This Week</div>
+                <div class="cascade-desc">3–5 across all active goals combined. Outcome-framed — not what you'll work on, but what will be different by Friday.</div>
+            </div>
+            <div class="cascade-item">
+                <div class="cascade-level">Daily 3</div>
+                <div class="cascade-title">Three Things That Don't Slip Today</div>
+                <div class="cascade-desc">Forced constraint. Always three. Each linked to a weekly commitment. Everything after is priority four and beyond — get to it, delegate it, or defer it. But these three move.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coaching Prompt -->
+    <div class="section" style="padding-bottom: 32px;">
+        <div class="coaching-card">
+            <div class="coaching-label">Founding Prompt — True North</div>
+            <div class="coaching-prompt">A year from now, what would need to be true for you to feel like you made it count?</div>
+        </div>
+    </div>
+
+    <!-- Vocabulary -->
+    <div class="section" id="vocabulary">
+        <div class="section-label">Locked Vocabulary</div>
+        <h2 class="section-title">The Language of Throughline</h2>
+        <p class="section-body">These terms are final. Used consistently across all screens, onboarding, and help text.</p>
+
+        <div class="vocab-grid">
+            <div class="vocab-item">
+                <div class="vocab-term">Throughline</div>
+                <div class="vocab-def">The invisible thread connecting True North to Daily 3. The system itself.</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-term">True North</div>
+                <div class="vocab-def">The user's personal vision statement. Set at onboarding. Permanent anchor.</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-term">Daily 3</div>
+                <div class="vocab-def">The three specific actions that do not slip today. Forced constraint.</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-term">Non-Negotiables</div>
+                <div class="vocab-def">Recurring behaviors that make goals inevitable rather than hopeful.</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-term">On the Throughline</div>
+                <div class="vocab-def">The daily and weekly signal for normal — executing in alignment with goals.</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-term">Drifted</div>
+                <div class="vocab-def">The daily and weekly signal for off track — recovery needed.</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-term">Arrival Picture</div>
+                <div class="vocab-def">The internal image of what reaching a goal looks and feels like. Always shown in the user's exact words.</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-term">Dead Fish Check</div>
+                <div class="vocab-def">A challenge that fires after Non-Negotiable entry. Even a dead fish can go with the flow — are you moving upstream?</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lab Status Strip -->
+    <div class="lab-strip">
+        <div class="lab-strip-inner">
+            <div>
+                <div class="lab-strip-label">StrayStation Lab</div>
+                <div class="lab-strip-info">Phase 1 — Daily screen, weekly screen, and throughline thread in active development.</div>
+            </div>
+            <div class="lab-strip-badge">v1 In Dev</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="footer-wordmark">Throughline — StrayStation Lab</div>
+        <div class="footer-ethos">Even a dead fish can go with the flow.</div>
+    </footer>
+
+    <script>
+        function setThreadState(state) {
+            const diagram = document.getElementById('threadDiagram');
+            const segQW = document.getElementById('seg-q-w');
+            const segWD = document.getElementById('seg-w-d');
+            const nodeWeekly = document.getElementById('node-weekly');
+            const labelWeekly = document.getElementById('label-weekly');
+            const valueWeekly = document.getElementById('value-weekly');
+            const nodeDaily = document.getElementById('node-daily');
+            const valueDaily = document.getElementById('value-daily');
+            const btnOn = document.getElementById('btnOnTrack');
+            const btnDr = document.getElementById('btnDrifted');
+
+            if (state === 'drifted') {
+                segQW.style.background = 'linear-gradient(to bottom, #0fbfad, #f4623a)';
+                segWD.style.background = 'rgba(15,191,173,0.1)';
+                nodeWeekly.style.borderColor = '#f4623a';
+                nodeWeekly.style.borderStyle = 'dashed';
+                nodeWeekly.style.boxShadow = '0 0 10px rgba(244,98,58,0.35)';
+                labelWeekly.style.color = '#f4623a';
+                labelWeekly.textContent = 'This Week — Drifted';
+                valueWeekly.style.color = 'rgba(244,98,58,0.7)';
+                valueWeekly.textContent = '2 of 4 commitments incomplete';
+                nodeDaily.style.borderColor = 'rgba(15,191,173,0.2)';
+                nodeDaily.style.boxShadow = 'none';
+                valueDaily.style.color = 'rgba(240,244,248,0.2)';
+                btnOn.classList.remove('active-btn'); btnOn.classList.add('inactive-btn');
+                btnDr.classList.remove('inactive-btn'); btnDr.classList.add('active-btn');
+            } else {
+                segQW.style.background = '#0fbfad';
+                segWD.style.background = '#0fbfad';
+                nodeWeekly.style.borderColor = '#0fbfad';
+                nodeWeekly.style.borderStyle = 'solid';
+                nodeWeekly.style.boxShadow = 'none';
+                labelWeekly.style.color = '#0fbfad';
+                labelWeekly.textContent = 'This Week';
+                valueWeekly.style.color = 'var(--white)';
+                valueWeekly.textContent = 'Lock visual treatment';
+                nodeDaily.style.borderColor = '#0fbfad';
+                nodeDaily.style.boxShadow = '0 0 12px rgba(15,191,173,0.35)';
+                valueDaily.style.color = 'var(--white)';
+                btnOn.classList.remove('inactive-btn'); btnOn.classList.add('active-btn');
+                btnDr.classList.remove('active-btn'); btnDr.classList.add('inactive-btn');
+            }
+        }
+    </script>
+</body>
+</html>
