@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stray Station - My AI laboratory for experimental apps, creative exploration, and learning to build the future.">
+    <meta name="keywords" content="AI, experiments, apps, playground, technology, innovation">
+    <meta name="author" content="Stray Station">
+    <title>Stray Station - Where Curiosity Meets Code</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/straystation_final.png">
+    <style>
+        .coming-soon-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+            color: #0a0a0a;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+            z-index: 10;
+        }
+        .project-card {
+            position: relative;
+        }
+        .project-card.disabled {
+            cursor: default;
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-pattern"></div>
+    <div class="orbital-accent"></div>
+
+    <nav class="container">
+        <div class="logo">STRAY STATION</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#lab">Lab</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero container" id="home">
+        <div class="hero-logo">
+            <img src="images/straystation_final.png" alt="Stray Station Logo">
+        </div>
+        <h1>STRAY STATION</h1>
+        <p class="tagline">Where curiosity meets code.</p>
+        <p class="hero-description">
+            My AI laboratory for experimental apps, creative exploration, and learning to build the future—one project at a time.
+            A playground for the professionally curious.
+        </p>
+        <a href="#lab" class="cta-button">Explore the Lab</a>
+    </section>
+
+    <section class="section container" id="lab">
+        <div class="section-header">
+            <h2 class="section-title">The Lab</h2>
+            <p class="section-subtitle">Experimental AI applications and creative projects</p>
+        </div>
+        <div class="projects-grid">
+
+            <!-- Stray Lucky - Active -->
+            <a href="stray-lucky/index.html" style="text-decoration: none; color: inherit;">
+                <div class="project-card">
+                    <div class="project-icon">🎲</div>
+                    <h3 class="project-title">Stray Lucky</h3>
+                    <p class="project-description">An intelligent lottery number selector for NC Powerball. Apply algorithms and patterns to your picks while maintaining that element of chance.</p>
+                    <div>
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Algorithm</span>
+                        <span class="project-tag">Fun</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Fractology - Active -->
+            <a href="fractal-dates/index.html" style="text-decoration: none; color: inherit;">
+                <div class="project-card">
+                    <div class="project-icon">🎨</div>
+                    <h3 class="project-title">Fractology</h3>
+                    <p class="project-description">The art of meaningful mathematics. Transform birthdays, anniversaries, and special dates into stunning fractal artwork—each one a completely unique mathematical signature.</p>
+                    <div>
+                        <span class="project-tag">Art</span>
+                        <span class="project-tag">Mathematics</span>
+                        <span class="project-tag">Gifts</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Release - Active -->
+            <a href="release/index.html" style="text-decoration: none; color: inherit;">
+                <div class="project-card">
+                    <div class="project-icon">💥</div>
+                    <h3 class="project-title">Release</h3>
+                    <p class="project-description">A therapeutic app for safe emotional release. Write what's weighing on you, pick your weapon, and smash it into oblivion. Catharsis, engineered.</p>
+                    <div>
+                        <span class="project-tag">Wellness</span>
+                        <span class="project-tag">Interactive</span>
+                        <span class="project-tag">Audio</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Throughline - Preview -->
+            <a href="throughline/index.html" style="text-decoration: none; color: inherit;">
+                <div class="project-card">
+                    <span class="coming-soon-badge">Preview</span>
+                    <div class="project-icon">🧵</div>
+                    <h3 class="project-title">Throughline</h3>
+                    <p class="project-description">A goal-setting and daily execution system built on a single idea: every daily action should connect to a vision that matters. From True North to Daily 3—nothing slips.</p>
+                    <div>
+                        <span class="project-tag">Productivity</span>
+                        <span class="project-tag">Goals</span>
+                        <span class="project-tag">In Development</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Chainfinity - Coming Soon -->
+            <div class="project-card disabled">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <div class="project-icon">∞</div>
+                <h3 class="project-title">Chainfinity</h3>
+                <p class="project-description">A practitioner-focused supply chain newsletter for the people actually building and running the systems. Future-oriented. No fluff.</p>
+                <div>
+                    <span class="project-tag">Newsletter</span>
+                    <span class="project-tag">Supply Chain</span>
+                    <span class="project-tag">Strategy</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section container" id="shop">
+        <div class="section-header">
+            <h2 class="section-title">The Shop</h2>
+            <p class="section-subtitle">Gear for the contrarian professional</p>
+        </div>
+        <div class="coming-soon-content">
+            <p>Stray brand merch is coming. T-shirts for the people moving upstream. Proceeds fuel the lab.</p>
+        </div>
+    </section>
+
+    <section class="section container" id="contact">
+        <div class="section-header">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">Say something worth saying</p>
+        </div>
+        <div class="coming-soon-content">
+            <p>straystation.com · Huntersville, NC</p>
+        </div>
+    </section>
+
+    <footer class="footer container">
+        <p>STRAY STATION &mdash; Built with curiosity and caffeine.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.5;">Even a dead fish can go with the flow.</p>
+    </footer>
+
+</body>
+</html>
