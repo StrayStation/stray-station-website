@@ -32,6 +32,45 @@
             cursor: default;
             opacity: 0.85;
         }
+
+        /* Lab Filter */
+        .lab-filter {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+        .filter-btn {
+            background: transparent;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            color: rgba(255, 255, 255, 0.55);
+            padding: 0.45rem 1.25rem;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .filter-btn:hover {
+            border-color: rgba(0, 217, 255, 0.7);
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .filter-btn.active {
+            background: linear-gradient(135deg, #00D9FF 0%, #0066CC 100%);
+            border-color: transparent;
+            color: #0F1419;
+            box-shadow: 0 4px 14px rgba(0, 217, 255, 0.35);
+        }
+
+        /* Card hide/show with fade */
+        .project-card-wrapper {
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        .project-card-wrapper.hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -56,7 +95,7 @@
         <h1>STRAY STATION</h1>
         <p class="tagline">Where curiosity meets code.</p>
         <p class="hero-description">
-            My AI laboratory for experimental apps, creative exploration, and learning to build the future—one project at a time.
+            My AI laboratory for experimental apps, creative exploration, and learning to build the future&mdash;one project at a time.
             A playground for the professionally curious.
         </p>
         <a href="#lab" class="cta-button">Explore the Lab</a>
@@ -67,79 +106,96 @@
             <h2 class="section-title">The Lab</h2>
             <p class="section-subtitle">Experimental AI applications and creative projects</p>
         </div>
+
+        <div class="lab-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="experiment">Experiments</button>
+            <button class="filter-btn" data-filter="tool">Tools</button>
+        </div>
+
         <div class="projects-grid">
 
-            <!-- Stray Lucky - Active -->
-            <a href="stray-lucky/index.html" style="text-decoration: none; color: inherit;">
-                <div class="project-card">
-                    <div class="project-icon">🎲</div>
-                    <h3 class="project-title">Stray Lucky</h3>
-                    <p class="project-description">An intelligent lottery number selector for NC Powerball. Apply algorithms and patterns to your picks while maintaining that element of chance.</p>
-                    <div>
-                        <span class="project-tag">React</span>
-                        <span class="project-tag">Algorithm</span>
-                        <span class="project-tag">Fun</span>
+            <!-- Stray Lucky - Experiment -->
+            <div class="project-card-wrapper" data-category="experiment">
+                <a href="stray-lucky/index.html" style="text-decoration: none; color: inherit;">
+                    <div class="project-card">
+                        <div class="project-icon">🎲</div>
+                        <h3 class="project-title">Stray Lucky</h3>
+                        <p class="project-description">An intelligent lottery number selector for NC Powerball. Apply algorithms and patterns to your picks while maintaining that element of chance.</p>
+                        <div>
+                            <span class="project-tag">Algorithm</span>
+                            <span class="project-tag">Data</span>
+                            <span class="project-tag">Fun</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
 
-            <!-- Fractology - Active -->
-            <a href="fractal-dates/index.html" style="text-decoration: none; color: inherit;">
-                <div class="project-card">
-                    <div class="project-icon">🎨</div>
-                    <h3 class="project-title">Fractology</h3>
-                    <p class="project-description">The art of meaningful mathematics. Transform birthdays, anniversaries, and special dates into stunning fractal artwork—each one a completely unique mathematical signature.</p>
-                    <div>
-                        <span class="project-tag">Art</span>
-                        <span class="project-tag">Mathematics</span>
-                        <span class="project-tag">Gifts</span>
+            <!-- Fractology - Experiment -->
+            <div class="project-card-wrapper" data-category="experiment">
+                <a href="fractal-dates/index.html" style="text-decoration: none; color: inherit;">
+                    <div class="project-card">
+                        <div class="project-icon">🎨</div>
+                        <h3 class="project-title">Fractology</h3>
+                        <p class="project-description">The art of meaningful mathematics. Transform birthdays, anniversaries, and special dates into stunning fractal artwork&mdash;each one a completely unique mathematical signature.</p>
+                        <div>
+                            <span class="project-tag">Art</span>
+                            <span class="project-tag">Mathematics</span>
+                            <span class="project-tag">Gifts</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
 
-            <!-- Release - Active -->
-            <a href="release/index.html" style="text-decoration: none; color: inherit;">
-                <div class="project-card">
-                    <div class="project-icon">💥</div>
-                    <h3 class="project-title">Release</h3>
-                    <p class="project-description">A therapeutic app for safe emotional release. Write what's weighing on you, pick your weapon, and smash it into oblivion. Catharsis, engineered.</p>
-                    <div>
-                        <span class="project-tag">Wellness</span>
-                        <span class="project-tag">Interactive</span>
-                        <span class="project-tag">Audio</span>
+            <!-- Release - Experiment -->
+            <div class="project-card-wrapper" data-category="experiment">
+                <a href="release/index.html" style="text-decoration: none; color: inherit;">
+                    <div class="project-card">
+                        <div class="project-icon">💥</div>
+                        <h3 class="project-title">Release</h3>
+                        <p class="project-description">A therapeutic app for safe emotional release. Write what's weighing on you, pick your weapon, and smash it into oblivion. Catharsis, engineered.</p>
+                        <div>
+                            <span class="project-tag">Wellness</span>
+                            <span class="project-tag">Interactive</span>
+                            <span class="project-tag">Audio</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
 
-            <!-- Throughline - Preview -->
-            <a href="throughline/index.html" style="text-decoration: none; color: inherit;">
-                <div class="project-card">
-                    <span class="coming-soon-badge">Preview</span>
-                    <div class="project-icon">🧵</div>
-                    <h3 class="project-title">Throughline</h3>
-                    <p class="project-description">A goal-setting and daily execution system built on a single idea: every daily action should connect to a vision that matters. From True North to Daily 3—nothing slips.</p>
-                    <div>
-                        <span class="project-tag">Productivity</span>
-                        <span class="project-tag">Goals</span>
-                        <span class="project-tag">In Development</span>
+            <!-- Chainfinity - Tool -->
+            <div class="project-card-wrapper" data-category="tool">
+                <a href="chainfinity/index.html" style="text-decoration: none; color: inherit;">
+                    <div class="project-card">
+                        <span class="coming-soon-badge" style="background: linear-gradient(135deg, #FF6B4A 0%, #FF8866 100%); color: #ffffff;">Live</span>
+                        <div class="project-icon" style="background: linear-gradient(135deg, #00D9FF, #0066CC, #FF6B4A);">∞</div>
+                        <h3 class="project-title">Chainfinity</h3>
+                        <p class="project-description">A practitioner-focused supply chain newsletter for the people actually building and running the systems. Future-oriented. No fluff.</p>
+                        <div>
+                            <span class="project-tag">Newsletter</span>
+                            <span class="project-tag">Supply Chain</span>
+                            <span class="project-tag">Strategy</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
 
-            <!-- Chainfinity - Live -->
-            <a href="chainfinity/index.html" style="text-decoration: none; color: inherit;">
-                <div class="project-card">
-                    <span class="coming-soon-badge" style="background: linear-gradient(135deg, #FF6B4A 0%, #FF8866 100%); color: #ffffff;">Live</span>
-                    <div class="project-icon" style="background: linear-gradient(135deg, #00D9FF, #0066CC, #FF6B4A);">∞</div>
-                    <h3 class="project-title">Chainfinity</h3>
-                    <p class="project-description">A practitioner-focused supply chain newsletter for the people actually building and running the systems. Future-oriented. No fluff.</p>
-                    <div>
-                        <span class="project-tag">Newsletter</span>
-                        <span class="project-tag">Supply Chain</span>
-                        <span class="project-tag">Strategy</span>
+            <!-- Throughline - Tool -->
+            <div class="project-card-wrapper" data-category="tool">
+                <a href="throughline/index.html" style="text-decoration: none; color: inherit;">
+                    <div class="project-card">
+                        <span class="coming-soon-badge">Preview</span>
+                        <div class="project-icon">🧵</div>
+                        <h3 class="project-title">Throughline</h3>
+                        <p class="project-description">A goal-setting and daily execution system built on a single idea: every daily action should connect to a vision that matters. From True North to Daily 3&mdash;nothing slips.</p>
+                        <div>
+                            <span class="project-tag">Productivity</span>
+                            <span class="project-tag">Goals</span>
+                            <span class="project-tag">In Development</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
 
         </div>
     </section>
@@ -160,7 +216,7 @@
             <p class="section-subtitle">Say something worth saying</p>
         </div>
         <div class="coming-soon-content">
-            <p>straystation.com · Huntersville, NC</p>
+            <p>straystation.com &middot; Huntersville, NC</p>
         </div>
     </section>
 
@@ -168,6 +224,28 @@
         <p>STRAY STATION &mdash; Built with curiosity and caffeine.</p>
         <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.5;">Even a dead fish can go with the flow.</p>
     </footer>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.project-card-wrapper');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                cards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
