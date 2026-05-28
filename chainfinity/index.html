@@ -32,28 +32,13 @@
             text-align: center;
         }
 
-        /* Infinity symbol mirrors the logo: cyan left, coral right */
-        .cf-infinity {
-            font-size: 100px;
-            line-height: 1;
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, #00D9FF 0%, #0066CC 50%, #FF6B4A 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .cf-logo {
+            width: 340px;
+            max-width: 85vw;
+            margin: 0 auto 36px;
             display: block;
             animation: float 6s ease-in-out infinite;
-        }
-
-        .cf-hero h1 {
-            font-size: 72px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #00D9FF 0%, #FFFFFF 50%, #FF6B4A 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.1;
+            filter: drop-shadow(0 8px 32px rgba(0, 217, 255, 0.18));
         }
 
         .cf-hero .tagline {
@@ -329,11 +314,10 @@
 
     <!-- Hero -->
     <section class="cf-hero container">
-        <span class="cf-infinity">∞</span>
-        <h1>CHAINFINITY</h1>
-        <p class="tagline">Beyond the possibility frontier.</p>
+        <img src="chainfinity-logo.jpg" alt="Chainfinity" class="cf-logo">
+        <p class="tagline">Where supply chain leaders discover the technologies, strategies, and paradigm shifts shaping the next era of operations.</p>
         <p class="hero-description">
-            A practitioner-focused newsletter for supply chain and operations executives navigating technology trajectory, AI adoption, and the decisions that separate leaders from laggards. Future-oriented. No fluff.
+            A practitioner-focused newsletter for the people actually building and running the systems. Future-oriented. No fluff.
         </p>
         <a href="https://chainfinity.substack.com/" target="_blank" rel="noopener" class="cta-button-coral">Subscribe on Substack</a>
     </section>
