@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chainfinity — A practitioner-focused supply chain newsletter for CSCOs and COOs navigating technology and the possibility frontier.">
+    <meta name="keywords" content="supply chain, newsletter, CSCO, COO, operations, technology, strategy, AI">
+    <meta name="author" content="Jason Hill">
+    <title>Chainfinity — Beyond the Possibility Frontier</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/png" href="../images/straystation_final.png">
+    <style>
+        /* Chainfinity accent: amber-gold to differentiate from main site cyan */
+        :root {
+            --cf-gold: #F5A623;
+            --cf-gold-dim: rgba(245, 166, 35, 0.15);
+            --cf-gold-glow: rgba(245, 166, 35, 0.35);
+        }
+
+        /* Override section-title gradient for Chainfinity pages */
+        .cf-title {
+            background: linear-gradient(135deg, #FFFFFF 0%, #F5A623 60%, #CC7A00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Hero overrides */
+        .cf-hero {
+            padding: 80px 0 120px;
+            text-align: center;
+        }
+
+        .cf-infinity {
+            font-size: 100px;
+            line-height: 1;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #F5A623, #CC7A00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .cf-hero h1 {
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F5A623 60%, #CC7A00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .cf-hero .tagline {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 30px;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .cf-hero .hero-description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 760px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+
+        /* Gold CTA */
+        .cta-button-gold {
+            display: inline-block;
+            padding: 18px 48px;
+            background: linear-gradient(135deg, #F5A623 0%, #CC7A00 100%);
+            color: #0F1419;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(245, 166, 35, 0.35);
+        }
+
+        .cta-button-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 45px rgba(245, 166, 35, 0.55);
+        }
+
+        /* Divider */
+        .cf-divider {
+            border: none;
+            border-top: 1px solid rgba(245, 166, 35, 0.2);
+            margin: 0;
+        }
+
+        /* Mission block */
+        .mission-block {
+            background: linear-gradient(135deg, rgba(35, 41, 56, 0.7) 0%, rgba(26, 31, 46, 0.7) 100%);
+            border: 1px solid rgba(245, 166, 35, 0.2);
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 860px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #F5A623, #CC7A00);
+        }
+
+        .mission-block p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.9;
+            text-align: center;
+        }
+
+        .mission-block .byline {
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--cf-gold);
+            text-align: center;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* What you get grid */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pillar-card {
+            background: linear-gradient(135deg, rgba(35, 41, 56, 0.8) 0%, rgba(26, 31, 46, 0.8) 100%);
+            border: 1px solid rgba(245, 166, 35, 0.12);
+            border-radius: 16px;
+            padding: 32px 28px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #F5A623, #CC7A00);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            border-color: rgba(245, 166, 35, 0.35);
+            box-shadow: 0 12px 40px rgba(245, 166, 35, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .pillar-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pillar-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .pillar-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+
+        .pillar-desc {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.65;
+        }
+
+        /* Sample issue preview */
+        .preview-block {
+            background: linear-gradient(135deg, rgba(35, 41, 56, 0.6) 0%, rgba(26, 31, 46, 0.6) 100%);
+            border: 1px solid rgba(245, 166, 35, 0.15);
+            border-radius: 20px;
+            padding: 48px 50px;
+            max-width: 860px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .preview-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #F5A623, #CC7A00);
+        }
+
+        .preview-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--cf-gold);
+            margin-bottom: 16px;
+        }
+
+        .preview-issue-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        .preview-excerpt {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .preview-read-link {
+            font-size: 14px;
+            color: var(--cf-gold);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s ease;
+        }
+
+        .preview-read-link:hover {
+            gap: 10px;
+        }
+
+        /* CTA section */
+        .cf-cta-section {
+            text-align: center;
+            padding: 80px 0 100px;
+        }
+
+        .cf-cta-section h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F5A623 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cf-cta-section p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 540px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .cf-cta-note {
+            margin-top: 18px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Back nav */
+        .back-link {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--cf-gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cf-hero h1 { font-size: 48px; }
+            .cf-infinity { font-size: 70px; }
+            .pillars-grid { grid-template-columns: 1fr; }
+            .mission-block, .preview-block { padding: 32px 24px; }
+            .cf-cta-section h2 { font-size: 32px; }
+        }
+
+        @media (max-width: 480px) {
+            .cf-hero h1 { font-size: 38px; }
+            .cf-hero .tagline { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-pattern"></div>
+    <div class="orbital-accent"></div>
+
+    <nav class="container">
+        <a href="../index.html" class="back-link">← STRAY STATION</a>
+        <div class="logo" style="background: linear-gradient(135deg, #F5A623 0%, #CC7A00 100%); -webkit-background-clip: text; background-clip: text;">CHAINFINITY</div>
+        <a href="https://chainfinity.substack.com/" target="_blank" rel="noopener" class="cta-button-gold" style="padding: 10px 24px; font-size: 14px;">Subscribe</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="cf-hero container">
+        <span class="cf-infinity">∞</span>
+        <h1>CHAINFINITY</h1>
+        <p class="tagline">Beyond the possibility frontier.</p>
+        <p class="hero-description">
+            A practitioner-focused newsletter for supply chain and operations executives navigating technology trajectory, AI adoption, and the decisions that separate leaders from laggards. Future-oriented. No fluff.
+        </p>
+        <a href="https://chainfinity.substack.com/" target="_blank" rel="noopener" class="cta-button-gold">Subscribe on Substack</a>
+    </section>
+
+    <hr class="cf-divider">
+
+    <!-- Mission -->
+    <section class="section container">
+        <div class="mission-block">
+            <p>
+                Written by Jason Hill, a supply chain and operations executive with over twenty years of enterprise leadership, Chainfinity is built to help CSCOs and COOs understand technology trajectory, learn how to value and leverage it to stay ahead of the paradigm, and push beyond the possibility frontier.
+            </p>
+            <p class="byline">Jason Hill &mdash; Supply Chain &amp; Operations Executive</p>
+        </div>
+    </section>
+
+    <!-- What you get -->
+    <section class="section container">
+        <div class="section-header">
+            <h2 class="section-title cf-title">What You Get</h2>
+            <p class="section-subtitle">Built for the people actually running the systems</p>
+        </div>
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <span class="pillar-icon">🔭</span>
+                <div class="pillar-title">Technology Trajectory</div>
+                <p class="pillar-desc">Not what AI can do in a demo — what it means for your network, your labor model, and your capital decisions over the next three years.</p>
+            </div>
+            <div class="pillar-card">
+                <span class="pillar-icon">⚙️</span>
+                <div class="pillar-title">Practitioner Perspective</div>
+                <p class="pillar-desc">Written by someone who has lived inside enterprise supply chains, not consulting decks. The gap between theory and execution is where most initiatives die.</p>
+            </div>
+            <div class="pillar-card">
+                <span class="pillar-icon">🧭</span>
+                <div class="pillar-title">Strategic Clarity</div>
+                <p class="pillar-desc">How to evaluate, sequence, and pitch investments. Where the leverage actually is. What to skip, what to watch, and what to move on now.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Issue Preview -->
+    <section class="section container">
+        <div class="section-header">
+            <h2 class="section-title cf-title">From the Latest Issue</h2>
+            <p class="section-subtitle">A sample of what lands in your inbox</p>
+        </div>
+        <div class="preview-block">
+            <p class="preview-label">Issue Preview</p>
+            <h3 class="preview-issue-title">The Agentic Supply Chain: What Autonomous AI Actually Means for Operations Leaders</h3>
+            <p class="preview-excerpt">
+                The framing you keep hearing — "AI as co-pilot" — is already obsolete. The next wave is agentic: systems that don't just assist decisions, they execute sequences of actions across your tech stack autonomously. For supply chain leaders, that distinction matters more than any benchmark score. The question isn't whether your ERP vendor will bolt on an AI module. It's whether you understand the operational surface area you're about to expose — and whether your org is structured to govern it.
+            </p>
+            <a href="https://chainfinity.substack.com/" target="_blank" rel="noopener" class="preview-read-link">
+                Read the full issue on Substack →
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cf-cta-section container">
+        <h2>Ready to move upstream?</h2>
+        <p>Join supply chain and operations leaders who want the real signal, not the noise.</p>
+        <a href="https://chainfinity.substack.com/" target="_blank" rel="noopener" class="cta-button-gold">Subscribe on Substack</a>
+        <p class="cf-cta-note">Free to subscribe. No spam. Unsubscribe anytime.</p>
+    </section>
+
+    <footer class="footer container">
+        <p>CHAINFINITY &mdash; A <a href="../index.html" style="color: #00D9FF; text-decoration: none;">Stray Station</a> publication.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.5;">Even a dead fish can go with the flow.</p>
+    </footer>
+
+</body>
+</html>
