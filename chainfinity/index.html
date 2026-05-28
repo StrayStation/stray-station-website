@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" type="image/png" href="../images/straystation_final.png">
     <style>
-        /* Chainfinity accent: amber-gold to differentiate from main site cyan */
+        /* Chainfinity colors: matches the logo -- cyan chain into coral infinity+arrow */
         :root {
-            --cf-gold: #F5A623;
-            --cf-gold-dim: rgba(245, 166, 35, 0.15);
-            --cf-gold-glow: rgba(245, 166, 35, 0.35);
+            --cf-coral: #FF6B4A;
+            --cf-coral-light: #FF8866;
+            --cf-cyan: #00D9FF;
+            --cf-blue: #0066CC;
         }
 
         /* Override section-title gradient for Chainfinity pages */
         .cf-title {
-            background: linear-gradient(135deg, #FFFFFF 0%, #F5A623 60%, #CC7A00 100%);
+            background: linear-gradient(135deg, #00D9FF 0%, #FFFFFF 50%, #FF6B4A 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -31,11 +32,12 @@
             text-align: center;
         }
 
+        /* Infinity symbol mirrors the logo: cyan left, coral right */
         .cf-infinity {
             font-size: 100px;
             line-height: 1;
             margin-bottom: 30px;
-            background: linear-gradient(135deg, #F5A623, #CC7A00);
+            background: linear-gradient(135deg, #00D9FF 0%, #0066CC 50%, #FF6B4A 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -47,7 +49,7 @@
             font-size: 72px;
             font-weight: 800;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #FFFFFF 0%, #F5A623 60%, #CC7A00 100%);
+            background: linear-gradient(135deg, #00D9FF 0%, #FFFFFF 50%, #FF6B4A 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -71,36 +73,36 @@
         }
 
         /* Gold CTA */
-        .cta-button-gold {
+        .cta-button-coral {
             display: inline-block;
             padding: 18px 48px;
-            background: linear-gradient(135deg, #F5A623 0%, #CC7A00 100%);
-            color: #0F1419;
+            background: linear-gradient(135deg, #FF6B4A 0%, #FF8866 100%);
+            color: #ffffff;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
             font-size: 18px;
             letter-spacing: 0.03em;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(245, 166, 35, 0.35);
+            box-shadow: 0 10px 30px rgba(255, 107, 74, 0.3);
         }
 
-        .cta-button-gold:hover {
+        .cta-button-coral:hover {
             transform: translateY(-3px);
-            box-shadow: 0 18px 45px rgba(245, 166, 35, 0.55);
+            box-shadow: 0 18px 45px rgba(255, 107, 74, 0.5);
         }
 
         /* Divider */
         .cf-divider {
             border: none;
-            border-top: 1px solid rgba(245, 166, 35, 0.2);
+            border-top: 1px solid rgba(255, 107, 74, 0.2);
             margin: 0;
         }
 
         /* Mission block */
         .mission-block {
             background: linear-gradient(135deg, rgba(35, 41, 56, 0.7) 0%, rgba(26, 31, 46, 0.7) 100%);
-            border: 1px solid rgba(245, 166, 35, 0.2);
+            border: 1px solid rgba(255, 107, 74, 0.2);
             border-radius: 20px;
             padding: 50px;
             max-width: 860px;
@@ -116,7 +118,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #F5A623, #CC7A00);
+            background: linear-gradient(90deg, #FF6B4A, #FF8866);
         }
 
         .mission-block p {
@@ -129,7 +131,7 @@
         .mission-block .byline {
             margin-top: 24px;
             font-size: 14px;
-            color: var(--cf-gold);
+            color: var(--cf-coral);
             text-align: center;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -147,7 +149,7 @@
 
         .pillar-card {
             background: linear-gradient(135deg, rgba(35, 41, 56, 0.8) 0%, rgba(26, 31, 46, 0.8) 100%);
-            border: 1px solid rgba(245, 166, 35, 0.12);
+            border: 1px solid rgba(255, 107, 74, 0.12);
             border-radius: 16px;
             padding: 32px 28px;
             transition: all 0.3s ease;
@@ -160,14 +162,14 @@
             position: absolute;
             top: 0; left: 0; right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #F5A623, #CC7A00);
+            background: linear-gradient(90deg, #FF6B4A, #FF8866);
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
 
         .pillar-card:hover {
-            border-color: rgba(245, 166, 35, 0.35);
-            box-shadow: 0 12px 40px rgba(245, 166, 35, 0.15);
+            border-color: rgba(255, 107, 74, 0.3);
+            box-shadow: 0 12px 40px rgba(255, 107, 74, 0.12);
             transform: translateY(-4px);
         }
 
@@ -197,7 +199,7 @@
         /* Sample issue preview */
         .preview-block {
             background: linear-gradient(135deg, rgba(35, 41, 56, 0.6) 0%, rgba(26, 31, 46, 0.6) 100%);
-            border: 1px solid rgba(245, 166, 35, 0.15);
+            border: 1px solid rgba(255, 107, 74, 0.12);
             border-radius: 20px;
             padding: 48px 50px;
             max-width: 860px;
@@ -211,7 +213,7 @@
             position: absolute;
             top: 0; left: 0; right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #F5A623, #CC7A00);
+            background: linear-gradient(90deg, #FF6B4A, #FF8866);
         }
 
         .preview-label {
@@ -219,7 +221,7 @@
             font-weight: 700;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--cf-gold);
+            color: var(--cf-coral);
             margin-bottom: 16px;
         }
 
@@ -240,7 +242,7 @@
 
         .preview-read-link {
             font-size: 14px;
-            color: var(--cf-gold);
+            color: var(--cf-coral);
             text-decoration: none;
             font-weight: 600;
             letter-spacing: 0.05em;
@@ -264,7 +266,7 @@
             font-size: 42px;
             font-weight: 800;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #FFFFFF 0%, #F5A623 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #FF6B4A 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -297,7 +299,7 @@
         }
 
         .back-link:hover {
-            color: var(--cf-gold);
+            color: var(--cf-coral);
         }
 
         /* Responsive */
@@ -321,8 +323,8 @@
 
     <nav class="container">
         <a href="../index.html" class="back-link">← STRAY STATION</a>
-        <div class="logo" style="background: linear-gradient(135deg, #F5A623 0%, #CC7A00 100%); -webkit-background-clip: text; background-clip: text;">CHAINFINITY</div>
-        <a href="https://chainfinity.substack.com/" target="_blank" rel="noopener" class="cta-button-gold" style="padding: 10px 24px; font-size: 14px;">Subscribe</a>
+        <div class="logo" style="background: linear-gradient(135deg, #FF6B4A 0%, #FF8866 100%); -webkit-background-clip: text; background-clip: text;">CHAINFINITY</div>
+        <a href="https://chainfinity.substack.com/" target="_blank" rel="noopener" class="cta-button-coral" style="padding: 10px 24px; font-size: 14px;">Subscribe</a>
     </nav>
 
     <!-- Hero -->
@@ -333,7 +335,7 @@
         <p class="hero-description">
             A practitioner-focused newsletter for supply chain and operations executives navigating technology trajectory, AI adoption, and the decisions that separate leaders from laggards. Future-oriented. No fluff.
         </p>
-        <a href="https://chainfinity.substack.com/" target="_blank" rel="noopener" class="cta-button-gold">Subscribe on Substack</a>
+        <a href="https://chainfinity.substack.com/" target="_blank" rel="noopener" class="cta-button-coral">Subscribe on Substack</a>
     </section>
 
     <hr class="cf-divider">
@@ -395,7 +397,7 @@
     <section class="cf-cta-section container">
         <h2>Ready to move upstream?</h2>
         <p>Join supply chain and operations leaders who want the real signal, not the noise.</p>
-        <a href="https://chainfinity.substack.com/" target="_blank" rel="noopener" class="cta-button-gold">Subscribe on Substack</a>
+        <a href="https://chainfinity.substack.com/" target="_blank" rel="noopener" class="cta-button-coral">Subscribe on Substack</a>
         <p class="cf-cta-note">Free to subscribe. No spam. Unsubscribe anytime.</p>
     </section>
 
