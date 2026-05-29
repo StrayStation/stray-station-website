@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Throughline — your daily execution system.">
+    <title>Throughline</title>
+    <link rel="icon" type="image/png" href="../images/straystation_final.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy:        #0a0f1e;
+            --navy-card:   #161d2e;
+            --navy-mid:    #1e2a40;
+            --navy-border: rgba(255,255,255,0.07);
+            --teal:        #0fbfad;
+            --teal-dim:    rgba(15,191,173,0.14);
+            --teal-glow:   rgba(15,191,173,0.3);
+            --coral:       #f4623a;
+            --coral-dim:   rgba(244,98,58,0.12);
+            --white:       #f0f4f8;
+            --white-dim:   rgba(240,244,248,0.5);
+            --white-faint: rgba(240,244,248,0.1);
+        }
+
+        html, body { height: 100%; }
+
+        body {
+            background: var(--navy);
+            color: var(--white);
+            font-family: 'DM Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow: hidden;
+        }
+
+        /* ── App Shell ── */
+        .app-shell {
+            display: flex;
+            flex-direction: column;
+            height: 100dvh;
+            max-width: 520px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* ── Top Bar ── */
+        .top-bar {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px 12px;
+            border-bottom: 1px solid var(--navy-border);
+            background: var(--navy);
+            z-index: 10;
+        }
+
+        .wordmark {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.01em;
+            text-decoration: none;
+        }
+        .wordmark span { color: var(--teal); }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1.5px solid;
+        }
+        .status-pill.on-track { border-color: var(--teal); color: var(--teal); background: var(--teal-dim); }
+        .status-pill.drifted  { border-color: var(--coral); color: var(--coral); background: var(--coral-dim); }
+        .status-dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: blink 2s ease-in-out infinite;
+        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            color: var(--white-dim);
+            cursor: pointer;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            border-radius: 6px;
+            transition: color 0.2s;
+        }
+        .icon-btn:hover { color: var(--white); }
+        .icon-btn svg { width: 20px; height: 20px; }
+
+        /* ── Scrollable content area ── */
+        .view-container {
+            flex: 1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .view { display: none; padding-bottom: 24px; }
+        .view.active { display: block; }
+
+        /* ── Bottom Nav ── */
+        .bottom-nav {
+            flex-shrink: 0;
+            display: flex;
+            border-top: 1px solid var(--navy-border);
+            background: var(--navy);
+            padding-bottom: env(safe-area-inset-bottom, 0);
+        }
+        .nav-tab {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            padding: 10px 0 12px;
+            background: none;
+            border: none;
+            color: var(--white-dim);
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.57rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        .nav-tab svg { width: 20px; height: 20px; }
+        .nav-tab.active { color: var(--teal); }
+
+        /* ── Shared section styles ── */
+        .section-hd {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .section-label {
+            font-size: 0.58rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+        }
+        .section-count {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--teal);
+        }
+
+        /* ───────────────────────────────── */
+        /* DAILY VIEW                        */
+        /* ───────────────────────────────── */
+
+        .daily-header {
+            padding: 18px 20px 10px;
+        }
+        .daily-date {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 2px;
+        }
+        .daily-sub {
+            font-size: 0.72rem;
+            color: var(--white-dim);
+        }
+
+        .tn-peek {
+            margin: 0 20px 16px;
+            padding: 11px 16px;
+            background: var(--navy-card);
+            border: 1px solid var(--navy-border);
+            border-left: 3px solid rgba(15,191,173,0.4);
+            border-radius: 0 8px 8px 0;
+        }
+        .tn-peek-label {
+            font-size: 0.54rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 4px;
+        }
+        .tn-peek-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.82rem;
+            color: var(--white-dim);
+            line-height: 1.5;
+        }
+
+        .daily-section { padding: 0 20px 16px; }
+
+        /* Daily 3 progress dots */
+        .d3-progress {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+        .d3-pip {
+            flex: 1;
+            height: 3px;
+            border-radius: 2px;
+            background: var(--navy-mid);
+            transition: background 0.3s;
+        }
+        .d3-pip.filled { background: var(--teal); }
+        .d3-pip.done   { background: rgba(15,191,173,0.35); }
+
+        /* Daily 3 slots */
+        .d3-slots { display: flex; flex-direction: column; gap: 8px; }
+
+        .d3-slot {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--navy-card);
+            border: 1px solid var(--navy-border);
+            border-radius: 10px;
+            padding: 13px 14px;
+            min-height: 54px;
+            cursor: pointer;
+            transition: border-color 0.2s, opacity 0.2s;
+        }
+        .d3-slot:hover { border-color: rgba(15,191,173,0.22); }
+        .d3-slot.filled { cursor: default; }
+        .d3-slot.filled:hover { border-color: var(--navy-border); }
+        .d3-slot.done { opacity: 0.55; }
+
+        .d3-circle {
+            flex-shrink: 0;
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            border: 2px solid var(--navy-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .d3-slot.filled .d3-circle   { border-color: var(--teal); }
+        .d3-slot.done   .d3-circle   { background: var(--teal); border-color: var(--teal); }
+        .d3-circle svg { width: 12px; height: 12px; color: var(--navy); display: none; }
+        .d3-slot.done .d3-circle svg { display: block; }
+
+        .d3-body { flex: 1; min-width: 0; }
+        .d3-text { font-size: 0.84rem; color: var(--white); line-height: 1.4; }
+        .d3-text.empty { color: var(--white-faint); font-style: italic; }
+        .d3-goal-tag {
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-top: 2px;
+        }
+
+        .d3-remove {
+            flex-shrink: 0;
+            background: none;
+            border: none;
+            color: var(--white-faint);
+            cursor: pointer;
+            padding: 2px;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s;
+        }
+        .d3-remove:hover { color: var(--coral); }
+        .d3-remove svg   { width: 14px; height: 14px; }
+
+        .d3-complete-msg {
+            text-align: center;
+            padding: 10px 0 2px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.82rem;
+            color: rgba(15,191,173,0.55);
+        }
+
+        /* Section divider */
+        .section-divider { height: 1px; background: var(--navy-border); margin: 0 20px 16px; }
+
+        /* Non-Negotiables */
+        .nn-list { display: flex; flex-direction: column; gap: 8px; }
+
+        .nn-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--navy-card);
+            border: 1px solid var(--navy-border);
+            border-radius: 10px;
+            padding: 12px 14px;
+            transition: opacity 0.2s;
+            cursor: pointer;
+        }
+        .nn-item.checked { opacity: 0.5; }
+
+        .nn-box {
+            flex-shrink: 0;
+            width: 20px; height: 20px;
+            border-radius: 4px;
+            border: 1.5px solid rgba(15,191,173,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .nn-item.checked .nn-box { background: var(--teal); border-color: var(--teal); }
+        .nn-box svg { width: 11px; height: 11px; color: var(--navy); display: none; }
+        .nn-item.checked .nn-box svg { display: block; }
+
+        .nn-body { flex: 1; }
+        .nn-what { font-size: 0.84rem; color: var(--white); }
+        .nn-when { font-size: 0.68rem; color: var(--white-dim); margin-top: 1px; }
+
+        .nn-cadence {
+            flex-shrink: 0;
+            font-size: 0.57rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--white-faint);
+            padding: 2px 7px;
+            border: 1px solid var(--navy-border);
+            border-radius: 10px;
+        }
+
+        /* ───────────────────────────────── */
+        /* GOALS VIEW                        */
+        /* ───────────────────────────────── */
+
+        .goals-list {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .goal-card {
+            background: var(--navy-card);
+            border: 1px solid var(--navy-border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .goal-card.drifted { border-color: rgba(244,98,58,0.28); }
+
+        .goal-card-hd {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            cursor: pointer;
+            gap: 10px;
+        }
+        .goal-card-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            min-width: 0;
+        }
+        .goal-icon {
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            background: var(--teal-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        .goal-card.drifted .goal-icon { background: var(--coral-dim); }
+
+        .goal-meta { min-width: 0; }
+        .goal-domain-tag {
+            font-size: 0.58rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 2px;
+        }
+        .goal-card.drifted .goal-domain-tag { color: var(--coral); }
+        .goal-summary {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--white);
+            line-height: 1.3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .goal-chevron {
+            flex-shrink: 0;
+            color: var(--white-faint);
+            transition: transform 0.2s;
+        }
+        .goal-card.open .goal-chevron { transform: rotate(180deg); }
+
+        .goal-body {
+            display: none;
+            padding: 0 16px 16px;
+            border-top: 1px solid var(--navy-border);
+        }
+        .goal-card.open .goal-body { display: block; }
+
+        .cascade-block { padding-top: 14px; }
+
+        .cascade-row { margin-bottom: 14px; }
+        .cascade-row:last-child { margin-bottom: 0; }
+        .cascade-lv {
+            font-size: 0.55rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 3px;
+        }
+        .cascade-text { font-size: 0.82rem; color: var(--white); line-height: 1.45; }
+        .cascade-arrival {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.8rem;
+            color: var(--white-dim);
+            line-height: 1.5;
+            margin-top: 3px;
+        }
+        .cascade-measure {
+            font-size: 0.72rem;
+            color: var(--teal);
+            margin-top: 3px;
+        }
+
+        /* Weekly commitments in goal card */
+        .weekly-block { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--white-faint); }
+        .weekly-hd {
+            font-size: 0.55rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-bottom: 10px;
+        }
+        .commit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 9px;
+            cursor: pointer;
+        }
+        .commit-item:last-child { margin-bottom: 0; }
+        .commit-box {
+            flex-shrink: 0;
+            width: 18px; height: 18px;
+            border-radius: 4px;
+            border: 1.5px solid rgba(15,191,173,0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+            transition: all 0.2s;
+        }
+        .commit-item.done .commit-box { background: var(--teal); border-color: var(--teal); }
+        .commit-box svg { width: 10px; height: 10px; color: var(--navy); display: none; }
+        .commit-item.done .commit-box svg { display: block; }
+        .commit-text {
+            font-size: 0.8rem;
+            color: var(--white);
+            line-height: 1.4;
+        }
+        .commit-item.done .commit-text { text-decoration: line-through; color: var(--white-dim); }
+
+        /* drift toggle in goal card */
+        .goal-drift-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 12px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: 1.5px solid;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s;
+            background: none;
+        }
+        .goal-drift-btn.on-track { border-color: rgba(244,98,58,0.4); color: var(--coral); }
+        .goal-drift-btn.drifted  { border-color: rgba(15,191,173,0.4); color: var(--teal); }
+
+        /* ───────────────────────────────── */
+        /* THREAD VIEW                       */
+        /* ───────────────────────────────── */
+
+        .thread-view { padding: 16px 20px; }
+
+        .tn-card {
+            background: var(--navy-card);
+            border: 1px solid rgba(15,191,173,0.2);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .tn-card-label {
+            font-size: 0.58rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+        .tn-star {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 10px rgba(15,191,173,0.6));
+            animation: pulse-star 3s ease-in-out infinite;
+        }
+        @keyframes pulse-star { 0%,100%{filter:drop-shadow(0 0 10px rgba(15,191,173,0.6))} 50%{filter:drop-shadow(0 0 20px rgba(15,191,173,0.9))} }
+        .tn-card-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .thread-list { display: flex; flex-direction: column; gap: 0; }
+
+        .thread-item { display: flex; gap: 14px; }
+
+        .thread-spine {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+            width: 18px;
+        }
+        .t-node {
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            border: 2px solid var(--teal);
+            background: var(--navy);
+            flex-shrink: 0;
+            box-shadow: 0 0 8px rgba(15,191,173,0.3);
+            transition: all 0.3s;
+        }
+        .t-node.drift {
+            border-color: var(--coral);
+            border-style: dashed;
+            box-shadow: 0 0 8px rgba(244,98,58,0.3);
+        }
+        .t-seg {
+            width: 2px;
+            flex: 1;
+            min-height: 20px;
+            background: rgba(15,191,173,0.2);
+        }
+
+        .t-card {
+            flex: 1;
+            background: var(--navy-card);
+            border: 1px solid var(--navy-border);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 12px;
+            transition: border-color 0.3s;
+        }
+        .t-card.drift { border-color: rgba(244,98,58,0.2); }
+
+        .t-card-domain {
+            font-size: 0.58rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 5px;
+        }
+        .t-card.drift .t-card-domain { color: var(--coral); }
+        .t-card-q {
+            font-size: 0.82rem;
+            color: var(--white);
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+        .t-card-status {
+            font-size: 0.68rem;
+            color: var(--teal);
+            font-weight: 600;
+        }
+        .t-card.drift .t-card-status { color: var(--coral); }
+        .t-card-progress {
+            font-size: 0.68rem;
+            color: var(--white-dim);
+            margin-left: 6px;
+            font-weight: 400;
+        }
+
+        /* ───────────────────────────────── */
+        /* MODAL — Task Picker               */
+        /* ───────────────────────────────── */
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10,15,30,0.85);
+            z-index: 200;
+            display: none;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .overlay.open { display: flex; }
+
+        .sheet {
+            background: var(--navy-card);
+            border: 1px solid var(--navy-border);
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+            max-width: 520px;
+            max-height: 82vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .sheet-handle {
+            width: 36px; height: 4px;
+            border-radius: 2px;
+            background: var(--navy-mid);
+            margin: 12px auto 0;
+            flex-shrink: 0;
+        }
+        .sheet-header {
+            padding: 14px 20px 10px;
+            flex-shrink: 0;
+        }
+        .sheet-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+        .sheet-sub {
+            font-size: 0.73rem;
+            color: var(--white-dim);
+            margin-top: 3px;
+        }
+        .sheet-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 4px 20px 24px;
+        }
+
+        .picker-group { margin-bottom: 20px; }
+        .picker-group-label {
+            font-size: 0.57rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--teal);
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--navy-border);
+            margin-bottom: 4px;
+        }
+        .picker-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            cursor: pointer;
+            border-bottom: 1px solid var(--white-faint);
+            transition: opacity 0.15s;
+        }
+        .picker-item:last-child { border-bottom: none; }
+        .picker-item:hover { opacity: 0.75; }
+        .picker-item.used { opacity: 0.32; cursor: not-allowed; pointer-events: none; }
+        .picker-text { flex: 1; font-size: 0.84rem; color: var(--white); line-height: 1.35; }
+        .picker-badge {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--teal);
+            flex-shrink: 0;
+        }
+        .picker-item.used .picker-badge { color: var(--white-faint); }
+
+        /* Settings sheet */
+        .settings-list { padding: 8px 20px 24px; }
+        .settings-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--navy-border);
+            cursor: pointer;
+            gap: 12px;
+        }
+        .settings-row:last-child { border-bottom: none; }
+        .settings-row-info { flex: 1; min-width: 0; }
+        .settings-row-label { font-size: 0.84rem; color: var(--white); }
+        .settings-row-sub   { font-size: 0.7rem; color: var(--white-dim); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .settings-action     { font-size: 0.72rem; font-weight: 600; color: var(--teal); flex-shrink: 0; }
+        .settings-action.danger { color: var(--coral); }
+    </style>
+</head>
+<body>
+
+<div class="app-shell">
+
+    <!-- Top bar -->
+    <header class="top-bar">
+        <a href="index.html" class="wordmark">Through<span>line</span></a>
+        <div class="status-pill on-track" id="globalStatus">
+            <div class="status-dot"></div>
+            <span id="globalStatusText">On the Throughline</span>
+        </div>
+        <button class="icon-btn" onclick="openSettings()" aria-label="Settings">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Scrollable views -->
+    <div class="view-container">
+
+        <!-- ── TODAY ── -->
+        <div class="view active" id="view-today">
+
+            <div class="daily-header">
+                <div class="daily-date" id="hdrDate"></div>
+                <div class="daily-sub" id="hdrSub"></div>
+            </div>
+
+            <div class="tn-peek">
+                <div class="tn-peek-label">True North</div>
+                <div class="tn-peek-text" id="tnPeek"></div>
+            </div>
+
+            <!-- Daily 3 -->
+            <div class="daily-section">
+                <div class="section-hd">
+                    <div class="section-label">Daily 3</div>
+                    <div class="section-count" id="d3Count">0 of 3</div>
+                </div>
+                <div class="d3-progress">
+                    <div class="d3-pip" id="pip0"></div>
+                    <div class="d3-pip" id="pip1"></div>
+                    <div class="d3-pip" id="pip2"></div>
+                </div>
+                <div class="d3-slots" id="d3Slots"></div>
+                <div class="d3-complete-msg" id="d3CompleteMsg" style="display:none">
+                    Three done. That's a good day.
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <!-- Non-Negotiables -->
+            <div class="daily-section">
+                <div class="section-hd">
+                    <div class="section-label">Non-Negotiables</div>
+                </div>
+                <div class="nn-list" id="nnList"></div>
+            </div>
+
+        </div>
+
+        <!-- ── GOALS ── -->
+        <div class="view" id="view-goals">
+            <div class="goals-list" id="goalsList"></div>
+        </div>
+
+        <!-- ── THREAD ── -->
+        <div class="view" id="view-thread">
+            <div class="thread-view">
+                <div class="tn-card">
+                    <div class="tn-card-label">True North</div>
+                    <span class="tn-star">✦</span>
+                    <div class="tn-card-text" id="tnThread"></div>
+                </div>
+                <div class="thread-list" id="threadList"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom nav -->
+    <nav class="bottom-nav">
+        <button class="nav-tab active" id="tab-today" onclick="switchView('today')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            Today
+        </button>
+        <button class="nav-tab" id="tab-goals" onclick="switchView('goals')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            Goals
+        </button>
+        <button class="nav-tab" id="tab-thread" onclick="switchView('thread')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"></line><polyline points="17 7 12 2 7 7"></polyline><polyline points="17 17 12 22 7 17"></polyline></svg>
+            Thread
+        </button>
+    </nav>
+
+</div>
+
+<!-- Modal: Task Picker -->
+<div class="overlay" id="overlayPicker">
+    <div class="sheet">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+            <div class="sheet-title">Pick a task for slot <span id="pickerSlotNum"></span></div>
+            <div class="sheet-sub">Choose from your weekly commitments.</div>
+        </div>
+        <div class="sheet-body" id="pickerBody"></div>
+    </div>
+</div>
+
+<!-- Modal: Settings -->
+<div class="overlay" id="overlaySettings">
+    <div class="sheet">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+            <div class="sheet-title">Settings</div>
+        </div>
+        <div class="settings-list">
+            <div class="settings-row">
+                <div class="settings-row-info">
+                    <div class="settings-row-label">True North</div>
+                    <div class="settings-row-sub" id="settingsTNPreview"></div>
+                </div>
+            </div>
+            <div class="settings-row" onclick="clearToday()">
+                <div class="settings-row-info">
+                    <div class="settings-row-label">Clear Today</div>
+                    <div class="settings-row-sub">Reset Daily 3 and Non-Negotiable checks for today</div>
+                </div>
+                <div class="settings-action">Clear</div>
+            </div>
+            <div class="settings-row" onclick="resetAllData()">
+                <div class="settings-row-info">
+                    <div class="settings-row-label">Reset All Data</div>
+                    <div class="settings-row-sub">Wipes everything — goals, log, all of it</div>
+                </div>
+                <div class="settings-action danger">Reset</div>
+            </div>
+            <div class="settings-row" onclick="closeSettings()">
+                <div class="settings-row-info">
+                    <div class="settings-row-label">Close</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// SEED DATA — Pall VP Operations pilot (placeholder)
+// Replace with real goals via onboarding when ready
+// ═══════════════════════════════════════════════════════
+const SEED = {
+    setup: {
+        context: 'work',
+        trueNorth: 'Build an operational excellence culture at Pall that outlasts the role — one where the team owns the standard.'
+    },
+    goals: [
+        {
+            id: 'safety',
+            domain: 'Safety',
+            icon: '🛡',
+            annual: {
+                text: 'Achieve zero recordable incidents and build a proactive safety culture where every team member owns safety — not just the safety team.',
+                arrivalPicture: 'The team is stopping incidents before they happen. Safety is how we work, not a program we run. Near-miss reporting is up because people trust the system.',
+                measure: 'Zero recordables. Near-miss reporting frequency up. Safety audit scores consistently green.'
+            },
+            status: 'on_track',
+            quarterly: {
+                text: 'Complete safety culture baseline assessment and establish team-owned leading indicators with accountability visible at the line level.'
+            },
+            weekly: [
+                { id: 'w-s1', text: 'Complete initial safety walk with all team leads', done: false },
+                { id: 'w-s2', text: 'Review prior 12-month incident and near-miss data', done: false }
+            ]
+        },
+        {
+            id: 'quality',
+            domain: 'Quality',
+            icon: '✓',
+            annual: {
+                text: 'Drive right-first-time to 95%+ and close the top three customer complaint categories.',
+                arrivalPicture: 'Quality is built in, not inspected in. Customer escalations are rare and resolved at the source. The team knows where their defects come from and owns the fix.',
+                measure: 'RFT ≥95%. Top 3 customer complaint categories closed or on a declining trend.'
+            },
+            status: 'on_track',
+            quarterly: {
+                text: 'Identify top three quality failure modes, confirm current RFT baseline, and have corrective action owners named and in motion.'
+            },
+            weekly: [
+                { id: 'w-q1', text: 'Pull and review current RFT data — establish true baseline', done: false },
+                { id: 'w-q2', text: 'Meet with quality team to walk through top customer escapes', done: false }
+            ]
+        },
+        {
+            id: 'delivery',
+            domain: 'Delivery',
+            icon: '📦',
+            annual: {
+                text: 'Achieve 95%+ on-time delivery and reduce lead time variability so customers can plan around us.',
+                arrivalPicture: 'Customers receive what they ordered when they expected it. Expediting is the exception, not the rhythm of the operation. The team pulls to a plan.',
+                measure: 'OTD ≥95%. Lead time variability down 20%. Expedite frequency reduced.'
+            },
+            status: 'on_track',
+            quarterly: {
+                text: 'Establish OTD baseline, map top three systemic causes of late delivery, and have a corrective roadmap drafted.'
+            },
+            weekly: [
+                { id: 'w-d1', text: 'Pull OTD performance report — last 90 days by product family', done: false },
+                { id: 'w-d2', text: 'Walk the floor with scheduling team to understand current constraint', done: false }
+            ]
+        },
+        {
+            id: 'inventory',
+            domain: 'Inventory',
+            icon: '📊',
+            annual: {
+                text: 'Reduce excess and obsolete inventory by 25% while maintaining or improving service levels.',
+                arrivalPicture: 'We hold what we need, when we need it. Cash is not tied up sitting on shelves. The team manages to a plan, not to gut feel.',
+                measure: 'E&O reduced 25%. Inventory turns improved. No degradation in fill rate or OTD.'
+            },
+            status: 'on_track',
+            quarterly: {
+                text: 'Complete A/B/C inventory stratification and identify top E&O candidates with disposition plan in place.'
+            },
+            weekly: [
+                { id: 'w-i1', text: 'Review current inventory position and aging report', done: false },
+                { id: 'w-i2', text: 'Meet with supply planning on top E&O items and current disposition options', done: false }
+            ]
+        },
+        {
+            id: 'productivity',
+            domain: 'Productivity',
+            icon: '⚡',
+            annual: {
+                text: 'Improve labor productivity 15% through process standardization, waste elimination, and visible daily management.',
+                arrivalPicture: 'The team is doing more with what we have. Standards are clear, waste is visible and named, and improvements stick because the team made them. The operation runs to a rhythm.',
+                measure: 'Labor productivity +15%. Top 3 waste categories in active kaizen. Standard work documented on critical lines.'
+            },
+            status: 'on_track',
+            quarterly: {
+                text: 'Complete current-state value stream analysis on highest-volume line and identify the top three productivity opportunities by impact.'
+            },
+            weekly: [
+                { id: 'w-p1', text: 'Walk a full production line end-to-end with stopwatch — see waste with own eyes', done: false },
+                { id: 'w-p2', text: 'Meet with IE and engineering on existing time studies and standard work gaps', done: false }
+            ]
+        }
+    ],
+    nonNegotiables: [
+        {
+            id: 'nn1',
+            what: 'Daily floor walk',
+            when: 'Every morning before 9am',
+            cadence: 'daily'
+        },
+        {
+            id: 'nn2',
+            what: 'Weekly 1:1s with all direct reports',
+            when: 'Scheduled, every week, no exceptions',
+            cadence: 'weekly'
+        }
+    ]
+};
+
+// ═══════════════════════════════════════════════════════
+// PERSISTENCE
+// ═══════════════════════════════════════════════════════
+const STATE_KEY = 'throughline_state_v1';
+const LOG_KEY   = 'throughline_log_v1';
+
+function todayKey() {
+    const d = new Date();
+    return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+}
+function pad(n) { return String(n).padStart(2,'0'); }
+
+function loadState() {
+    try { const r = localStorage.getItem(STATE_KEY); return r ? JSON.parse(r) : null; }
+    catch { return null; }
+}
+function saveState() { localStorage.setItem(STATE_KEY, JSON.stringify(S)); }
+
+function loadLog() {
+    try { const r = localStorage.getItem(LOG_KEY); return r ? JSON.parse(r) : {}; }
+    catch { return {}; }
+}
+function saveLog() { localStorage.setItem(LOG_KEY, JSON.stringify(LOG)); }
+
+function ensureToday() {
+    const k = todayKey();
+    if (!LOG[k]) LOG[k] = { daily3: [null, null, null], nnChecked: [] };
+    return LOG[k];
+}
+
+// Live state vars
+let S, LOG, TODAY;
+
+function boot() {
+    S = loadState() || SEED;
+    if (!loadState()) saveState(); // persist seed on first load
+    LOG = loadLog();
+    TODAY = ensureToday();
+    renderAll();
+}
+
+// ═══════════════════════════════════════════════════════
+// VIEW ROUTING
+// ═══════════════════════════════════════════════════════
+function switchView(name) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(`view-${name}`).classList.add('active');
+    document.getElementById(`tab-${name}`).classList.add('active');
+}
+
+// ═══════════════════════════════════════════════════════
+// RENDER
+// ═══════════════════════════════════════════════════════
+function renderAll() {
+    renderHeader();
+    renderTrueNorth();
+    renderGlobalStatus();
+    renderD3();
+    renderNN();
+    renderGoals();
+    renderThread();
+}
+
+function renderHeader() {
+    const d = new Date();
+    const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    document.getElementById('hdrDate').textContent =
+        `${days[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate()}`;
+
+    // Quarter + week
+    const qIdx      = Math.floor(d.getMonth() / 3);
+    const qStart    = new Date(d.getFullYear(), qIdx * 3, 1);
+    const weekOfQ   = Math.max(1, Math.ceil((d - qStart) / (7 * 86400000)));
+    const qLabel    = ['Q1','Q2','Q3','Q4'][qIdx];
+    document.getElementById('hdrSub').textContent = `${qLabel} · Week ${weekOfQ} of 13`;
+}
+
+function renderTrueNorth() {
+    const t = S.setup.trueNorth;
+    document.getElementById('tnPeek').textContent   = t;
+    document.getElementById('tnThread').textContent = t;
+    document.getElementById('settingsTNPreview').textContent =
+        t.length > 65 ? t.slice(0,65) + '…' : t;
+}
+
+function renderGlobalStatus() {
+    const drifted = S.goals.some(g => g.status === 'drifted');
+    const pill = document.getElementById('globalStatus');
+    document.getElementById('globalStatusText').textContent = drifted ? 'Drifted' : 'On the Throughline';
+    pill.className = `status-pill ${drifted ? 'drifted' : 'on-track'}`;
+}
+
+// ── Daily 3 ──
+function renderD3() {
+    const container = document.getElementById('d3Slots');
+    const slots = TODAY.daily3;
+    const doneCount   = slots.filter(s => s && s.done).length;
+    const filledCount = slots.filter(Boolean).length;
+
+    document.getElementById('d3Count').textContent = `${doneCount} of 3`;
+    document.getElementById('d3CompleteMsg').style.display =
+        filledCount === 3 && doneCount === 3 ? 'block' : 'none';
+
+    // Progress pips
+    slots.forEach((s, i) => {
+        const pip = document.getElementById(`pip${i}`);
+        pip.className = 'd3-pip' + (s && s.done ? ' done' : s ? ' filled' : '');
+    });
+
+    container.innerHTML = '';
+    slots.forEach((slot, i) => {
+        const el = document.createElement('div');
+        el.className = 'd3-slot' + (slot ? ' filled' : '') + (slot && slot.done ? ' done' : '');
+
+        if (slot) {
+            const circle = document.createElement('div');
+            circle.className = 'd3-circle';
+            circle.innerHTML = checkSVG();
+            circle.addEventListener('click', e => { e.stopPropagation(); toggleD3(i); });
+
+            const body = document.createElement('div');
+            body.className = 'd3-body';
+            body.innerHTML = `<div class="d3-text">${escHtml(slot.text)}</div><div class="d3-goal-tag">${escHtml(slot.goalDomain)}</div>`;
+
+            el.appendChild(circle);
+            el.appendChild(body);
+
+            if (!slot.done) {
+                const rm = document.createElement('button');
+                rm.className = 'd3-remove';
+                rm.innerHTML = xSVG();
+                rm.addEventListener('click', e => { e.stopPropagation(); removeD3(i); });
+                el.appendChild(rm);
+            }
+        } else {
+            el.addEventListener('click', () => openPicker(i));
+            el.innerHTML = `
+                <div class="d3-circle"></div>
+                <div class="d3-body"><div class="d3-text empty">Tap to add</div></div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.45;flex-shrink:0"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            `;
+        }
+        container.appendChild(el);
+    });
+}
+
+function toggleD3(idx) {
+    if (!TODAY.daily3[idx]) return;
+    TODAY.daily3[idx].done = !TODAY.daily3[idx].done;
+    // Sync weekly commitment
+    const task = TODAY.daily3[idx];
+    if (task.weeklyId) {
+        const goal = S.goals.find(g => g.id === task.goalId);
+        if (goal) {
+            const w = goal.weekly.find(w => w.id === task.weeklyId);
+            if (w) { w.done = task.done; saveState(); }
+        }
+    }
+    saveLog();
+    renderD3();
+    renderGoals();
+    renderThread();
+    renderGlobalStatus();
+}
+
+function removeD3(idx) {
+    TODAY.daily3[idx] = null;
+    saveLog();
+    renderD3();
+}
+
+// ── Non-Negotiables ──
+function renderNN() {
+    const container = document.getElementById('nnList');
+    container.innerHTML = '';
+    S.nonNegotiables.forEach(nn => {
+        const checked = TODAY.nnChecked.includes(nn.id);
+        const el = document.createElement('div');
+        el.className = 'nn-item' + (checked ? ' checked' : '');
+        el.innerHTML = `
+            <div class="nn-box">${checkSVG()}</div>
+            <div class="nn-body">
+                <div class="nn-what">${escHtml(nn.what)}</div>
+                <div class="nn-when">${escHtml(nn.when)}</div>
+            </div>
+            <div class="nn-cadence">${nn.cadence}</div>
+        `;
+        el.addEventListener('click', () => toggleNN(nn.id));
+        container.appendChild(el);
+    });
+}
+
+function toggleNN(id) {
+    const idx = TODAY.nnChecked.indexOf(id);
+    if (idx === -1) TODAY.nnChecked.push(id);
+    else TODAY.nnChecked.splice(idx, 1);
+    saveLog();
+    renderNN();
+}
+
+// ── Goals ──
+function renderGoals() {
+    const container = document.getElementById('goalsList');
+    container.innerHTML = '';
+
+    S.goals.forEach(goal => {
+        const isDrifted   = goal.status === 'drifted';
+        const doneWeekly  = goal.weekly.filter(w => w.done).length;
+        const totalWeekly = goal.weekly.length;
+
+        const card = document.createElement('div');
+        card.className = 'goal-card' + (isDrifted ? ' drifted' : '');
+
+        card.innerHTML = `
+            <div class="goal-card-hd">
+                <div class="goal-card-left">
+                    <div class="goal-icon">${goal.icon}</div>
+                    <div class="goal-meta">
+                        <div class="goal-domain-tag">${goal.domain} — ${isDrifted ? 'Drifted' : 'On the Throughline'}</div>
+                        <div class="goal-summary">${goal.quarterly.text}</div>
+                    </div>
+                </div>
+                <svg class="goal-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="goal-body">
+                <div class="cascade-block">
+                    <div class="cascade-row">
+                        <div class="cascade-lv">Annual Goal</div>
+                        <div class="cascade-text">${escHtml(goal.annual.text)}</div>
+                    </div>
+                    <div class="cascade-row">
+                        <div class="cascade-lv">Arrival Picture</div>
+                        <div class="cascade-arrival">${escHtml(goal.annual.arrivalPicture)}</div>
+                    </div>
+                    <div class="cascade-row">
+                        <div class="cascade-lv">How We'll Know</div>
+                        <div class="cascade-measure">${escHtml(goal.annual.measure)}</div>
+                    </div>
+                    <div class="cascade-row">
+                        <div class="cascade-lv">Q2 Milestone</div>
+                        <div class="cascade-text">${escHtml(goal.quarterly.text)}</div>
+                    </div>
+                </div>
+                <div class="weekly-block">
+                    <div class="weekly-hd">This Week · ${doneWeekly} of ${totalWeekly} done</div>
+                    ${goal.weekly.map(w => `
+                        <div class="commit-item${w.done ? ' done' : ''}" data-gid="${goal.id}" data-wid="${w.id}">
+                            <div class="commit-box">${checkSVG()}</div>
+                            <div class="commit-text">${escHtml(w.text)}</div>
+                        </div>
+                    `).join('')}
+                </div>
+                <button class="goal-drift-btn ${isDrifted ? 'drifted' : 'on-track'}" data-gid="${goal.id}">
+                    ${isDrifted ? '↑ Back on track' : '⚑ Mark as drifted'}
+                </button>
+            </div>
+        `;
+
+        // Toggle expand
+        card.querySelector('.goal-card-hd').addEventListener('click', () => card.classList.toggle('open'));
+
+        // Weekly commitment checkboxes
+        card.querySelectorAll('.commit-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const g = S.goals.find(g => g.id === item.dataset.gid);
+                const w = g.weekly.find(w => w.id === item.dataset.wid);
+                w.done = !w.done;
+                // Sync daily3 if this task is in today's slots
+                TODAY.daily3.forEach(task => {
+                    if (task && task.weeklyId === w.id) task.done = w.done;
+                });
+                saveState();
+                saveLog();
+                renderGoals();
+                renderD3();
+                renderThread();
+                renderGlobalStatus();
+            });
+        });
+
+        // Drift toggle
+        card.querySelector('.goal-drift-btn').addEventListener('click', () => {
+            const g = S.goals.find(g => g.id === goal.id);
+            g.status = g.status === 'drifted' ? 'on_track' : 'drifted';
+            saveState();
+            renderGoals();
+            renderThread();
+            renderGlobalStatus();
+        });
+
+        container.appendChild(card);
+    });
+}
+
+// ── Thread ──
+function renderThread() {
+    const container = document.getElementById('threadList');
+    container.innerHTML = '';
+
+    S.goals.forEach((goal, idx) => {
+        const isDrifted  = goal.status === 'drifted';
+        const isLast     = idx === S.goals.length - 1;
+        const doneCount  = goal.weekly.filter(w => w.done).length;
+        const totalCount = goal.weekly.length;
+
+        const item = document.createElement('div');
+        item.className = 'thread-item';
+
+        item.innerHTML = `
+            <div class="thread-spine">
+                <div class="t-node${isDrifted ? ' drift' : ''}"></div>
+                ${!isLast ? '<div class="t-seg"></div>' : ''}
+            </div>
+            <div class="t-card${isDrifted ? ' drift' : ''}">
+                <div class="t-card-domain">${goal.icon} ${goal.domain}</div>
+                <div class="t-card-q">${escHtml(goal.quarterly.text)}</div>
+                <div class="t-card-status">
+                    ${isDrifted ? 'Drifted — recovery needed' : 'On the throughline'}
+                    <span class="t-card-progress">· ${doneCount} of ${totalCount} weekly done</span>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(item);
+    });
+}
+
+// ═══════════════════════════════════════════════════════
+// TASK PICKER MODAL
+// ═══════════════════════════════════════════════════════
+let activeSlot = null;
+
+function openPicker(slotIdx) {
+    activeSlot = slotIdx;
+    document.getElementById('pickerSlotNum').textContent = slotIdx + 1;
+
+    const usedWeeklyIds = TODAY.daily3
+        .filter(Boolean)
+        .map(t => t.weeklyId)
+        .filter(Boolean);
+
+    const body = document.getElementById('pickerBody');
+    body.innerHTML = '';
+
+    S.goals.forEach(goal => {
+        const group = document.createElement('div');
+        group.className = 'picker-group';
+        group.innerHTML = `<div class="picker-group-label">${goal.icon} ${goal.domain}</div>`;
+
+        goal.weekly.forEach(w => {
+            const used = usedWeeklyIds.includes(w.id);
+            const item = document.createElement('div');
+            item.className = 'picker-item' + (used ? ' used' : '');
+            item.innerHTML = `<div class="picker-text">${escHtml(w.text)}</div><div class="picker-badge">${used ? 'In use' : '+ Add'}</div>`;
+            if (!used) {
+                item.addEventListener('click', () => {
+                    TODAY.daily3[activeSlot] = {
+                        text: w.text,
+                        goalId: goal.id,
+                        goalDomain: goal.domain,
+                        weeklyId: w.id,
+                        done: false
+                    };
+                    saveLog();
+                    closePicker();
+                    renderD3();
+                });
+            }
+            group.appendChild(item);
+        });
+
+        body.appendChild(group);
+    });
+
+    document.getElementById('overlayPicker').classList.add('open');
+}
+
+function closePicker() {
+    document.getElementById('overlayPicker').classList.remove('open');
+    activeSlot = null;
+}
+
+document.getElementById('overlayPicker').addEventListener('click', function(e) {
+    if (e.target === this) closePicker();
+});
+
+// ═══════════════════════════════════════════════════════
+// SETTINGS
+// ═══════════════════════════════════════════════════════
+function openSettings() {
+    document.getElementById('overlaySettings').classList.add('open');
+}
+function closeSettings() {
+    document.getElementById('overlaySettings').classList.remove('open');
+}
+function clearToday() {
+    if (!confirm('Clear today\'s Daily 3 and Non-Negotiable checks?')) return;
+    LOG[todayKey()] = { daily3: [null, null, null], nnChecked: [] };
+    TODAY = LOG[todayKey()];
+    saveLog();
+    closeSettings();
+    renderD3();
+    renderNN();
+}
+function resetAllData() {
+    if (!confirm('Reset all Throughline data? This cannot be undone.')) return;
+    localStorage.removeItem(STATE_KEY);
+    localStorage.removeItem(LOG_KEY);
+    location.reload();
+}
+
+document.getElementById('overlaySettings').addEventListener('click', function(e) {
+    if (e.target === this) closeSettings();
+});
+
+// ═══════════════════════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════════════════════
+function checkSVG() {
+    return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+}
+function xSVG() {
+    return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+}
+function escHtml(str) {
+    return String(str)
+        .replace(/&/g,'&amp;')
+        .replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;');
+}
+
+// ═══════════════════════════════════════════════════════
+// BOOT
+// ═══════════════════════════════════════════════════════
+boot();
+</script>
+</body>
+</html>
