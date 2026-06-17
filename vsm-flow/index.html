@@ -6,1227 +6,742 @@
   <title>Visual Flow | StrayStation</title>
   <style>
     :root {
-      --bg: #0F1419;
-      --cyan: #00D9FF;
-      --blue: #0066CC;
-      --coral: #FF6B4A;
-      --amber: #F5A623;
-      --green: #4ade80;
-      --text: #FFFFFF;
-      --muted: rgba(255,255,255,0.52);
-      --card-bg: rgba(255,255,255,0.04);
-      --card-border: rgba(0,217,255,0.15);
-      --input-bg: rgba(255,255,255,0.07);
-      --input-border: rgba(255,255,255,0.15);
+      --bg:#0F1419;--cyan:#00D9FF;--blue:#0066CC;--coral:#FF6B4A;
+      --amber:#F5A623;--green:#4ade80;--text:#FFFFFF;
+      --muted:rgba(255,255,255,0.52);--card-bg:rgba(255,255,255,0.04);
+      --card-border:rgba(0,217,255,0.15);--input-bg:rgba(255,255,255,0.07);
+      --input-border:rgba(255,255,255,0.15);
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .background-pattern {
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image:
-        linear-gradient(rgba(0,217,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,217,255,0.025) 1px, transparent 1px);
-      background-size: 50px 50px;
-    }
-    .orbital-accent {
-      position: fixed; width: 700px; height: 700px; border-radius: 50%;
-      border: 1px solid rgba(0,217,255,0.05);
-      top: -250px; right: -200px; z-index: 0; pointer-events: none;
-    }
-
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(15,20,25,0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--card-border);
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto;
-      height: 56px; padding: 0 24px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .back-link {
-      color: var(--cyan); text-decoration: none;
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      opacity: 0.65; transition: opacity 0.2s;
-    }
-    .back-link:hover { opacity: 1; }
-    .nav-logo {
-      font-size: 0.82rem; font-weight: 800;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      background: linear-gradient(135deg, var(--cyan), var(--blue));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-
-    .page {
-      max-width: 1200px; margin: 0 auto;
-      padding: 0 24px 80px;
-      position: relative; z-index: 1;
-    }
-
-    .hero {
-      text-align: center; padding: 48px 0 36px;
-    }
-    .hero h1 {
-      font-size: clamp(28px, 5vw, 52px); font-weight: 800;
-      background: linear-gradient(135deg, #fff 0%, var(--cyan) 60%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
-    }
-    .hero p { color: var(--muted); font-size: 0.95rem; }
-
-    .section { margin-bottom: 32px; }
-    .section-title {
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--cyan);
-      margin-bottom: 14px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .section-title::after {
-      content: ''; flex: 1; height: 1px; background: var(--card-border);
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px; padding: 20px;
-    }
-
-    /* Config row */
-    .config-row {
-      display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end;
-    }
-    .field-group {
-      display: flex; flex-direction: column; gap: 5px; min-width: 110px;
-    }
-    .field-group label {
-      font-size: 0.65rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--muted);
-    }
-    .field-group input, .field-group select {
-      background: var(--input-bg);
-      border: 1px solid var(--input-border);
-      border-radius: 6px; color: var(--text);
-      padding: 8px 10px; font-size: 0.875rem;
-      outline: none; transition: border-color 0.18s; width: 100%;
-    }
-    .field-group input:focus, .field-group select:focus {
-      border-color: var(--cyan);
-    }
-    .field-group select option { background: #1c2430; }
-
-    /* Add step form */
-    .add-step-form {
-      display: flex; gap: 10px; flex-wrap: wrap;
-      align-items: flex-end; margin-bottom: 16px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    /* Buttons */
-    .btn {
-      padding: 8px 16px; border-radius: 6px; border: none;
-      cursor: pointer; font-size: 0.78rem; font-weight: 700;
-      letter-spacing: 0.07em; text-transform: uppercase;
-      transition: all 0.18s; white-space: nowrap;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--cyan), var(--blue));
-      color: var(--bg);
-    }
-    .btn-primary:hover {
-      box-shadow: 0 4px 16px rgba(0,217,255,0.4);
-      transform: translateY(-1px);
-    }
-    .btn-ghost {
-      background: transparent; color: var(--muted);
-      border: 1px solid var(--input-border);
-    }
-    .btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.3); }
-    .btn-danger {
-      background: rgba(255,107,74,0.12); color: var(--coral);
-      border: 1px solid rgba(255,107,74,0.25);
-    }
-    .btn-danger:hover { background: rgba(255,107,74,0.22); }
-    .btn-sm { padding: 5px 10px; font-size: 0.68rem; }
-
-    /* Steps list */
-    .steps-list { display: flex; flex-direction: column; gap: 7px; }
-    .step-item {
-      display: flex; align-items: center; gap: 12px;
-      background: rgba(0,217,255,0.04);
-      border: 1px solid rgba(0,217,255,0.1);
-      border-radius: 8px; padding: 9px 14px;
-    }
-    .step-number {
-      width: 22px; height: 22px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue), #004499);
-      color: white; font-size: 0.68rem; font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .step-item-name { flex: 1; font-weight: 600; font-size: 0.88rem; }
-    .step-item-meta {
-      display: flex; gap: 14px; font-size: 0.73rem; color: var(--muted);
-    }
-    .meta-ct { color: var(--cyan); }
-    .meta-wt { color: var(--amber); }
-    .step-actions { display: flex; gap: 6px; }
-
-    .empty-state {
-      text-align: center; padding: 28px; color: var(--muted);
-      font-size: 0.85rem; border: 1px dashed rgba(255,255,255,0.1);
-      border-radius: 8px;
-    }
-
-    /* Canvas section */
-    .canvas-controls {
-      display: flex; align-items: center; gap: 14px;
-      padding: 12px 16px 8px; flex-wrap: wrap;
-    }
-    .canvas-controls label {
-      font-size: 0.67rem; font-weight: 700;
-      letter-spacing: 0.09em; text-transform: uppercase;
-      color: var(--muted);
-    }
-    input[type=range] { accent-color: var(--cyan); width: 110px; cursor: pointer; }
-    .speed-val { font-size: 0.75rem; color: var(--cyan); min-width: 64px; }
-
-    .vsm-wrapper {
-      overflow-x: auto;
-      border-radius: 0 0 10px 10px;
-    }
-    canvas { display: block; }
-
-    .canvas-card {
-      background: rgba(0,0,0,0.4);
-      border: 1px solid var(--card-border);
-      border-radius: 12px; overflow: hidden;
-    }
-
-    /* Metrics */
-    .metrics-row {
-      display: flex; gap: 20px; flex-wrap: wrap; margin-top: 14px;
-    }
-    .metric { display: flex; flex-direction: column; gap: 2px; }
-    .metric-label {
-      font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--muted);
-    }
-    .metric-value { font-size: 1.15rem; font-weight: 800; }
-    .mv-good { color: var(--cyan); }
-    .mv-warn { color: var(--amber); }
-    .mv-bad { color: var(--coral); }
-
-    /* Future state table */
-    .future-intro {
-      font-size: 0.83rem; color: var(--muted);
-      margin-bottom: 16px; line-height: 1.55;
-    }
-    .tbl-wrap { overflow-x: auto; margin-bottom: 16px; }
-    table.future-tbl { width: 100%; border-collapse: collapse; }
-    table.future-tbl th {
-      text-align: left; padding: 6px 10px;
-      font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--muted);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    table.future-tbl td {
-      padding: 7px 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      vertical-align: middle; font-size: 0.83rem;
-    }
-    table.future-tbl tr:last-child td { border-bottom: none; }
-    table.future-tbl input[type=number] {
-      width: 78px;
-      background: var(--input-bg);
-      border: 1px solid var(--input-border);
-      border-radius: 4px; color: var(--text);
-      padding: 5px 7px; font-size: 0.8rem; outline: none;
-    }
-    table.future-tbl input[type=number]:focus { border-color: var(--cyan); }
-    .delta { font-size: 0.72rem; font-weight: 700; }
-    .d-good { color: var(--green); }
-    .d-bad  { color: var(--coral); }
-    .d-same { color: var(--muted); }
-
-    /* Comparison callout */
-    .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
-    .cmp-box {
-      border-radius: 10px; padding: 18px; text-align: center;
-    }
-    .cmp-current { background: rgba(0,217,255,0.06); border: 1px solid rgba(0,217,255,0.2); }
-    .cmp-future  { background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.25); }
-    .cmp-label {
-      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
-    }
-    .cmp-value { font-size: 2rem; font-weight: 800; }
-    .cmp-current .cmp-value { color: var(--cyan); }
-    .cmp-future .cmp-value { color: var(--green); }
-    .cmp-sub { font-size: 0.73rem; color: var(--muted); margin-top: 5px; line-height: 1.5; }
-
-    /* Legend */
-    .legend {
-      display: flex; gap: 20px; flex-wrap: wrap;
-      padding: 10px 16px; font-size: 0.7rem; color: var(--muted);
-    }
-    .legend-item { display: flex; align-items: center; gap: 6px; }
-    .legend-dot {
-      width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
-    }
-    .legend-box {
-      width: 14px; height: 10px; border-radius: 2px; flex-shrink: 0;
-    }
-
-    @media (max-width: 640px) {
-      .comparison { grid-template-columns: 1fr; }
-      .config-row { flex-direction: column; }
-      .add-step-form { flex-direction: column; }
-      .add-step-form .field-group { min-width: unset; width: 100%; }
-    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:100vh;overflow-x:hidden}
+    .background-pattern{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(0,217,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,217,255,0.025) 1px,transparent 1px);background-size:50px 50px}
+    .orbital-accent{position:fixed;width:700px;height:700px;border-radius:50%;border:1px solid rgba(0,217,255,0.05);top:-250px;right:-200px;z-index:0;pointer-events:none}
+    nav{position:sticky;top:0;z-index:100;background:rgba(15,20,25,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--card-border)}
+    .nav-inner{max-width:1200px;margin:0 auto;height:56px;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+    .back-link{color:var(--cyan);text-decoration:none;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.65;transition:opacity .2s}
+    .back-link:hover{opacity:1}
+    .nav-logo{font-size:.82rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .page{max-width:1200px;margin:0 auto;padding:0 24px 80px;position:relative;z-index:1}
+    .hero{text-align:center;padding:48px 0 36px}
+    .hero h1{font-size:clamp(28px,5vw,52px);font-weight:800;background:linear-gradient(135deg,#fff 0%,var(--cyan) 60%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
+    .hero p{color:var(--muted);font-size:.95rem}
+    .section{margin-bottom:32px}
+    .section-title{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+    .section-title::after{content:'';flex:1;height:1px;background:var(--card-border)}
+    .card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:20px}
+    .config-row{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end}
+    .field-group{display:flex;flex-direction:column;gap:5px;min-width:110px}
+    .field-group label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .field-group input,.field-group select{background:var(--input-bg);border:1px solid var(--input-border);border-radius:6px;color:var(--text);padding:8px 10px;font-size:.875rem;outline:none;transition:border-color .18s;width:100%}
+    .field-group input:focus,.field-group select:focus{border-color:var(--cyan)}
+    .field-group select option{background:#1c2430}
+    .add-step-form{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.06)}
+    .btn{padding:8px 16px;border-radius:6px;border:none;cursor:pointer;font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;transition:all .18s;white-space:nowrap}
+    .btn-primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--bg)}
+    .btn-primary:hover{box-shadow:0 4px 16px rgba(0,217,255,.4);transform:translateY(-1px)}
+    .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+    .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--input-border)}
+    .btn-ghost:hover{color:var(--text);border-color:rgba(255,255,255,.3)}
+    .btn-danger{background:rgba(255,107,74,.12);color:var(--coral);border:1px solid rgba(255,107,74,.25)}
+    .btn-danger:hover{background:rgba(255,107,74,.22)}
+    .btn-green{background:linear-gradient(135deg,#4ade80,#16a34a);color:#0F1419}
+    .btn-green:hover{box-shadow:0 4px 16px rgba(74,222,128,.35);transform:translateY(-1px)}
+    .btn-amber{background:rgba(245,166,35,.15);color:var(--amber);border:1px solid rgba(245,166,35,.35)}
+    .btn-amber:hover{background:rgba(245,166,35,.25)}
+    .btn-sm{padding:5px 10px;font-size:.68rem}
+    .steps-list{display:flex;flex-direction:column;gap:7px}
+    .step-item{display:flex;align-items:center;gap:12px;background:rgba(0,217,255,.04);border:1px solid rgba(0,217,255,.1);border-radius:8px;padding:9px 14px}
+    .step-number{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#004499);color:#fff;font-size:.68rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .step-item-name{flex:1;font-weight:600;font-size:.88rem}
+    .step-item-meta{display:flex;gap:14px;font-size:.73rem;color:var(--muted)}
+    .meta-ct{color:var(--cyan)}.meta-wt{color:var(--amber)}
+    .step-actions{display:flex;gap:6px}
+    .empty-state{text-align:center;padding:28px;color:var(--muted);font-size:.85rem;border:1px dashed rgba(255,255,255,.1);border-radius:8px}
+    .canvas-card{background:rgba(0,0,0,.4);border:1px solid var(--card-border);border-radius:12px;overflow:hidden}
+    .canvas-controls{display:flex;align-items:center;gap:14px;padding:12px 16px 8px;flex-wrap:wrap}
+    .canvas-controls label{font-size:.67rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+    input[type=range]{accent-color:var(--cyan);width:110px;cursor:pointer}
+    .speed-val{font-size:.75rem;color:var(--cyan);min-width:64px}
+    .vsm-wrapper{overflow-x:auto}
+    canvas{display:block}
+    .metrics-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px}
+    .metric{display:flex;flex-direction:column;gap:2px}
+    .metric-label{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .metric-value{font-size:1.15rem;font-weight:800}
+    .mv-good{color:var(--cyan)}.mv-warn{color:var(--amber)}.mv-bad{color:var(--coral)}
+    .future-intro{font-size:.83rem;color:var(--muted);margin-bottom:16px;line-height:1.55}
+    .tbl-wrap{overflow-x:auto;margin-bottom:16px}
+    table.future-tbl{width:100%;border-collapse:collapse}
+    table.future-tbl th{text-align:left;padding:6px 10px;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.08)}
+    table.future-tbl td{padding:7px 10px;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:middle;font-size:.83rem}
+    table.future-tbl tr:last-child td{border-bottom:none}
+    table.future-tbl input[type=number]{width:78px;background:var(--input-bg);border:1px solid var(--input-border);border-radius:4px;color:var(--text);padding:5px 7px;font-size:.8rem;outline:none}
+    table.future-tbl input[type=number]:focus{border-color:var(--cyan)}
+    .delta{font-size:.72rem;font-weight:700}
+    .d-good{color:var(--green)}.d-bad{color:var(--coral)}.d-same{color:var(--muted)}
+    .comparison{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+    .cmp-box{border-radius:10px;padding:18px;text-align:center}
+    .cmp-current{background:rgba(0,217,255,.06);border:1px solid rgba(0,217,255,.2)}
+    .cmp-future{background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.25)}
+    .cmp-label{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+    .cmp-value{font-size:2rem;font-weight:800}
+    .cmp-current .cmp-value{color:var(--cyan)}.cmp-future .cmp-value{color:var(--green)}
+    .cmp-sub{font-size:.73rem;color:var(--muted);margin-top:5px;line-height:1.5}
+    .legend{display:flex;gap:20px;flex-wrap:wrap;padding:10px 16px;font-size:.7rem;color:var(--muted)}
+    .legend-item{display:flex;align-items:center;gap:6px}
+    .legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+    .legend-box{width:14px;height:10px;border-radius:2px;flex-shrink:0}
+    /* Tabs */
+    .mode-tabs{display:flex;margin-bottom:20px;border:1px solid var(--card-border);border-radius:8px;overflow:hidden}
+    .mode-tab{flex:1;padding:10px;text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;background:transparent;border:none;color:var(--muted);transition:all .18s}
+    .mode-tab.active{background:rgba(0,217,255,.1);color:var(--cyan)}
+    .mode-tab:hover:not(.active){color:var(--text)}
+    /* AI */
+    .ai-panel{background:rgba(0,217,255,.03);border:1px solid rgba(0,217,255,.22);border-radius:12px;padding:20px}
+    .ai-panel-intro{font-size:.83rem;color:var(--muted);margin-bottom:14px;line-height:1.6}
+    .ai-textarea{width:100%;background:rgba(0,0,0,.35);border:1px solid rgba(0,217,255,.18);border-radius:8px;color:var(--text);padding:14px;font-size:.875rem;line-height:1.6;font-family:inherit;resize:vertical;min-height:130px;outline:none;transition:border-color .18s}
+    .ai-textarea:focus{border-color:var(--cyan)}
+    .ai-textarea::placeholder{color:rgba(255,255,255,.28)}
+    .ai-btn-row{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .parse-status{margin-top:10px;min-height:22px;font-size:.82rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(0,217,255,.3);border-top-color:var(--cyan);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px}
+    /* Insights */
+    .insights-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+    .insight-stat{background:rgba(0,0,0,.3);border-radius:10px;padding:16px;border:1px solid rgba(255,255,255,.07)}
+    .insight-stat-label{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    .insight-stat-value{font-size:1.4rem;font-weight:800}
+    .insight-stat-sub{font-size:.72rem;color:var(--muted);margin-top:3px}
+    .is-good{color:var(--green)}.is-warn{color:var(--amber)}.is-bad{color:var(--coral)}.is-cyan{color:var(--cyan)}
+    table.insight-tbl{width:100%;border-collapse:collapse}
+    table.insight-tbl th{text-align:left;padding:7px 12px;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.08)}
+    table.insight-tbl td{padding:8px 12px;font-size:.82rem;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:middle}
+    table.insight-tbl tr:last-child td{border-bottom:none}
+    table.insight-tbl tr.bn-row td{background:rgba(255,107,74,.05)}
+    .status-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .sb-bn{background:rgba(255,107,74,.15);color:var(--coral);border:1px solid rgba(255,107,74,.35)}
+    .sb-ok{background:rgba(74,222,128,.1);color:var(--green);border:1px solid rgba(74,222,128,.25)}
+    .sb-warn{background:rgba(245,166,35,.12);color:var(--amber);border:1px solid rgba(245,166,35,.3)}
+    .sb-crit{background:rgba(255,107,74,.08);color:#ff9977;border:1px solid rgba(255,107,74,.2)}
+    .util-bar-wrap{background:rgba(255,255,255,.06);border-radius:3px;height:6px;width:80px;display:inline-block;vertical-align:middle;margin-right:6px;overflow:hidden}
+    .util-bar{height:100%;border-radius:3px}
+    .buffer-rows{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+    .buffer-row{display:flex;align-items:flex-start;gap:14px;padding:10px 14px;border-radius:8px}
+    .buffer-icon{flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:16px}
+    .buffer-row-info{flex:1}
+    .buffer-row-title{font-weight:700;font-size:.85rem}
+    .buffer-row-detail{font-size:.75rem;color:var(--muted);margin-top:2px}
+    .buffer-swip{flex-shrink:0;text-align:right}
+    .buffer-swip-val{font-size:1.2rem;font-weight:800;color:var(--amber)}
+    .buffer-swip-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .downtime-alert{border-radius:8px;padding:12px 16px;margin-top:10px;background:rgba(255,107,74,.07);border:1px solid rgba(255,107,74,.25)}
+    .downtime-alert-title{font-weight:700;font-size:.85rem;color:var(--coral);margin-bottom:4px}
+    .downtime-alert-body{font-size:.78rem;color:var(--muted);line-height:1.6}
+    .downtime-alert.ok-alert{background:rgba(74,222,128,.06);border-color:rgba(74,222,128,.2)}
+    .downtime-alert.ok-alert .downtime-alert-title{color:var(--green)}
+    .insights-apply-row{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap}
+    .insights-apply-note{font-size:.78rem;color:var(--muted)}
+    .feasibility-banner{display:flex;align-items:center;gap:14px;padding:12px 16px;border-radius:8px;margin-bottom:16px}
+    .fb-ok{background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.25)}
+    .fb-warn{background:rgba(245,166,35,.07);border:1px solid rgba(245,166,35,.25)}
+    .fb-bad{background:rgba(255,107,74,.07);border:1px solid rgba(255,107,74,.25)}
+    .fb-icon{font-size:1.4rem}.fb-text{font-size:.83rem;line-height:1.55}.fb-title{font-weight:700;margin-bottom:2px}
+    /* Live sim UI */
+    .sim-counter{display:flex;gap:24px;padding:12px 16px;background:rgba(0,0,0,.3);border-top:1px solid var(--card-border);flex-wrap:wrap}
+    .sim-counter-item{display:flex;flex-direction:column;gap:2px}
+    .sc-label{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .sc-value{font-size:1.1rem;font-weight:800;color:var(--cyan)}
+    .sc-lost{color:var(--coral)!important}
+    .sim-station-panel{display:flex;gap:10px;flex-wrap:wrap;padding:12px 16px;border-top:1px solid var(--card-border)}
+    .sim-station-card{flex:1;min-width:110px;max-width:180px;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 12px}
+    .ssc-name{font-size:.7rem;font-weight:700;color:var(--muted);margin-bottom:6px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+    .ssc-state{font-size:.65rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px}
+    .ssc-state.running{color:var(--green)}.ssc-state.bottleneck{color:var(--coral)}
+    .ssc-state.starved{color:var(--amber)}.ssc-state.blocked{color:#ff9977}.ssc-state.down{color:var(--amber)}
+    .ssc-buf-wrap{height:4px;background:rgba(255,255,255,.08);border-radius:2px;margin-bottom:4px;overflow:hidden}
+    .ssc-buf-bar{height:100%;border-radius:2px;transition:width .15s}
+    .ssc-buf-label{font-size:.65rem;color:var(--muted)}
+    .sim-downtime-panel{padding:10px 16px;border-top:1px solid var(--card-border);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .sim-dt-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+    @media(max-width:640px){.comparison{grid-template-columns:1fr}.config-row{flex-direction:column}.add-step-form{flex-direction:column}.add-step-form .field-group{min-width:unset;width:100%}.insights-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 <div class="background-pattern"></div>
 <div class="orbital-accent"></div>
-
 <nav>
   <div class="nav-inner">
-    <a href="../index.html" class="back-link">← Stray Station</a>
+    <a href="../index.html" class="back-link">&#8592; Stray Station</a>
     <div class="nav-logo">Visual Flow</div>
-    <div style="width:120px;"></div>
+    <div style="width:120px"></div>
   </div>
 </nav>
-
 <div class="page">
   <div class="hero">
     <h1>Value Stream Flow</h1>
-    <p>Map your process. See where time goes. Simulate what changes.</p>
+    <p>Describe your process in plain language or build it step by step. See bottlenecks, simulate starvation, quantify the cost.</p>
   </div>
-
-  <!-- GLOBAL CONFIG -->
-  <div class="section">
-    <div class="section-title">Process Setup</div>
-    <div class="card">
-      <div class="config-row">
-        <div class="field-group" style="min-width:200px; flex:1">
-          <label>Process Name</label>
-          <input type="text" id="process-name" placeholder="e.g., Widget Fulfillment" value="My Process">
+  <div class="mode-tabs">
+    <button class="mode-tab active" id="tab-ai" onclick="switchTab('ai')">&#9889; AI Parse</button>
+    <button class="mode-tab" id="tab-manual" onclick="switchTab('manual')">&#9881; Manual Entry</button>
+  </div>
+  <!-- AI PANEL -->
+  <div id="panel-ai">
+    <div class="section">
+      <div class="section-title">Describe Your Process</div>
+      <div class="ai-panel">
+        <p class="ai-panel-intro">Describe each station: name, number of machines, rate or cycle time, batch size, and any downtime. Include daily demand and shift hours. AI infers takt, bottleneck, utilization, and recommended SWIP buffers.</p>
+        <textarea id="ai-input" class="ai-textarea" placeholder="Example: We make 300 per day on 24 hours. Core Build (1): 20/hr. Furnace (6): batch 20, 4hr cycle. IsoPress (1): 40/hr, goes down 2-3hrs. Oven (2): batch 20, 3hr, bottleneck. Final Assembly (4): 20/hr. Test (2): 30/hr."></textarea>
+        <div class="ai-btn-row">
+          <button class="btn btn-primary" id="parse-btn" onclick="aiParse()">Parse with AI</button>
+          <button class="btn btn-ghost btn-sm" onclick="loadAIExample()">Load Example</button>
         </div>
-        <div class="field-group">
-          <label>Avail. Time / Period</label>
-          <input type="number" id="avail-time" value="480" min="1">
-        </div>
-        <div class="field-group">
-          <label>Demand / Period (units)</label>
-          <input type="number" id="demand" value="100" min="1">
-        </div>
-        <div class="field-group">
-          <label>Time Unit</label>
-          <select id="time-unit">
-            <option value="sec">Seconds</option>
-            <option value="min" selected>Minutes</option>
-            <option value="hr">Hours</option>
-            <option value="day">Days</option>
-          </select>
-        </div>
-        <div class="field-group" style="justify-content:flex-end">
-          <label>&nbsp;</label>
-          <button class="btn btn-ghost" onclick="loadExample()">Load Example</button>
-        </div>
+        <div class="parse-status" id="parse-status"></div>
+      </div>
+    </div>
+    <div id="insights-section" style="display:none">
+      <div class="section">
+        <div class="section-title">Process Analysis</div>
+        <div id="insights-content"></div>
       </div>
     </div>
   </div>
-
-  <!-- PROCESS STEPS -->
-  <div class="section">
-    <div class="section-title">Process Steps</div>
-    <div class="card">
-      <div class="add-step-form">
-        <div class="field-group" style="flex:1; min-width:150px">
-          <label>Step Name</label>
-          <input type="text" id="new-name" placeholder="e.g., Assembly" autocomplete="off">
-        </div>
-        <div class="field-group" style="min-width:100px">
-          <label>Process Time</label>
-          <input type="number" id="new-ct" placeholder="30" min="0.1" step="0.1">
-        </div>
-        <div class="field-group" style="min-width:100px">
-          <label>Wait Time (queue)</label>
-          <input type="number" id="new-wt" placeholder="120" min="0" step="0.1" value="0">
-        </div>
-        <div class="field-group" style="min-width:90px">
-          <label>Inventory (units)</label>
-          <input type="number" id="new-inv" placeholder="0" min="0" value="0">
-        </div>
-        <div class="field-group" style="justify-content:flex-end">
-          <label>&nbsp;</label>
-          <button class="btn btn-primary" onclick="addStep()">+ Add Step</button>
+  <!-- MANUAL PANEL -->
+  <div id="panel-manual" style="display:none">
+    <div class="section">
+      <div class="section-title">Process Setup</div>
+      <div class="card">
+        <div class="config-row">
+          <div class="field-group" style="min-width:200px;flex:1"><label>Process Name</label><input type="text" id="process-name" value="My Process"></div>
+          <div class="field-group"><label>Avail. Time / Period</label><input type="number" id="avail-time" value="480" min="1"></div>
+          <div class="field-group"><label>Demand / Period</label><input type="number" id="demand" value="100" min="1"></div>
+          <div class="field-group"><label>Time Unit</label><select id="time-unit"><option value="sec">Seconds</option><option value="min" selected>Minutes</option><option value="hr">Hours</option><option value="day">Days</option></select></div>
+          <div class="field-group" style="justify-content:flex-end"><label>&nbsp;</label><button class="btn btn-ghost" onclick="loadExample()">Load Example</button></div>
         </div>
       </div>
-      <div class="steps-list" id="steps-list">
-        <div class="empty-state">No steps yet. Add your first step above or load the example.</div>
+    </div>
+    <div class="section">
+      <div class="section-title">Process Steps</div>
+      <div class="card">
+        <div class="add-step-form">
+          <div class="field-group" style="flex:1;min-width:150px"><label>Step Name</label><input type="text" id="new-name" placeholder="Assembly" autocomplete="off"></div>
+          <div class="field-group" style="min-width:100px"><label>Process Time</label><input type="number" id="new-ct" placeholder="30" min="0.001" step="0.001"></div>
+          <div class="field-group" style="min-width:100px"><label>Wait / Buffer Time</label><input type="number" id="new-wt" placeholder="0" min="0" step="0.001" value="0"></div>
+          <div class="field-group" style="min-width:90px"><label>Inventory (units)</label><input type="number" id="new-inv" placeholder="0" min="0" value="0"></div>
+          <div class="field-group" style="justify-content:flex-end"><label>&nbsp;</label><button class="btn btn-primary" onclick="addStep()">+ Add Step</button></div>
+        </div>
+        <div class="steps-list" id="steps-list"><div class="empty-state">No steps yet. Add your first step above or load the example.</div></div>
       </div>
     </div>
   </div>
-
   <!-- CURRENT STATE -->
   <div class="section" id="current-section" style="display:none">
     <div class="section-title">Current State</div>
-    <div class="canvas-card">
-      <div class="canvas-controls">
-        <label>Animation Speed</label>
-        <input type="range" id="anim-speed" min="1" max="10" value="5" oninput="onSpeedChange()">
-        <span class="speed-val" id="speed-label">Normal</span>
-        <div style="flex:1"></div>
-        <div class="legend">
-          <div class="legend-item">
-            <div class="legend-dot" style="background:#00D9FF;box-shadow:0 0 6px #00D9FF"></div>
-            Processing (value-added)
-          </div>
-          <div class="legend-item">
-            <div class="legend-dot" style="background:#F5A623;box-shadow:0 0 6px #F5A623"></div>
-            Waiting (waste)
-          </div>
-          <div class="legend-item">
-            <div class="legend-box" style="background:rgba(0,102,204,0.4);border:1px solid rgba(0,217,255,0.5)"></div>
-            Process step
-          </div>
-          <div class="legend-item">
-            <div class="legend-box" style="background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.4)"></div>
-            Queue / wait zone
+    <div class="mode-tabs" style="margin-bottom:0;border-radius:12px 12px 0 0;border-bottom:none">
+      <button class="mode-tab active" id="tab-flowmap" onclick="switchCanvasTab('flowmap')">Flow Map</button>
+      <button class="mode-tab" id="tab-livesim" onclick="switchCanvasTab('livesim')">&#9654; Live Simulation</button>
+    </div>
+    <!-- FLOW MAP -->
+    <div id="panel-flowmap">
+      <div class="canvas-card" style="border-radius:0 0 12px 12px">
+        <div class="canvas-controls">
+          <label>Animation Speed</label>
+          <input type="range" id="anim-speed" min="1" max="10" value="5" oninput="onSpeedChange()">
+          <span class="speed-val" id="speed-label">Normal</span>
+          <div style="flex:1"></div>
+          <div class="legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#00D9FF;box-shadow:0 0 6px #00D9FF"></div>Processing</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#F5A623;box-shadow:0 0 6px #F5A623"></div>Buffer</div>
+            <div class="legend-item"><div class="legend-box" style="background:rgba(255,107,74,.2);border:1px solid rgba(255,107,74,.7)"></div>Bottleneck</div>
           </div>
         </div>
+        <div class="vsm-wrapper"><canvas id="current-canvas"></canvas></div>
       </div>
-      <div class="vsm-wrapper">
-        <canvas id="current-canvas"></canvas>
+      <div class="metrics-row" id="current-metrics"></div>
+    </div>
+    <!-- LIVE SIMULATION -->
+    <div id="panel-livesim" style="display:none">
+      <div class="canvas-card" style="border-radius:0 0 12px 12px">
+        <div class="canvas-controls">
+          <label>Sim Speed</label>
+          <input type="range" id="sim-speed" min="1" max="120" value="20" oninput="onSimSpeedChange()">
+          <span class="speed-val" id="sim-speed-label">20x</span>
+          <div style="flex:1"></div>
+          <button class="btn btn-primary btn-sm" id="sim-play-btn" onclick="toggleSim()">&#9654; Start</button>
+          <button class="btn btn-ghost btn-sm" onclick="resetSim()">&#8635; Reset</button>
+        </div>
+        <div class="vsm-wrapper"><canvas id="sim-canvas"></canvas></div>
+        <div class="sim-counter">
+          <div class="sim-counter-item"><div class="sc-label">Sim Time</div><div class="sc-value" id="sc-time" style="color:var(--muted)">0.0 hrs</div></div>
+          <div class="sim-counter-item"><div class="sc-label">Units Produced</div><div class="sc-value" id="sc-produced">0</div></div>
+          <div class="sim-counter-item"><div class="sc-label">Lost to Starvation</div><div class="sc-value sc-lost" id="sc-lost">0</div></div>
+          <div class="sim-counter-item"><div class="sc-label">Starvation Events</div><div class="sc-value sc-lost" id="sc-events">0</div></div>
+        </div>
+        <div class="sim-station-panel" id="sim-station-panel"></div>
+        <div class="sim-downtime-panel" id="sim-downtime-panel"><span class="sim-dt-label">Trigger Downtime:</span></div>
       </div>
     </div>
-    <div class="metrics-row" id="current-metrics"></div>
   </div>
-
   <!-- FUTURE STATE -->
   <div class="section" id="future-section" style="display:none">
-    <div class="section-title">Future State — Simulate Changes</div>
+    <div class="section-title">Future State &#8212; Simulate Changes</div>
     <div class="card">
-      <p class="future-intro">
-        Adjust any value below. The diagram updates live so you can see exactly what each change does to flow and lead time.
-      </p>
-      <div style="display:flex; justify-content:flex-end; margin-bottom:10px">
-        <button class="btn btn-ghost btn-sm" onclick="resetFuture()">Reset to Current</button>
-      </div>
-      <div class="tbl-wrap">
-        <table class="future-tbl" id="future-tbl">
-          <thead>
-            <tr>
-              <th>Step</th>
-              <th>Process Time</th>
-              <th>Wait Time</th>
-              <th>Inventory</th>
-              <th>vs. Current</th>
-            </tr>
-          </thead>
-          <tbody id="future-tbody"></tbody>
-        </table>
-      </div>
+      <p class="future-intro">Adjust any value below. The flow map updates live so you can see what each change does to lead time and efficiency.</p>
+      <div style="display:flex;justify-content:flex-end;margin-bottom:10px"><button class="btn btn-ghost btn-sm" onclick="resetFuture()">Reset to Current</button></div>
+      <div class="tbl-wrap"><table class="future-tbl"><thead><tr><th>Step</th><th>Process Time</th><th>Wait Time</th><th>Inventory</th><th>vs. Current</th></tr></thead><tbody id="future-tbody"></tbody></table></div>
     </div>
-    <div class="canvas-card" style="margin-top:16px">
-      <div class="vsm-wrapper">
-        <canvas id="future-canvas"></canvas>
-      </div>
-    </div>
+    <div class="canvas-card" style="margin-top:16px"><div class="vsm-wrapper"><canvas id="future-canvas"></canvas></div></div>
     <div class="metrics-row" id="future-metrics"></div>
     <div class="comparison" id="comparison"></div>
   </div>
 </div>
-
 <script>
-// ─── STATE ───────────────────────────────────────────────────────────────────
-
-let steps = [];        // { id, name, processTime, waitTime, inventory }
-let futureSteps = [];  // same structure, independently editable
-let nextId = 1;
-
-// Animation
-let animSpeed = 5;
-let lastTs = null;
-let cParticles = [];
-let fParticles = [];
-let cSpawn = { t: 0 };
-let fSpawn = { t: 0 };
-
-// ─── CANVAS CONSTANTS ────────────────────────────────────────────────────────
-
-const CANVAS_H  = 215;
-const PAD       = 44;
-const BOX_TOP   = 28;
-const BOX_H     = 76;
-const FLOW_Y    = BOX_TOP + BOX_H / 2;   // y = 66
-const TL_TOP    = BOX_TOP + BOX_H + 12;  // y = 116
-const TL_H      = 22;
-const LBL_Y     = TL_TOP + TL_H + 12;    // y = 150
-const MIN_WAIT  = 40;
-const MIN_BOX   = 78;
-
-const C = {
-  cyan:      '#00D9FF',
-  blue:      '#0066CC',
-  coral:     '#FF6B4A',
-  amber:     '#F5A623',
-  green:     '#4ade80',
-  text:      '#FFFFFF',
-  muted:     'rgba(255,255,255,0.48)',
-  waitBg:    'rgba(245,166,35,0.10)',
-  waitBdr:   'rgba(245,166,35,0.28)',
-  boxBg:     'rgba(0,102,204,0.18)',
-  boxStroke: 'rgba(0,217,255,0.52)',
-  gridLine:  'rgba(0,217,255,0.035)',
-  flowLine:  'rgba(0,217,255,0.18)',
+// =====================================================================
+// STATE
+// =====================================================================
+let steps=[],futureSteps=[],nextId=1,activeTab='ai',canvasTab='flowmap';
+let animSpeed=5,lastTs=null,cParticles=[],fParticles=[],cSpawn={t:0},fSpawn={t:0};
+let simParams=null,simState=null,simRunning=false,simSpeed=20,simLast=null;
+let simParticles=[],simSpawn=[];
+const SS_RUNNING='RUNNING',SS_STARVED='STARVED',SS_BLOCKED='BLOCKED',SS_BOTTLENECK='BOTTLENECK',SS_DOWN='DOWN';
+let parsedData=null,parsedInsights=null;
+// =====================================================================
+// CANVAS CONSTANTS
+// =====================================================================
+const CANVAS_H=260,PAD=44,BOX_TOP=28,BOX_H=90;
+const FLOW_Y=BOX_TOP+BOX_H/2,TL_TOP=BOX_TOP+BOX_H+14,TL_H=22,LBL_Y=TL_TOP+TL_H+12;
+const MIN_WAIT=44,MIN_BOX=88;
+const C={
+  cyan:'#00D9FF',blue:'#0066CC',coral:'#FF6B4A',amber:'#F5A623',green:'#4ade80',
+  text:'#FFFFFF',muted:'rgba(255,255,255,0.48)',
+  waitBg:'rgba(245,166,35,0.10)',waitBdr:'rgba(245,166,35,0.28)',
+  boxBg:'rgba(0,102,204,0.18)',boxStroke:'rgba(0,217,255,0.52)',
+  gridLine:'rgba(0,217,255,0.035)',flowLine:'rgba(0,217,255,0.18)',
+  bnBg:'rgba(255,107,74,0.14)',bnStroke:'rgba(255,107,74,0.82)',
+  starvedBg:'rgba(245,166,35,0.06)',starvedStroke:'rgba(245,166,35,0.7)',
+  blockedBg:'rgba(255,107,74,0.06)',blockedStroke:'rgba(255,107,74,0.6)',
+  downBg:'rgba(245,166,35,0.12)',downStroke:'rgba(245,166,35,0.9)',
 };
-
-// ─── STEP MANAGEMENT ─────────────────────────────────────────────────────────
-
-function addStep() {
-  const name = document.getElementById('new-name').value.trim();
-  const ct   = parseFloat(document.getElementById('new-ct').value);
-  const wt   = parseFloat(document.getElementById('new-wt').value) || 0;
-  const inv  = parseInt(document.getElementById('new-inv').value)   || 0;
-
-  if (!name) {
-    document.getElementById('new-name').focus();
-    highlight('new-name');
-    return;
+// =====================================================================
+// TABS
+// =====================================================================
+function switchTab(t){activeTab=t;document.getElementById('panel-ai').style.display=t==='ai'?'block':'none';document.getElementById('panel-manual').style.display=t==='manual'?'block':'none';document.getElementById('tab-ai').classList.toggle('active',t==='ai');document.getElementById('tab-manual').classList.toggle('active',t==='manual');}
+function switchCanvasTab(t){canvasTab=t;document.getElementById('panel-flowmap').style.display=t==='flowmap'?'block':'none';document.getElementById('panel-livesim').style.display=t==='livesim'?'block':'none';document.getElementById('tab-flowmap').classList.toggle('active',t==='flowmap');document.getElementById('tab-livesim').classList.toggle('active',t==='livesim');if(t==='livesim'){resizeSimCanvas();renderSimStationPanel();renderSimDowntimePanel();}}
+// =====================================================================
+// AI PARSE
+// =====================================================================
+async function aiParse(){
+  const text=document.getElementById('ai-input').value.trim();
+  if(!text){setParseStatus('error','Describe your process first.');return;}
+  const btn=document.getElementById('parse-btn');btn.disabled=true;
+  setParseStatus('loading','Parsing your process...');
+  try{
+    const res=await fetch('/api/parse',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})});
+    const data=await res.json();
+    if(!res.ok||!data.ok)throw new Error(data.error||`Server error ${res.status}`);
+    parsedData=data.data;parsedInsights=computeInsights(parsedData);
+    setParseStatus('success',`Parsed ${parsedData.stations.length} stations. Review analysis below.`);
+    renderInsights(parsedData,parsedInsights);
+  }catch(e){setParseStatus('error',`Parse failed: ${e.message}`);}
+  finally{btn.disabled=false;}
+}
+function setParseStatus(type,msg){const el=document.getElementById('parse-status');const colors={loading:'var(--cyan)',error:'var(--coral)',success:'var(--green)'};const prefix=type==='loading'?'<span class="spinner"></span>':type==='error'?'&#10007; ':'&#10003; ';el.innerHTML=`<span style="color:${colors[type]};font-size:.82rem">${prefix}${esc(msg)}</span>`;}
+function loadAIExample(){document.getElementById('ai-input').value='We need to make 300 units per day. We run 24 hours a day.\n\n- Core Build (1 station): We do one at a time and batch them in groups of 20 and can do 20 per hour.\n- Furnace (6): They can handle a batch of 20 at a time and take 4 hours process time in the furnace.\n- IsoPress (1): The operator can handle 40 per hour. This machine frequently goes down for 2-3 hours.\n- Oven (2): The oven can take the full batch of 20 and take 3 hours to process. The Ovens are the bottleneck and need to run all the time.\n- Final Assembly (4): Units done individually, not batched. Each station can do 20 per hour.\n- Test (2): Can handle 30 per hour.';}
+// =====================================================================
+// MATH ENGINE
+// =====================================================================
+function computeInsights(p){
+  const stations=p.stations.map(s=>({...s,totalRateHr:s.count*s.ratePerHrPerUnit}));
+  const bottleneck=stations.reduce((b,s)=>s.totalRateHr<b.totalRateHr?s:b);
+  const shiftHrsNeeded=p.demand/bottleneck.totalRateHr;
+  const actualShift=p.shiftHours||Math.ceil(shiftHrsNeeded);
+  const requiredHr=p.demand/actualShift,taktHr=actualShift/p.demand,taktMin=taktHr*60;
+  const dailyOutput=bottleneck.totalRateHr*actualShift,feasible=dailyOutput>=p.demand-0.01;
+  const sysRate=Math.min(requiredHr,bottleneck.totalRateHr);
+  const utilizations=stations.map(s=>({...s,util:sysRate/s.totalRateHr,isBottleneck:s.name===bottleneck.name}));
+  const buffers=stations.map((s,i)=>{
+    if(i===0)return{swip:s.batchSize||1,reasoning:'Launch batch'};
+    let swip=s.batchSize||1,reasoning=`1 batch minimum (${swip} units)`;
+    const prev=stations[i-1];
+    if(prev.downtime){const dt=prev.downtime.maxHr,needed=s.totalRateHr*dt,cand=Math.ceil(needed/(s.batchSize||1))*(s.batchSize||1);if(cand>swip){swip=cand;reasoning=`Covers ${dt}hr ${prev.name} downtime (${needed.toFixed(0)} units consumed)`;}}
+    if(s.name===bottleneck.name){for(let u=0;u<i;u++){if(stations[u].downtime){const dt=stations[u].downtime.maxHr,needed=s.totalRateHr*dt,cand=Math.ceil(needed/(s.batchSize||1))*(s.batchSize||1);if(cand>swip){swip=cand;reasoning=`DBR: protects drum from ${stations[u].name} downtime (${dt}hr x ${s.totalRateHr.toFixed(1)}/hr = ${needed.toFixed(0)} units)`;}}}}
+    return{swip,reasoning};
+  });
+  const downtimeImpacts=[];
+  stations.forEach((s,i)=>{if(!s.downtime||i>=stations.length-1)return;const next=stations[i+1],bufHr=buffers[i+1].swip/next.totalRateHr,dt=s.downtime.maxHr,starvHr=Math.max(0,dt-bufHr);downtimeImpacts.push({station:s.name,nextStation:next.name,dtMin:s.downtime.minHr,dtMax:dt,bufHr,swip:buffers[i+1].swip,starvationHr:starvHr,lostOutput:starvHr*next.totalRateHr,pctDemand:starvHr*next.totalRateHr/p.demand*100});});
+  return{stations,utilizations,bottleneck,requiredHr,sysRate,shiftHoursNeeded:shiftHrsNeeded,actualShiftHrs:actualShift,taktHr,taktMin,dailyOutput,feasible,buffers,downtimeImpacts,deficit:p.demand-dailyOutput};
+}
+// =====================================================================
+// RENDER INSIGHTS
+// =====================================================================
+function renderInsights(p,ins){
+  const section=document.getElementById('insights-section'),content=document.getElementById('insights-content');
+  const taktLabel=ins.taktMin<1?`${(ins.taktMin*60).toFixed(0)} sec`:ins.taktMin<60?`${ins.taktMin.toFixed(1)} min`:`${ins.taktHr.toFixed(2)} hr`;
+  let bannerCls,bannerIcon,bannerTitle,bannerBody;
+  if(ins.feasible){bannerCls='fb-ok';bannerIcon='&#9989;';bannerTitle=`Feasible &mdash; ${ins.dailyOutput.toFixed(0)} units/day at ${ins.actualShiftHrs}hr shift`;bannerBody=`Your bottleneck (${esc(ins.bottleneck.name)}) runs at ${ins.bottleneck.totalRateHr.toFixed(1)} units/hr. At ${ins.actualShiftHrs} hours that yields ${ins.dailyOutput.toFixed(0)} units vs ${p.demand} demanded.`;}
+  else if(ins.shiftHoursNeeded<=24){bannerCls='fb-warn';bannerIcon='&#9888;&#65039;';bannerTitle=`Not feasible on ${ins.actualShiftHrs}hr shift &mdash; need ${ins.shiftHoursNeeded.toFixed(1)} hours`;bannerBody=`${esc(ins.bottleneck.name)} at ${ins.bottleneck.totalRateHr.toFixed(1)}/hr is the ceiling. To hit ${p.demand}/day you need ${ins.shiftHoursNeeded.toFixed(1)} hours, or add capacity.`;}
+  else{bannerCls='fb-bad';bannerIcon='&#128683;';bannerTitle=`Cannot meet demand &mdash; max output ${ins.dailyOutput.toFixed(0)} units/day (24hr)`;bannerBody=`Even at 24hr, ${esc(ins.bottleneck.name)} at ${ins.bottleneck.totalRateHr.toFixed(1)}/hr only produces ${(ins.bottleneck.totalRateHr*24).toFixed(0)} units.`;}
+  const stRows=ins.utilizations.map((s,i)=>{const up=(s.util*100).toFixed(1),bc=s.util>0.9?'#FF6B4A':s.util>0.7?'#F5A623':'#4ade80',bCls=s.isBottleneck?'sb-bn':s.util>0.9?'sb-crit':s.util>0.7?'sb-warn':'sb-ok',bLabel=s.isBottleneck?'BOTTLENECK':s.util>0.85?'CONSTRAINT':'OK',dtTag=s.downtime?` <span class="status-badge sb-warn" style="font-size:.55rem">&#9889; DOWNTIME RISK</span>`:'',trCls=s.isBottleneck?'class="bn-row"':'';return`<tr ${trCls}><td><strong>${esc(s.name)}</strong>${dtTag}</td><td style="color:var(--muted)">${s.count} x ${s.ratePerHrPerUnit.toFixed(2)}/hr</td><td style="color:var(--cyan);font-weight:700">${s.totalRateHr.toFixed(2)}/hr</td><td><span class="util-bar-wrap"><span class="util-bar" style="width:${Math.min(100,s.util*100).toFixed(0)}%;background:${bc}"></span></span><span style="color:${bc};font-weight:700">${up}%</span></td><td><span class="status-badge ${bCls}">${bLabel}</span></td></tr>`;}).join('');
+  const bufHtml=ins.buffers.map((b,i)=>{const s=ins.stations[i];if(i===0)return`<div class="buffer-row" style="border:1px solid rgba(0,217,255,.12);background:rgba(0,217,255,.03)"><div class="buffer-icon">&#127937;</div><div class="buffer-row-info"><div class="buffer-row-title">Before ${esc(s.name)}</div><div class="buffer-row-detail">${esc(b.reasoning)}</div></div><div class="buffer-swip"><div class="buffer-swip-val" style="color:var(--cyan)">${b.swip}</div><div class="buffer-swip-label">units</div></div></div>`;const prev=ins.stations[i-1],isCrit=ins.bottleneck.name===s.name||(prev.downtime!=null),bc=isCrit?'rgba(255,107,74,.25)':'rgba(245,166,35,.15)',bg=isCrit?'rgba(255,107,74,.05)':'rgba(245,166,35,.05)';return`<div class="buffer-row" style="border:1px solid ${bc};background:${bg}"><div class="buffer-icon">&#9661;</div><div class="buffer-row-info"><div class="buffer-row-title">${esc(prev.name)} &rarr; ${esc(s.name)}</div><div class="buffer-row-detail">${esc(b.reasoning)}</div></div><div class="buffer-swip"><div class="buffer-swip-val">${b.swip}</div><div class="buffer-swip-label">SWIP units</div></div></div>`;}).join('');
+  let dtHtml='';ins.downtimeImpacts.forEach(d=>{if(d.starvationHr>0){dtHtml+=`<div class="downtime-alert"><div class="downtime-alert-title">&#9888; ${esc(d.nextStation)} starvation risk &mdash; ${esc(d.station)} downtime</div><div class="downtime-alert-body">When ${esc(d.station)} goes down (${d.dtMin}&ndash;${d.dtMax} hrs), the ${d.swip}-unit buffer lasts <strong>${d.bufHr.toFixed(1)} hours</strong>. A ${d.dtMax}hr outage starves ${esc(d.nextStation)} for <strong>${d.starvationHr.toFixed(1)} hours</strong>, costing <strong>${d.lostOutput.toFixed(0)} units</strong> (${d.pctDemand.toFixed(0)}% of daily demand).</div></div>`;}else{dtHtml+=`<div class="downtime-alert ok-alert"><div class="downtime-alert-title">&#10003; ${esc(d.station)} downtime absorbed</div><div class="downtime-alert-body">The ${d.swip}-unit buffer covers worst-case ${d.dtMax}hr outage with ${(d.bufHr-d.dtMax).toFixed(1)} hrs spare.</div></div>`;}});
+  content.innerHTML=`<div class="feasibility-banner ${bannerCls}" style="margin-bottom:20px"><div class="fb-icon">${bannerIcon}</div><div class="fb-text"><div class="fb-title">${bannerTitle}</div><div>${bannerBody}</div></div></div><div class="insights-grid"><div class="insight-stat"><div class="insight-stat-label">Takt Time</div><div class="insight-stat-value is-cyan">${taktLabel} / unit</div><div class="insight-stat-sub">${p.demand} units / ${ins.actualShiftHrs}hr shift</div></div><div class="insight-stat"><div class="insight-stat-label">System Bottleneck</div><div class="insight-stat-value is-bad">${esc(ins.bottleneck.name)}</div><div class="insight-stat-sub">${ins.bottleneck.totalRateHr.toFixed(1)}/hr &mdash; ${(ins.utilizations.find(u=>u.name===ins.bottleneck.name).util*100).toFixed(1)}% utilization</div></div><div class="insight-stat"><div class="insight-stat-label">Max Daily Output</div><div class="insight-stat-value ${ins.feasible?'is-good':'is-bad'}">${ins.dailyOutput.toFixed(0)} units</div><div class="insight-stat-sub">${ins.feasible?`Meets demand of ${p.demand}`:`${Math.abs(ins.deficit).toFixed(0)} unit shortfall vs ${p.demand}`}</div></div><div class="insight-stat"><div class="insight-stat-label">Shift Hours Required</div><div class="insight-stat-value ${ins.shiftHoursNeeded<=8?'is-good':ins.shiftHoursNeeded<=16?'is-warn':'is-bad'}">${ins.shiftHoursNeeded.toFixed(1)} hrs</div><div class="insight-stat-sub">To hit ${p.demand} units at current capacity</div></div></div><div class="card" style="margin-bottom:16px"><div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Station Throughput &amp; Utilization</div><div class="tbl-wrap"><table class="insight-tbl"><thead><tr><th>Station</th><th>Capacity</th><th>Total Rate</th><th>Utilization</th><th>Status</th></tr></thead><tbody>${stRows}</tbody></table></div></div><div class="card" style="margin-bottom:16px"><div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">SWIP &amp; Buffer Recommendations</div><div style="font-size:.78rem;color:var(--muted);margin-bottom:14px">Sized using Drum-Buffer-Rope logic &mdash; protect the bottleneck from upstream variability.</div><div class="buffer-rows">${bufHtml}</div></div>${dtHtml?`<div style="margin-bottom:16px">${dtHtml}</div>`:''}<div class="insights-apply-row"><button class="btn btn-green" onclick="applyParsedToVSM()">&#8594; Load into Flow Map</button><span class="insights-apply-note">Populates the flow map and live simulation using inferred rates and recommended SWIP buffers.</span></div>`;
+  section.style.display='block';section.scrollIntoView({behavior:'smooth',block:'start'});
+}
+// =====================================================================
+// APPLY PARSED -> VSM + SIM
+// =====================================================================
+function applyParsedToVSM(){
+  if(!parsedData||!parsedInsights)return;
+  const p=parsedData,ins=parsedInsights;
+  document.getElementById('process-name').value=p.processName||'Parsed Process';
+  document.getElementById('avail-time').value=ins.actualShiftHrs;
+  document.getElementById('demand').value=p.demand;
+  document.getElementById('time-unit').value='hr';
+  steps=[];futureSteps=[];nextId=1;
+  ins.stations.forEach((s,i)=>{
+    const processTime=parseFloat((1/s.totalRateHr).toFixed(4));
+    const waitTime=i>0?parseFloat((ins.buffers[i].swip/ins.stations[i-1].totalRateHr).toFixed(4)):0;
+    const step={id:nextId++,name:s.name,processTime,waitTime,inventory:ins.buffers[i].swip};
+    steps.push(step);futureSteps.push({...step});
+  });
+  simParams={
+    stations:ins.stations.map((s,i)=>({name:s.name,ratePerHr:s.totalRateHr,bufferCap:ins.buffers[i].swip,hasDowntime:!!(s.downtime),dtMin:s.downtime?s.downtime.minHr:2,dtMax:s.downtime?s.downtime.maxHr:3})),
+    demandPerDay:p.demand,shiftHours:ins.actualShiftHrs,taktMin:ins.taktMin
+  };
+  initSim();switchTab('manual');refresh();
+  setTimeout(()=>{switchCanvasTab('livesim');document.getElementById('current-section').scrollIntoView({behavior:'smooth',block:'start'});},250);
+}
+// =====================================================================
+// SIMULATION ENGINE
+// =====================================================================
+function initSim(){
+  if(!simParams||!simParams.stations.length)return;
+  const n=simParams.stations.length;
+  simState={
+    buffers:simParams.stations.map(s=>s.bufferCap),
+    stationStates:Array(n).fill(SS_RUNNING),
+    dtCountdown:Array(n).fill(0),dtActive:Array(n).fill(false),
+    totalOutput:0,lostOutput:0,simTimeHrs:0,starvationEvents:0,
+    wasStarvedLast:Array(n).fill(false),
+  };
+  simParticles=[];simSpawn=Array(n).fill(0);simLast=null;
+  updateSimCounters();
+}
+function resetSim(){
+  simRunning=false;
+  const btn=document.getElementById('sim-play-btn');
+  if(btn){btn.textContent='&#9654; Start';btn.className='btn btn-primary btn-sm';}
+  initSim();renderSimStationPanel();
+}
+function toggleSim(){
+  simRunning=!simRunning;
+  const btn=document.getElementById('sim-play-btn');
+  if(simRunning){btn.innerHTML='&#9646;&#9646; Pause';btn.className='btn btn-amber btn-sm';simLast=null;}
+  else{btn.innerHTML='&#9654; Start';btn.className='btn btn-primary btn-sm';}
+}
+function onSimSpeedChange(){simSpeed=parseInt(document.getElementById('sim-speed').value);document.getElementById('sim-speed-label').textContent=simSpeed+'x';}
+function triggerDowntime(idx){
+  if(!simState||!simRunning){alert('Start the simulation first, then trigger downtime.');return;}
+  const s=simParams.stations[idx];
+  const dt=s.dtMin+Math.random()*(s.dtMax-s.dtMin);
+  simState.dtCountdown[idx]=dt;simState.dtActive[idx]=true;
+}
+function stepSimulation(dtReal_ms){
+  if(!simState||!simParams)return;
+  const dtHr=dtReal_ms*simSpeed/3600000;
+  const n=simParams.stations.length;
+  simState.simTimeHrs+=dtHr;
+  // Advance downtime
+  for(let i=0;i<n;i++){if(simState.dtActive[i]){simState.dtCountdown[i]-=dtHr;if(simState.dtCountdown[i]<=0){simState.dtCountdown[i]=0;simState.dtActive[i]=false;}}}
+  const newBufs=[...simState.buffers];
+  // Process each station
+  for(let i=0;i<n;i++){
+    const s=simParams.stations[i];
+    const isDown=simState.dtActive[i];
+    const upstreamOk=i===0?true:newBufs[i-1]>0.001;
+    const downstreamOk=i===n-1?true:newBufs[i]<s.bufferCap-0.001;
+    let state;
+    if(isDown)state=SS_DOWN;
+    else if(!upstreamOk)state=SS_STARVED;
+    else if(!downstreamOk)state=SS_BLOCKED;
+    else state=SS_RUNNING;
+    simState.stationStates[i]=state;
+    if(state!==SS_RUNNING)continue;
+    const produced=s.ratePerHr*dtHr;
+    if(i>0)newBufs[i-1]=Math.max(0,newBufs[i-1]-produced);
+    if(i<n-1)newBufs[i]=Math.min(s.bufferCap,newBufs[i]+produced);
+    else simState.totalOutput+=produced;
   }
-  if (!ct || ct <= 0) {
-    document.getElementById('new-ct').focus();
-    highlight('new-ct');
-    return;
-  }
-
-  const step = { id: nextId++, name, processTime: ct, waitTime: wt, inventory: inv };
-  steps.push(step);
-  futureSteps.push({ ...step });
-
-  // Clear form (keep wait/inv at 0 as sensible defaults)
-  document.getElementById('new-name').value = '';
-  document.getElementById('new-ct').value   = '';
-  document.getElementById('new-wt').value   = '0';
-  document.getElementById('new-inv').value  = '0';
-  document.getElementById('new-name').focus();
-
-  refresh();
+  // Lost output: last station not running
+  const lastState=simState.stationStates[n-1];
+  if(lastState===SS_STARVED||lastState===SS_DOWN){
+    simState.lostOutput+=simParams.stations[n-1].ratePerHr*dtHr;
+    if(!simState.wasStarvedLast[n-1]){simState.starvationEvents++;simState.wasStarvedLast[n-1]=true;}
+  }else{simState.wasStarvedLast[n-1]=false;}
+  // Mark bottleneck: lowest-rate running station
+  let minRate=Infinity,bnIdx=-1;
+  for(let i=0;i<n;i++){if(simState.stationStates[i]===SS_RUNNING&&simParams.stations[i].ratePerHr<minRate){minRate=simParams.stations[i].ratePerHr;bnIdx=i;}}
+  if(bnIdx>=0)simState.stationStates[bnIdx]=SS_BOTTLENECK;
+  simState.buffers=newBufs;
 }
-
-function removeStep(id) {
-  steps       = steps.filter(s => s.id !== id);
-  futureSteps = futureSteps.filter(s => s.id !== id);
-  resetParticles();
-  refresh();
+// =====================================================================
+// SIM CANVAS
+// =====================================================================
+function drawSimCanvas(){
+  const canvas=document.getElementById('sim-canvas');
+  if(!canvas||!simParams||!simState)return;
+  const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='rgba(8,12,18,0.96)';ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle=C.gridLine;ctx.lineWidth=1;
+  for(let yy=0;yy<H;yy+=40){ctx.beginPath();ctx.moveTo(0,yy);ctx.lineTo(W,yy);ctx.stroke();}
+  const n=simParams.stations.length,layout=computeSimLayout(W,n);
+  if(!layout)return;
+  const flowEnd=layout[n-1].boxX+layout[n-1].boxW;
+  ctx.strokeStyle=C.flowLine;ctx.lineWidth=2;ctx.setLineDash([]);
+  ctx.beginPath();ctx.moveTo(PAD-12,FLOW_Y);ctx.lineTo(flowEnd+10,FLOW_Y);ctx.stroke();
+  ctx.fillStyle=C.muted;ctx.font='bold 8px sans-serif';ctx.textAlign='right';ctx.fillText('IN',PAD-15,FLOW_Y+4);
+  arrow(ctx,flowEnd+5,FLOW_Y,flowEnd+22,FLOW_Y,C.cyan,2);
+  ctx.fillStyle=C.muted;ctx.textAlign='left';ctx.fillText('OUT',flowEnd+26,FLOW_Y+4);
+  layout.forEach((col,i)=>{
+    const st=simParams.stations[i],state=simState.stationStates[i];
+    // Buffer BEFORE this station = buffers[i-1] (index i-1 in our array means "output buffer of station i-1")
+    const buf=i>0?simState.buffers[i-1]:simParams.stations[0].bufferCap;
+    const bufCap=i>0?simParams.stations[i-1].bufferCap:simParams.stations[0].bufferCap;
+    const bufFill=bufCap>0?Math.min(1,buf/bufCap):1;
+    const{waitX,waitW,boxX,boxW}=col;
+    // Buffer zone
+    if(waitW>0&&i>0){
+      ctx.fillStyle=C.waitBg;ctx.fillRect(waitX,BOX_TOP,waitW,BOX_H);
+      ctx.strokeStyle=C.waitBdr;ctx.lineWidth=1;ctx.setLineDash([3,3]);ctx.strokeRect(waitX+.5,BOX_TOP+.5,waitW-1,BOX_H-1);ctx.setLineDash([]);
+      const tx=waitX+waitW/2,tcy=BOX_TOP+BOX_H*.32,tr=Math.min(18,waitW*.32);
+      const bufColor=bufFill>0.5?C.green:bufFill>0.15?C.amber:C.coral;
+      // Outline triangle
+      ctx.strokeStyle=C.amber;ctx.lineWidth=1.5;ctx.fillStyle='rgba(0,0,0,0)';
+      ctx.beginPath();ctx.moveTo(tx-tr,tcy);ctx.lineTo(tx+tr,tcy);ctx.lineTo(tx,tcy+tr*1.3);ctx.closePath();ctx.stroke();
+      // Filled portion
+      if(bufFill>0.01&&tr>4){
+        ctx.save();ctx.beginPath();ctx.moveTo(tx-tr,tcy);ctx.lineTo(tx+tr,tcy);ctx.lineTo(tx,tcy+tr*1.3);ctx.closePath();ctx.clip();
+        const fillH=tr*1.3*bufFill,fillTop=tcy+tr*1.3-fillH;
+        ctx.fillStyle=bufColor+'99';ctx.fillRect(tx-tr,fillTop,tr*2,fillH);ctx.restore();
+      }
+      if(tr>=8){ctx.fillStyle='rgba(255,255,255,0.85)';ctx.font=`bold ${Math.min(10,Math.max(7,tr*.6))}px sans-serif`;ctx.textAlign='center';ctx.fillText(Math.round(buf),tx,tcy+tr*.7);}
+      if(waitW>35){ctx.fillStyle=bufFill>0.5?C.green:bufFill>0.15?C.amber:C.coral;ctx.font='8px sans-serif';ctx.textAlign='center';ctx.fillText(Math.round(bufFill*100)+'%',tx,BOX_TOP+BOX_H-6);}
+    }
+    // Process box
+    const bx=boxX+3,by=BOX_TOP+2,bw=boxW-6,bh=BOX_H-4,br=6;
+    let boxFill,boxStroke,glowColor,glowBlur;
+    if(state===SS_DOWN){boxFill=C.downBg;boxStroke=C.downStroke;glowColor='rgba(245,166,35,0.5)';glowBlur=18;}
+    else if(state===SS_STARVED){boxFill=C.starvedBg;boxStroke=C.starvedStroke;glowColor='rgba(245,166,35,0.3)';glowBlur=10;}
+    else if(state===SS_BLOCKED){boxFill=C.blockedBg;boxStroke=C.blockedStroke;glowColor='rgba(255,107,74,0.3)';glowBlur=10;}
+    else if(state===SS_BOTTLENECK){boxFill=C.bnBg;boxStroke=C.bnStroke;glowColor='rgba(255,107,74,0.5)';glowBlur=18;}
+    else{boxFill=C.boxBg;boxStroke=C.boxStroke;glowColor='rgba(0,217,255,0.22)';glowBlur=12;}
+    ctx.globalAlpha=(state===SS_STARVED||state===SS_BLOCKED)?0.55:1.0;
+    ctx.shadowColor=glowColor;ctx.shadowBlur=glowBlur;
+    rr(ctx,bx,by,bw,bh,br);ctx.fillStyle=boxFill;ctx.fill();
+    ctx.shadowBlur=0;rr(ctx,bx,by,bw,bh,br);ctx.strokeStyle=boxStroke;ctx.lineWidth=state===SS_BOTTLENECK?2.5:1.5;ctx.stroke();
+    ctx.globalAlpha=1.0;
+    // Machine icon
+    const ix=bx+14,iy=by+13;
+    ctx.beginPath();ctx.arc(ix,iy,9,0,Math.PI*2);ctx.fillStyle=state===SS_BOTTLENECK?'rgba(255,107,74,0.25)':state===SS_DOWN?'rgba(245,166,35,0.25)':'rgba(0,217,255,0.15)';ctx.fill();
+    ctx.strokeStyle=state===SS_BOTTLENECK?'rgba(255,107,74,0.7)':state===SS_DOWN?'rgba(245,166,35,0.7)':'rgba(0,217,255,0.5)';ctx.lineWidth=1.5;ctx.stroke();
+    ctx.beginPath();ctx.arc(ix,iy,4,0,Math.PI*2);ctx.fillStyle=state===SS_BOTTLENECK?'rgba(255,107,74,0.5)':state===SS_DOWN?'rgba(245,166,35,0.5)':'rgba(0,217,255,0.4)';ctx.fill();
+    // Name
+    const maxCh=Math.max(4,Math.floor(bw/7.5));
+    ctx.fillStyle=(state===SS_STARVED||state===SS_BLOCKED)?C.muted:C.text;
+    ctx.font=`bold ${Math.min(12,Math.max(9,bw/9))}px sans-serif`;ctx.textAlign='center';
+    ctx.fillText(trunc(st.name,maxCh),boxX+boxW/2,by+36);
+    // Rate
+    ctx.font='9px monospace';ctx.textAlign='center';
+    ctx.fillStyle=state===SS_BOTTLENECK?C.coral:state===SS_DOWN?C.amber:C.cyan;
+    ctx.fillText(st.ratePerHr.toFixed(1)+'/hr',boxX+boxW/2,by+51);
+    // State label
+    if(bw>50){
+      ctx.font='bold 8px sans-serif';ctx.textAlign='center';
+      if(state===SS_STARVED){ctx.fillStyle=C.amber;ctx.fillText('▼ STARVED',boxX+boxW/2,by+66);}
+      else if(state===SS_BLOCKED){ctx.fillStyle=C.coral;ctx.fillText('▲ BLOCKED',boxX+boxW/2,by+66);}
+      else if(state===SS_BOTTLENECK){ctx.fillStyle=C.coral;ctx.fillText('▲ BOTTLENECK',boxX+boxW/2,by+66);}
+      else if(state===SS_DOWN){ctx.fillStyle=C.amber;const rem=simState.dtCountdown[i];ctx.fillText('⚡ DOWN '+(rem>0?rem.toFixed(1)+'h':''),boxX+boxW/2,by+66);}
+    }
+    // Downtime pulse border
+    if(state===SS_DOWN){const pulse=0.4+0.6*Math.abs(Math.sin(Date.now()/400));ctx.strokeStyle=`rgba(245,166,35,${pulse})`;ctx.lineWidth=3;rr(ctx,bx-1,by-1,bw+2,bh+2,br+1);ctx.stroke();}
+    // Connector
+    if(i<n-1){const next=layout[i+1],ax=boxX+boxW+1,bxx=next.waitX-1;if(bxx>ax+4){ctx.strokeStyle='rgba(0,217,255,0.2)';ctx.lineWidth=1.5;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(ax,FLOW_Y);ctx.lineTo(bxx,FLOW_Y);ctx.stroke();ctx.setLineDash([]);}}
+    // Timeline
+    const g2=ctx.createLinearGradient(boxX,0,boxX+boxW,0);
+    if(state===SS_BOTTLENECK){g2.addColorStop(0,'rgba(255,107,74,0.4)');g2.addColorStop(1,'rgba(255,107,74,0.6)');}
+    else if(state===SS_DOWN||state===SS_STARVED||state===SS_BLOCKED){g2.addColorStop(0,'rgba(245,166,35,0.2)');g2.addColorStop(1,'rgba(245,166,35,0.3)');}
+    else{g2.addColorStop(0,'rgba(0,102,204,0.45)');g2.addColorStop(1,'rgba(0,217,255,0.45)');}
+    ctx.fillStyle=g2;ctx.fillRect(boxX,TL_TOP,boxW,TL_H);
+    ctx.strokeStyle='rgba(255,255,255,.06)';ctx.lineWidth=1;ctx.strokeRect(boxX,TL_TOP,boxW,TL_H);
+    if(boxW>20){ctx.fillStyle=state===SS_BOTTLENECK?C.coral:state===SS_DOWN||state===SS_STARVED?C.amber:C.cyan;ctx.font='7px sans-serif';ctx.textAlign='center';ctx.fillText(state===SS_RUNNING||state===SS_BOTTLENECK?'VA':'—',boxX+boxW/2,LBL_Y);}
+  });
+  ctx.fillStyle=C.muted;ctx.font='8px sans-serif';ctx.textAlign='left';ctx.fillText('Timeline',layout[0].boxX,TL_TOP-4);
+  ctx.shadowBlur=0;
+  // Particles
+  layout.forEach((col,i)=>{
+    const state=simState.stationStates[i];
+    if(state!==SS_RUNNING&&state!==SS_BOTTLENECK)return;
+    simSpawn[i]=(simSpawn[i]||0)+1;
+    if(simSpawn[i]>14){simSpawn[i]=0;simParticles.push({x:col.boxX,y:FLOW_Y,vx:col.boxW/85,age:0,maxAge:85,i});}
+  });
+  simParticles=simParticles.filter(p=>{
+    p.x+=p.vx;p.age++;
+    if(p.age>p.maxAge||p.x>layout[p.i].boxX+layout[p.i].boxW+5)return false;
+    const alpha=Math.max(0,1-p.age/p.maxAge);
+    ctx.shadowColor='rgba(0,217,255,0.7)';ctx.shadowBlur=10;
+    ctx.beginPath();ctx.arc(p.x,p.y,5,0,Math.PI*2);ctx.fillStyle=`rgba(0,217,255,${alpha})`;ctx.fill();
+    ctx.shadowBlur=0;ctx.beginPath();ctx.arc(p.x,p.y,2,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${alpha*.9})`;ctx.fill();
+    return true;
+  });
+  ctx.shadowBlur=0;
 }
-
-function resetFuture() {
-  futureSteps = steps.map(s => ({ ...s }));
-  resetParticles();
-  renderFutureTable();
-  updateMetrics();
-  renderComparison();
+function computeSimLayout(W,n){
+  if(n===0)return null;
+  const drawable=W-PAD*2,slotW=drawable/n;
+  return Array.from({length:n},(_,i)=>{const wW=i===0?0:Math.max(MIN_WAIT,slotW*0.42),bW=Math.max(MIN_BOX,slotW-wW);return{waitX:PAD+i*slotW,waitW:wW,boxX:PAD+i*slotW+wW,boxW:bW};});
 }
-
-function updateFuture(id, field, rawVal) {
-  const idx = futureSteps.findIndex(s => s.id === id);
-  if (idx < 0) return;
-  const val = field === 'inventory' ? parseInt(rawVal) || 0 : parseFloat(rawVal) || 0;
-  futureSteps[idx][field] = val;
-  // Update delta cell only
-  const cs = steps[idx];
-  const fs = futureSteps[idx];
-  const cell = document.getElementById('delta-' + id);
-  if (cell) cell.innerHTML = deltaHtml(cs, fs);
-  // Reset future particles (flow changed)
-  fParticles = []; fSpawn.t = 0;
-  updateMetrics();
-  renderComparison();
-}
-
-// ─── RENDER UI ───────────────────────────────────────────────────────────────
-
-function refresh() {
-  renderStepsList();
-  renderFutureTable();
-  const hasStes = steps.length > 0;
-  document.getElementById('current-section').style.display = hasStes ? 'block' : 'none';
-  document.getElementById('future-section').style.display  = hasStes ? 'block' : 'none';
-  if (hasStes) {
-    resizeCanvases();
-    updateMetrics();
-    renderComparison();
-  }
-}
-
-function renderStepsList() {
-  const el = document.getElementById('steps-list');
-  if (steps.length === 0) {
-    el.innerHTML = '<div class="empty-state">No steps yet. Add your first step above or load the example.</div>';
-    return;
-  }
-  const u = unit();
-  el.innerHTML = steps.map((s, i) => `
-    <div class="step-item">
-      <div class="step-number">${i+1}</div>
-      <div class="step-item-name">${esc(s.name)}</div>
-      <div class="step-item-meta">
-        <span class="meta-ct">CT: ${s.processTime}${u}</span>
-        <span class="meta-wt">Wait: ${s.waitTime}${u}</span>
-        <span>INV: ${s.inventory}</span>
-      </div>
-      <div class="step-actions">
-        <button class="btn btn-danger btn-sm" onclick="removeStep(${s.id})">✕</button>
-      </div>
-    </div>
-  `).join('');
-}
-
-function renderFutureTable() {
-  const tbody = document.getElementById('future-tbody');
-  if (futureSteps.length === 0) { tbody.innerHTML = ''; return; }
-  const u = unit();
-  tbody.innerHTML = futureSteps.map((fs, i) => {
-    const cs = steps[i];
-    return `
-      <tr>
-        <td style="font-weight:600">${esc(fs.name)}</td>
-        <td>
-          <input type="number" value="${fs.processTime}" min="0.1" step="0.1"
-            style="width:78px"
-            onchange="updateFuture(${fs.id},'processTime',this.value)">
-          <span style="font-size:0.75rem;color:var(--muted)"> ${u}</span>
-        </td>
-        <td>
-          <input type="number" value="${fs.waitTime}" min="0" step="0.1"
-            style="width:78px"
-            onchange="updateFuture(${fs.id},'waitTime',this.value)">
-          <span style="font-size:0.75rem;color:var(--muted)"> ${u}</span>
-        </td>
-        <td>
-          <input type="number" value="${fs.inventory}" min="0"
-            style="width:64px"
-            onchange="updateFuture(${fs.id},'inventory',this.value)">
-        </td>
-        <td id="delta-${fs.id}">${deltaHtml(cs, fs)}</td>
-      </tr>
-    `;
+function resizeSimCanvas(){const canvas=document.getElementById('sim-canvas');if(!canvas)return;const wrapper=canvas.parentElement,cW=wrapper.clientWidth||800,n=simParams?simParams.stations.length:4;canvas.width=Math.max(cW,n*MIN_BOX+PAD*2+100);canvas.height=CANVAS_H;}
+// =====================================================================
+// SIM UI PANELS
+// =====================================================================
+function renderSimStationPanel(){
+  const panel=document.getElementById('sim-station-panel');
+  if(!panel||!simParams)return;
+  panel.innerHTML=simParams.stations.map((s,i)=>{
+    const state=simState?simState.stationStates[i]:SS_RUNNING;
+    const buf=simState?(i>0?simState.buffers[i-1]:s.bufferCap):s.bufferCap;
+    const cap=i>0?simParams.stations[i-1].bufferCap:s.bufferCap;
+    const pct=cap>0?Math.min(100,Math.round(buf/cap*100)):100;
+    const bc=pct>50?'#4ade80':pct>15?'#F5A623':'#FF6B4A';
+    return`<div class="sim-station-card" id="ssc-${i}"><div class="ssc-name" title="${esc(s.name)}">${esc(s.name)}</div><div class="ssc-state ${state.toLowerCase()}" id="ssc-state-${i}">${state}</div><div class="ssc-buf-wrap"><div class="ssc-buf-bar" id="ssc-bar-${i}" style="width:${pct}%;background:${bc}"></div></div><div class="ssc-buf-label" id="ssc-buf-${i}">${i===0?'Feed':'Buffer'}: ${Math.round(buf)}/${cap} units</div></div>`;
   }).join('');
 }
-
-function deltaHtml(cs, fs) {
-  const parts = [];
-  const ctd = fs.processTime - cs.processTime;
-  const wtd = fs.waitTime    - cs.waitTime;
-  if (Math.abs(ctd) > 0.001) {
-    const cls = ctd < 0 ? 'd-good' : 'd-bad';
-    parts.push(`<span class="delta ${cls}">CT: ${ctd > 0 ? '+' : ''}${ctd.toFixed(1)}</span>`);
-  }
-  if (Math.abs(wtd) > 0.001) {
-    const cls = wtd < 0 ? 'd-good' : 'd-bad';
-    parts.push(`<span class="delta ${cls}">Wait: ${wtd > 0 ? '+' : ''}${wtd.toFixed(1)}</span>`);
-  }
-  return parts.length ? parts.join(' ') : '<span class="delta d-same">No change</span>';
-}
-
-// ─── METRICS ─────────────────────────────────────────────────────────────────
-
-function computeMetrics(arr) {
-  const leadTime = arr.reduce((s, st) => s + (st.waitTime||0) + (st.processTime||0), 0);
-  const vaTime   = arr.reduce((s, st) => s + (st.processTime||0), 0);
-  const nva      = leadTime - vaTime;
-  const eff      = leadTime > 0 ? vaTime / leadTime * 100 : 0;
-  const avail    = parseFloat(document.getElementById('avail-time').value) || 480;
-  const demand   = parseFloat(document.getElementById('demand').value) || 100;
-  const takt     = avail / demand;
-  return { leadTime, vaTime, nva, eff, takt };
-}
-
-function updateMetrics() {
-  renderMetrics('current-metrics', computeMetrics(steps));
-  renderMetrics('future-metrics',  computeMetrics(futureSteps));
-}
-
-function renderMetrics(id, m) {
-  const u   = unit();
-  const ec  = m.eff >= 50 ? 'mv-good' : m.eff >= 20 ? 'mv-warn' : 'mv-bad';
-  document.getElementById(id).innerHTML = `
-    <div class="metric">
-      <div class="metric-label">Total Lead Time</div>
-      <div class="metric-value mv-warn">${fmt(m.leadTime)} ${u}</div>
-    </div>
-    <div class="metric">
-      <div class="metric-label">Value-Added Time</div>
-      <div class="metric-value mv-good">${fmt(m.vaTime)} ${u}</div>
-    </div>
-    <div class="metric">
-      <div class="metric-label">Non-Value-Added</div>
-      <div class="metric-value mv-bad">${fmt(m.nva)} ${u}</div>
-    </div>
-    <div class="metric">
-      <div class="metric-label">Flow Efficiency</div>
-      <div class="metric-value ${ec}">${m.eff.toFixed(1)}%</div>
-    </div>
-    <div class="metric">
-      <div class="metric-label">Takt Time</div>
-      <div class="metric-value">${fmt(m.takt)} ${u}</div>
-    </div>
-  `;
-}
-
-function renderComparison() {
-  if (steps.length === 0) return;
-  const cm = computeMetrics(steps);
-  const fm = computeMetrics(futureSteps);
-  const u  = unit();
-  const leadDelta = cm.leadTime > 0 ? ((cm.leadTime - fm.leadTime) / cm.leadTime * 100) : 0;
-  const effDelta  = fm.eff - cm.eff;
-
-  document.getElementById('comparison').innerHTML = `
-    <div class="cmp-box cmp-current">
-      <div class="cmp-label">Current Lead Time</div>
-      <div class="cmp-value">${fmt(cm.leadTime)}<span style="font-size:1rem;font-weight:400"> ${u}</span></div>
-      <div class="cmp-sub">${cm.eff.toFixed(1)}% flow efficiency</div>
-    </div>
-    <div class="cmp-box cmp-future">
-      <div class="cmp-label">Future Lead Time</div>
-      <div class="cmp-value">${fmt(fm.leadTime)}<span style="font-size:1rem;font-weight:400"> ${u}</span></div>
-      <div class="cmp-sub">
-        ${fm.eff.toFixed(1)}% flow efficiency
-        ${leadDelta > 0.5 ? `<br><strong style="color:var(--green)">&#8595; ${leadDelta.toFixed(0)}% lead time reduction</strong>` : ''}
-        ${effDelta  > 0.5 ? `<br><strong style="color:var(--green)">+${effDelta.toFixed(1)}% efficiency gain</strong>` : ''}
-        ${leadDelta < -0.5 ? `<br><strong style="color:var(--coral)">&#8593; ${Math.abs(leadDelta).toFixed(0)}% lead time increase</strong>` : ''}
-      </div>
-    </div>
-  `;
-}
-
-// ─── LAYOUT ──────────────────────────────────────────────────────────────────
-
-function computeLayout(arr, canvasW) {
-  if (!arr.length) return [];
-  const avail     = arr.reduce((s, st) => s + (st.waitTime||0) + (st.processTime||0), 0) || 1;
-  const drawable  = canvasW - PAD * 2;
-
-  // Raw proportional widths
-  let cols = arr.map(st => {
-    const wt = st.waitTime || 0;
-    const pt = st.processTime || 0;
-    const rawW = Math.round((wt / avail) * drawable);
-    const rawB = Math.round((pt / avail) * drawable);
-    return {
-      step:  st,
-      waitW: wt > 0 ? Math.max(MIN_WAIT, rawW) : 0,
-      boxW:  Math.max(MIN_BOX, rawB),
-    };
-  });
-
-  // Scale down if overflowing drawable width
-  const used = cols.reduce((s, c) => s + c.waitW + c.boxW, 0);
-  if (used > drawable) {
-    const scale = drawable / used;
-    cols = cols.map(c => ({
-      ...c,
-      waitW: c.waitW * scale,
-      boxW:  c.boxW  * scale,
-    }));
-  }
-
-  // Assign x positions
-  let x = PAD;
-  return cols.map(c => {
-    const out = { ...c, waitX: x, boxX: x + c.waitW };
-    x = out.boxX + out.boxW;
-    return out;
+function updateSimCards(){
+  if(!simParams||!simState)return;
+  simParams.stations.forEach((s,i)=>{
+    const state=simState.stationStates[i],buf=i>0?simState.buffers[i-1]:s.bufferCap,cap=i>0?simParams.stations[i-1].bufferCap:s.bufferCap;
+    const pct=cap>0?Math.min(100,Math.round(buf/cap*100)):100,bc=pct>50?'#4ade80':pct>15?'#F5A623':'#FF6B4A';
+    const sEl=document.getElementById(`ssc-state-${i}`),bEl=document.getElementById(`ssc-bar-${i}`),lEl=document.getElementById(`ssc-buf-${i}`);
+    if(sEl){sEl.textContent=state;sEl.className=`ssc-state ${state.toLowerCase()}`;}
+    if(bEl){bEl.style.width=pct+'%';bEl.style.background=bc;}
+    if(lEl)lEl.textContent=`${i===0?'Feed':'Buffer'}: ${Math.round(buf)}/${cap} units`;
   });
 }
-
-function minCanvasW(arr) {
-  return arr.reduce((s, st) => s + (st.waitTime > 0 ? MIN_WAIT : 0) + MIN_BOX, PAD * 2 + 40);
+function renderSimDowntimePanel(){
+  const panel=document.getElementById('sim-downtime-panel');
+  if(!panel||!simParams)return;
+  panel.innerHTML='<span class="sim-dt-label">Trigger Downtime:</span>'+simParams.stations.map((s,i)=>s.hasDowntime?`<button class="btn btn-amber btn-sm" onclick="triggerDowntime(${i})">&#9889; ${esc(s.name)} (${s.dtMin}&#8211;${s.dtMax}hr)</button>`:`<button class="btn btn-ghost btn-sm" style="opacity:.4" onclick="triggerDowntime(${i})">&#9889; ${esc(s.name)}</button>`).join('');
 }
-
-// ─── DRAWING ─────────────────────────────────────────────────────────────────
-
-function drawVSM(canvas, arr, particles) {
-  const ctx = canvas.getContext('2d');
-  const W = canvas.width, H = canvas.height;
-
-  ctx.clearRect(0, 0, W, H);
-  ctx.fillStyle = 'rgba(8,12,18,0.96)';
-  ctx.fillRect(0, 0, W, H);
-
-  if (!arr.length) {
-    ctx.fillStyle = C.muted;
-    ctx.font = '13px sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('Add process steps to see the flow map', W/2, H/2);
-    return;
-  }
-
-  const layout = computeLayout(arr, W);
-  const last   = layout[layout.length - 1];
-  const flowEnd = last.boxX + last.boxW;
-
-  // Subtle grid
-  ctx.strokeStyle = C.gridLine;
-  ctx.lineWidth = 1;
-  for (let yy = 0; yy < H; yy += 40) {
-    ctx.beginPath(); ctx.moveTo(0, yy); ctx.lineTo(W, yy); ctx.stroke();
-  }
-
-  // Backbone flow line
-  ctx.strokeStyle = C.flowLine;
-  ctx.lineWidth = 2;
-  ctx.setLineDash([]);
-  ctx.beginPath();
-  ctx.moveTo(PAD - 12, FLOW_Y);
-  ctx.lineTo(flowEnd + 10, FLOW_Y);
-  ctx.stroke();
-
-  // IN / OUT labels
-  ctx.fillStyle = C.muted;
-  ctx.font = 'bold 8px sans-serif';
-  ctx.textAlign = 'right';
-  ctx.fillText('IN', PAD - 15, FLOW_Y + 4);
-  ctx.textAlign = 'left';
-  // Arrow at end
-  arrow(ctx, flowEnd + 5, FLOW_Y, flowEnd + 22, FLOW_Y, C.cyan, 2);
-  ctx.fillStyle = C.muted;
-  ctx.font = 'bold 8px sans-serif';
-  ctx.fillText('OUT', flowEnd + 26, FLOW_Y + 4);
-
-  // Get takt time for bottleneck detection
-  const avail  = parseFloat(document.getElementById('avail-time').value) || 480;
-  const demand = parseFloat(document.getElementById('demand').value) || 100;
-  const takt   = avail / demand;
-
-  // ─ Draw each step ─
-  layout.forEach((col, i) => {
-    const { step, waitX, waitW, boxX, boxW } = col;
-    const isBottleneck = step.processTime > takt;
-
-    // ── WAIT ZONE ──
-    if (step.waitTime > 0 && waitW > 0) {
-      ctx.fillStyle = C.waitBg;
-      ctx.fillRect(waitX, BOX_TOP, waitW, BOX_H);
-
-      ctx.strokeStyle = C.waitBdr;
-      ctx.lineWidth = 1;
-      ctx.setLineDash([3, 3]);
-      ctx.strokeRect(waitX + 0.5, BOX_TOP + 0.5, waitW - 1, BOX_H - 1);
-      ctx.setLineDash([]);
-
-      // Inventory triangle (VSM symbol)
-      const tx = waitX + waitW / 2;
-      const tcy = BOX_TOP + BOX_H * 0.38;
-      const tr  = Math.min(15, waitW * 0.28);
-
-      ctx.fillStyle = C.amber;
-      ctx.beginPath();
-      ctx.moveTo(tx, tcy + tr * 1.2);
-      ctx.lineTo(tx - tr, tcy);
-      ctx.lineTo(tx + tr, tcy);
-      ctx.closePath();
-      ctx.fill();
-
-      // Inventory count
-      if (tr >= 9) {
-        ctx.fillStyle = '#0F1419';
-        ctx.font = `bold ${Math.min(10, tr * 0.75)}px sans-serif`;
-        ctx.textAlign = 'center';
-        ctx.fillText(step.inventory, tx, tcy + tr * 0.55);
-      }
-
-      // Wait time label
-      if (waitW > 30) {
-        ctx.fillStyle = C.amber;
-        ctx.font = '8px sans-serif';
-        ctx.textAlign = 'center';
-        ctx.fillText(`${step.waitTime}${unit()}`, tx, BOX_TOP + BOX_H - 6);
-      }
-    }
-
-    // ── PROCESS BOX ──
-    const bx = boxX + 3, by = BOX_TOP + 2;
-    const bw = boxW - 6, bh = BOX_H - 4;
-    const br = 6;
-
-    // Bottleneck glow (red) vs normal (blue)
-    ctx.shadowColor = isBottleneck
-      ? 'rgba(255,107,74,0.4)'
-      : 'rgba(0,217,255,0.22)';
-    ctx.shadowBlur = 12;
-
-    rr(ctx, bx, by, bw, bh, br);
-    ctx.fillStyle = isBottleneck ? 'rgba(255,107,74,0.12)' : C.boxBg;
-    ctx.fill();
-
-    ctx.shadowBlur = 0;
-    rr(ctx, bx, by, bw, bh, br);
-    ctx.strokeStyle = isBottleneck ? 'rgba(255,107,74,0.7)' : C.boxStroke;
-    ctx.lineWidth = isBottleneck ? 2 : 1.5;
-    ctx.stroke();
-
-    // Step number badge
-    ctx.fillStyle = isBottleneck
-      ? 'rgba(255,107,74,0.2)'
-      : 'rgba(0,217,255,0.15)';
-    ctx.beginPath();
-    ctx.arc(bx + 13, by + 13, 10, 0, Math.PI*2);
-    ctx.fill();
-    ctx.fillStyle = isBottleneck ? C.coral : C.cyan;
-    ctx.font = 'bold 9px sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText(i + 1, bx + 13, by + 17);
-
-    // Step name
-    const maxCh = Math.max(4, Math.floor(bw / 7.5));
-    ctx.fillStyle = C.text;
-    ctx.font = `bold ${Math.min(12, Math.max(9, bw / 9))}px sans-serif`;
-    ctx.textAlign = 'center';
-    ctx.fillText(trunc(step.name, maxCh), boxX + boxW/2, by + 30);
-
-    // CT
-    ctx.fillStyle = isBottleneck ? C.coral : C.cyan;
-    ctx.font = '9px monospace';
-    ctx.textAlign = 'center';
-    ctx.fillText(`CT: ${step.processTime}${unit()}`, boxX + boxW/2, by + 45);
-
-    // Bottleneck indicator
-    if (isBottleneck && bw > 50) {
-      ctx.fillStyle = C.coral;
-      ctx.font = 'bold 8px sans-serif';
-      ctx.fillText('▲ BOTTLENECK', boxX + boxW/2, by + 58);
-    }
-
-    // Push arrow to next wait zone
-    if (i < layout.length - 1) {
-      const next = layout[i+1];
-      const ax = boxX + boxW + 1;
-      const bxx = next.waitX - 1;
-      if (bxx > ax + 4) {
-        ctx.strokeStyle = 'rgba(0,217,255,0.2)';
-        ctx.lineWidth = 1.5;
-        ctx.setLineDash([4, 4]);
-        ctx.beginPath(); ctx.moveTo(ax, FLOW_Y); ctx.lineTo(bxx, FLOW_Y); ctx.stroke();
-        ctx.setLineDash([]);
-      }
-    }
-
-    // ── TIMELINE BAR ──
-    // Wait segment
-    if (step.waitTime > 0 && waitW > 0) {
-      const g1 = ctx.createLinearGradient(waitX, 0, waitX + waitW, 0);
-      g1.addColorStop(0, 'rgba(245,166,35,0.3)');
-      g1.addColorStop(1, 'rgba(245,166,35,0.55)');
-      ctx.fillStyle = g1;
-      ctx.fillRect(waitX, TL_TOP, waitW, TL_H);
-
-      ctx.strokeStyle = 'rgba(255,255,255,0.06)';
-      ctx.lineWidth = 1;
-      ctx.strokeRect(waitX, TL_TOP, waitW, TL_H);
-
-      if (waitW > 22) {
-        ctx.fillStyle = C.amber;
-        ctx.font = '7px sans-serif';
-        ctx.textAlign = 'center';
-        ctx.fillText('NVA', waitX + waitW/2, LBL_Y);
-      }
-    }
-
-    // Process segment
-    const g2 = ctx.createLinearGradient(boxX, 0, boxX + boxW, 0);
-    g2.addColorStop(0, isBottleneck ? 'rgba(255,107,74,0.4)' : 'rgba(0,102,204,0.55)');
-    g2.addColorStop(1, isBottleneck ? 'rgba(255,107,74,0.6)' : 'rgba(0,217,255,0.55)');
-    ctx.fillStyle = g2;
-    ctx.fillRect(boxX, TL_TOP, boxW, TL_H);
-
-    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(boxX, TL_TOP, boxW, TL_H);
-
-    if (boxW > 20) {
-      ctx.fillStyle = isBottleneck ? C.coral : C.cyan;
-      ctx.font = '7px sans-serif';
-      ctx.textAlign = 'center';
-      ctx.fillText('VA', boxX + boxW/2, LBL_Y);
-    }
+function updateSimCounters(){
+  if(!simState)return;
+  const t=document.getElementById('sc-time'),p=document.getElementById('sc-produced'),l=document.getElementById('sc-lost'),e=document.getElementById('sc-events');
+  if(t)t.textContent=simState.simTimeHrs.toFixed(1)+' hrs';
+  if(p)p.textContent=Math.floor(simState.totalOutput);
+  if(l)l.textContent=Math.floor(simState.lostOutput);
+  if(e)e.textContent=simState.starvationEvents;
+}
+// =====================================================================
+// STEP MANAGEMENT
+// =====================================================================
+function addStep(){const name=document.getElementById('new-name').value.trim(),ct=parseFloat(document.getElementById('new-ct').value),wt=parseFloat(document.getElementById('new-wt').value)||0,inv=parseInt(document.getElementById('new-inv').value)||0;if(!name){highlight('new-name');return;}if(!ct||ct<=0){highlight('new-ct');return;}const step={id:nextId++,name,processTime:ct,waitTime:wt,inventory:inv};steps.push(step);futureSteps.push({...step});document.getElementById('new-name').value='';document.getElementById('new-ct').value='';document.getElementById('new-wt').value='0';document.getElementById('new-inv').value='0';document.getElementById('new-name').focus();refresh();}
+function removeStep(id){steps=steps.filter(s=>s.id!==id);futureSteps=futureSteps.filter(s=>s.id!==id);resetParticles();refresh();}
+function resetFuture(){futureSteps=steps.map(s=>({...s}));resetParticles();renderFutureTable();updateMetrics();renderComparison();}
+function updateFuture(id,field,rawVal){const idx=futureSteps.findIndex(s=>s.id===id);if(idx<0)return;futureSteps[idx][field]=field==='inventory'?parseInt(rawVal)||0:parseFloat(rawVal)||0;const cell=document.getElementById('delta-'+id);if(cell)cell.innerHTML=deltaHtml(steps[idx],futureSteps[idx]);fParticles=[];fSpawn.t=0;updateMetrics();renderComparison();}
+// =====================================================================
+// RENDER UI
+// =====================================================================
+function refresh(){renderStepsList();renderFutureTable();const has=steps.length>0;document.getElementById('current-section').style.display=has?'block':'none';document.getElementById('future-section').style.display=has?'block':'none';if(has){resizeCanvases();updateMetrics();renderComparison();}}
+function renderStepsList(){const el=document.getElementById('steps-list');if(!steps.length){el.innerHTML='<div class="empty-state">No steps yet. Add your first step above or load the example.</div>';return;}const u=unit();el.innerHTML=steps.map((s,i)=>`<div class="step-item"><div class="step-number">${i+1}</div><div class="step-item-name">${esc(s.name)}</div><div class="step-item-meta"><span class="meta-ct">CT: ${s.processTime}${u}</span><span class="meta-wt">Buffer: ${s.waitTime}${u}</span><span>INV: ${s.inventory}</span></div><div class="step-actions"><button class="btn btn-danger btn-sm" onclick="removeStep(${s.id})">&#10005;</button></div></div>`).join('');}
+function renderFutureTable(){const tbody=document.getElementById('future-tbody');if(!futureSteps.length){tbody.innerHTML='';return;}const u=unit();tbody.innerHTML=futureSteps.map((fs,i)=>{const cs=steps[i];return`<tr><td style="font-weight:600">${esc(fs.name)}</td><td><input type="number" value="${fs.processTime}" min="0.001" step="0.001" style="width:78px" onchange="updateFuture(${fs.id},'processTime',this.value)"><span style="font-size:.75rem;color:var(--muted)"> ${u}</span></td><td><input type="number" value="${fs.waitTime}" min="0" step="0.001" style="width:78px" onchange="updateFuture(${fs.id},'waitTime',this.value)"><span style="font-size:.75rem;color:var(--muted)"> ${u}</span></td><td><input type="number" value="${fs.inventory}" min="0" style="width:64px" onchange="updateFuture(${fs.id},'inventory',this.value)"></td><td id="delta-${fs.id}">${deltaHtml(cs,fs)}</td></tr>`;}).join('');}
+function deltaHtml(cs,fs){const parts=[],ctd=fs.processTime-cs.processTime,wtd=fs.waitTime-cs.waitTime;if(Math.abs(ctd)>0.0001)parts.push(`<span class="delta ${ctd<0?'d-good':'d-bad'}">CT: ${ctd>0?'+':''}${ctd.toFixed(3)}</span>`);if(Math.abs(wtd)>0.0001)parts.push(`<span class="delta ${wtd<0?'d-good':'d-bad'}">Wait: ${wtd>0?'+':''}${wtd.toFixed(3)}</span>`);return parts.length?parts.join(' '):'<span class="delta d-same">No change</span>';}
+// =====================================================================
+// METRICS
+// =====================================================================
+function computeMetrics(arr){const lt=arr.reduce((s,st)=>s+(st.waitTime||0)+(st.processTime||0),0),va=arr.reduce((s,st)=>s+(st.processTime||0),0),nva=lt-va,eff=lt>0?va/lt*100:0,avail=parseFloat(document.getElementById('avail-time').value)||480,demand=parseFloat(document.getElementById('demand').value)||100;return{leadTime:lt,vaTime:va,nva,eff,takt:avail/demand};}
+function updateMetrics(){renderMetrics('current-metrics',computeMetrics(steps));renderMetrics('future-metrics',computeMetrics(futureSteps));}
+function renderMetrics(id,m){const u=unit(),ec=m.eff>=50?'mv-good':m.eff>=20?'mv-warn':'mv-bad';document.getElementById(id).innerHTML=`<div class="metric"><div class="metric-label">Total Lead Time</div><div class="metric-value mv-warn">${fmt(m.leadTime)} ${u}</div></div><div class="metric"><div class="metric-label">Value-Added Time</div><div class="metric-value mv-good">${fmt(m.vaTime)} ${u}</div></div><div class="metric"><div class="metric-label">Non-Value-Added</div><div class="metric-value mv-bad">${fmt(m.nva)} ${u}</div></div><div class="metric"><div class="metric-label">Flow Efficiency</div><div class="metric-value ${ec}">${m.eff.toFixed(1)}%</div></div><div class="metric"><div class="metric-label">Takt Time</div><div class="metric-value">${fmt(m.takt)} ${u}</div></div>`;}
+function renderComparison(){if(!steps.length)return;const cm=computeMetrics(steps),fm=computeMetrics(futureSteps),u=unit(),ld=cm.leadTime>0?(cm.leadTime-fm.leadTime)/cm.leadTime*100:0,ed=fm.eff-cm.eff;document.getElementById('comparison').innerHTML=`<div class="cmp-box cmp-current"><div class="cmp-label">Current Lead Time</div><div class="cmp-value">${fmt(cm.leadTime)}<span style="font-size:1rem;font-weight:400"> ${u}</span></div><div class="cmp-sub">${cm.eff.toFixed(1)}% flow efficiency</div></div><div class="cmp-box cmp-future"><div class="cmp-label">Future Lead Time</div><div class="cmp-value">${fmt(fm.leadTime)}<span style="font-size:1rem;font-weight:400"> ${u}</span></div><div class="cmp-sub">${fm.eff.toFixed(1)}% flow efficiency${ld>0.5?`<br><strong style="color:var(--green)">&#8595; ${ld.toFixed(0)}% lead time reduction</strong>`:''}${ed>0.5?`<br><strong style="color:var(--green)">+${ed.toFixed(1)}% efficiency gain</strong>`:''}${ld<-0.5?`<br><strong style="color:var(--coral)">&#8593; ${Math.abs(ld).toFixed(0)}% lead time increase</strong>`:''}</div></div>`;}
+// =====================================================================
+// FLOW MAP LAYOUT + DRAWING
+// =====================================================================
+function computeLayout(arr,canvasW){if(!arr.length)return[];const avail=arr.reduce((s,st)=>s+(st.waitTime||0)+(st.processTime||0),0)||1,drawable=canvasW-PAD*2;let cols=arr.map(st=>({step:st,waitW:st.waitTime>0?Math.max(MIN_WAIT,Math.round(st.waitTime/avail*drawable)):0,boxW:Math.max(MIN_BOX,Math.round(st.processTime/avail*drawable))}));const used=cols.reduce((s,c)=>s+c.waitW+c.boxW,0);if(used>drawable){const sc=drawable/used;cols=cols.map(c=>({...c,waitW:c.waitW*sc,boxW:c.boxW*sc}));}let x=PAD;return cols.map(c=>{const out={...c,waitX:x,boxX:x+c.waitW};x=out.boxX+out.boxW;return out;});}
+function minCanvasW(arr){return arr.reduce((s,st)=>s+(st.waitTime>0?MIN_WAIT:0)+MIN_BOX,PAD*2+40);}
+function findBottleneckIdx(arr){let mx=-1,idx=-1;arr.forEach((s,i)=>{if(s.processTime>mx){mx=s.processTime;idx=i;}});return idx;}
+function drawVSM(canvas,arr,particles){
+  const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='rgba(8,12,18,0.96)';ctx.fillRect(0,0,W,H);
+  if(!arr.length){ctx.fillStyle=C.muted;ctx.font='13px sans-serif';ctx.textAlign='center';ctx.fillText('Add process steps to see the flow map',W/2,H/2);return;}
+  const layout=computeLayout(arr,W),last=layout[layout.length-1],flowEnd=last.boxX+last.boxW,bnIdx=findBottleneckIdx(arr);
+  ctx.strokeStyle=C.gridLine;ctx.lineWidth=1;for(let yy=0;yy<H;yy+=40){ctx.beginPath();ctx.moveTo(0,yy);ctx.lineTo(W,yy);ctx.stroke();}
+  ctx.strokeStyle=C.flowLine;ctx.lineWidth=2;ctx.setLineDash([]);ctx.beginPath();ctx.moveTo(PAD-12,FLOW_Y);ctx.lineTo(flowEnd+10,FLOW_Y);ctx.stroke();
+  ctx.fillStyle=C.muted;ctx.font='bold 8px sans-serif';ctx.textAlign='right';ctx.fillText('IN',PAD-15,FLOW_Y+4);
+  arrow(ctx,flowEnd+5,FLOW_Y,flowEnd+22,FLOW_Y,C.cyan,2);ctx.fillStyle=C.muted;ctx.textAlign='left';ctx.fillText('OUT',flowEnd+26,FLOW_Y+4);
+  layout.forEach((col,i)=>{
+    const{step,waitX,waitW,boxX,boxW}=col,isBN=i===bnIdx;
+    if(step.waitTime>0&&waitW>0){ctx.fillStyle=C.waitBg;ctx.fillRect(waitX,BOX_TOP,waitW,BOX_H);ctx.strokeStyle=C.waitBdr;ctx.lineWidth=1;ctx.setLineDash([3,3]);ctx.strokeRect(waitX+.5,BOX_TOP+.5,waitW-1,BOX_H-1);ctx.setLineDash([]);const tx=waitX+waitW/2,tcy=BOX_TOP+BOX_H*.32,tr=Math.min(18,waitW*.32);ctx.fillStyle=C.amber;ctx.beginPath();ctx.moveTo(tx-tr,tcy);ctx.lineTo(tx+tr,tcy);ctx.lineTo(tx,tcy+tr*1.3);ctx.closePath();ctx.fill();if(tr>=9){ctx.fillStyle='#0F1419';ctx.font=`bold ${Math.min(10,Math.max(7,tr*.62))}px sans-serif`;ctx.textAlign='center';ctx.fillText(step.inventory,tx,tcy+tr*.6);}if(waitW>30){ctx.fillStyle=C.amber;ctx.font='8px sans-serif';ctx.textAlign='center';ctx.fillText(`${step.waitTime}${unit()}`,tx,BOX_TOP+BOX_H-6);}}
+    const bx=boxX+3,by=BOX_TOP+2,bw=boxW-6,bh=BOX_H-4,br=6;
+    ctx.shadowColor=isBN?'rgba(255,107,74,0.5)':'rgba(0,217,255,0.22)';ctx.shadowBlur=isBN?18:12;rr(ctx,bx,by,bw,bh,br);ctx.fillStyle=isBN?C.bnBg:C.boxBg;ctx.fill();ctx.shadowBlur=0;rr(ctx,bx,by,bw,bh,br);ctx.strokeStyle=isBN?C.bnStroke:C.boxStroke;ctx.lineWidth=isBN?2.5:1.5;ctx.stroke();
+    const ix=bx+14,iy=by+13;ctx.beginPath();ctx.arc(ix,iy,9,0,Math.PI*2);ctx.fillStyle=isBN?'rgba(255,107,74,0.25)':'rgba(0,217,255,0.15)';ctx.fill();ctx.strokeStyle=isBN?'rgba(255,107,74,0.7)':'rgba(0,217,255,0.5)';ctx.lineWidth=1.5;ctx.stroke();ctx.beginPath();ctx.arc(ix,iy,4,0,Math.PI*2);ctx.fillStyle=isBN?'rgba(255,107,74,0.5)':'rgba(0,217,255,0.4)';ctx.fill();
+    const maxCh=Math.max(4,Math.floor(bw/7.5));ctx.fillStyle=C.text;ctx.font=`bold ${Math.min(12,Math.max(9,bw/9))}px sans-serif`;ctx.textAlign='center';ctx.fillText(trunc(step.name,maxCh),boxX+boxW/2,by+36);
+    ctx.fillStyle=isBN?C.coral:C.cyan;ctx.font='9px monospace';ctx.textAlign='center';ctx.fillText(`CT: ${step.processTime}${unit()}`,boxX+boxW/2,by+51);
+    if(isBN&&bw>50){ctx.fillStyle=C.coral;ctx.font='bold 8px sans-serif';ctx.fillText('▲ BOTTLENECK',boxX+boxW/2,by+66);}
+    if(i<layout.length-1){const next=layout[i+1],ax=boxX+boxW+1,bxx=next.waitX-1;if(bxx>ax+4){ctx.strokeStyle='rgba(0,217,255,0.2)';ctx.lineWidth=1.5;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(ax,FLOW_Y);ctx.lineTo(bxx,FLOW_Y);ctx.stroke();ctx.setLineDash([]);}}
+    if(step.waitTime>0&&waitW>0){const g1=ctx.createLinearGradient(waitX,0,waitX+waitW,0);g1.addColorStop(0,'rgba(245,166,35,0.3)');g1.addColorStop(1,'rgba(245,166,35,0.55)');ctx.fillStyle=g1;ctx.fillRect(waitX,TL_TOP,waitW,TL_H);ctx.strokeStyle='rgba(255,255,255,.06)';ctx.lineWidth=1;ctx.strokeRect(waitX,TL_TOP,waitW,TL_H);if(waitW>22){ctx.fillStyle=C.amber;ctx.font='7px sans-serif';ctx.textAlign='center';ctx.fillText('NVA',waitX+waitW/2,LBL_Y);}}
+    const g2=ctx.createLinearGradient(boxX,0,boxX+boxW,0);g2.addColorStop(0,isBN?'rgba(255,107,74,0.4)':'rgba(0,102,204,0.55)');g2.addColorStop(1,isBN?'rgba(255,107,74,0.6)':'rgba(0,217,255,0.55)');ctx.fillStyle=g2;ctx.fillRect(boxX,TL_TOP,boxW,TL_H);ctx.strokeStyle='rgba(255,255,255,.06)';ctx.lineWidth=1;ctx.strokeRect(boxX,TL_TOP,boxW,TL_H);if(boxW>20){ctx.fillStyle=isBN?C.coral:C.cyan;ctx.font='7px sans-serif';ctx.textAlign='center';ctx.fillText('VA',boxX+boxW/2,LBL_Y);}
   });
-
-  // Timeline left bracket label
-  ctx.fillStyle = C.muted;
-  ctx.font = '8px sans-serif';
-  ctx.textAlign = 'left';
-  ctx.fillText('Timeline', layout[0].waitX || layout[0].boxX, TL_TOP - 4);
-
-  // ── PARTICLES ──
-  ctx.shadowBlur = 0;
-  particles.forEach(p => {
-    if (p.dead) return;
-    const pos = particlePos(p, layout, arr);
-    if (!pos) { p.dead = true; return; }
-
-    const isWait  = p.phase === 'wait';
-    const color   = isWait ? C.amber : C.cyan;
-    const glowCol = isWait ? 'rgba(245,166,35,0.7)' : 'rgba(0,217,255,0.7)';
-    const rad     = isWait ? 4.5 : 5.5;
-
-    ctx.shadowColor = glowCol;
-    ctx.shadowBlur  = 10;
-    ctx.beginPath();
-    ctx.arc(pos.x, pos.y, rad, 0, Math.PI*2);
-    ctx.fillStyle = color;
-    ctx.fill();
-
-    ctx.shadowBlur = 0;
-    ctx.beginPath();
-    ctx.arc(pos.x, pos.y, rad * 0.38, 0, Math.PI*2);
-    ctx.fillStyle = 'rgba(255,255,255,0.85)';
-    ctx.fill();
-  });
-
-  ctx.shadowBlur = 0;
+  ctx.fillStyle=C.muted;ctx.font='8px sans-serif';ctx.textAlign='left';ctx.fillText('Timeline',layout[0].waitX||layout[0].boxX,TL_TOP-4);ctx.shadowBlur=0;
+  particles.forEach(p=>{if(p.dead)return;const pos=particlePos(p,layout,arr);if(!pos){p.dead=true;return;}const isWait=p.phase==='wait',color=isWait?C.amber:C.cyan;ctx.shadowColor=isWait?'rgba(245,166,35,0.7)':'rgba(0,217,255,0.7)';ctx.shadowBlur=10;ctx.beginPath();ctx.arc(pos.x,pos.y,isWait?4.5:5.5,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();ctx.shadowBlur=0;ctx.beginPath();ctx.arc(pos.x,pos.y,(isWait?4.5:5.5)*.38,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,0.85)';ctx.fill();});
+  ctx.shadowBlur=0;
 }
-
-function particlePos(p, layout, arr) {
-  let rem = p.flowTime;
-  for (let i = 0; i < layout.length; i++) {
-    const col = layout[i];
-    const wt  = arr[i].waitTime || 0;
-    const pt  = arr[i].processTime || 0;
-
-    if (wt > 0) {
-      if (rem <= wt) {
-        p.phase = 'wait';
-        const prog = rem / wt;
-        return { x: col.waitX + prog * col.waitW, y: FLOW_Y };
-      }
-      rem -= wt;
-    }
-
-    if (rem <= pt) {
-      p.phase = 'process';
-      const prog = rem / pt;
-      return { x: col.boxX + prog * col.boxW, y: FLOW_Y };
-    }
-    rem -= pt;
+function particlePos(p,layout,arr){let rem=p.flowTime;for(let i=0;i<layout.length;i++){const col=layout[i],wt=arr[i].waitTime||0,pt=arr[i].processTime||0;if(wt>0){if(rem<=wt){p.phase='wait';return{x:col.waitX+rem/wt*col.waitW,y:FLOW_Y};}rem-=wt;}if(rem<=pt){p.phase='process';return{x:col.boxX+rem/pt*col.boxW,y:FLOW_Y};}rem-=pt;}return null;}
+// =====================================================================
+// ANIMATION LOOP
+// =====================================================================
+function totalLead(arr){return arr.reduce((s,st)=>s+(st.waitTime||0)+(st.processTime||0),0)||1;}
+function speedFactor(){return totalLead(steps)/(22-animSpeed*2);}
+const TARGET=5;
+function stepParticles(particles,arr,dt,spawnRef){const sf=speedFactor(),dtFlow=dt*sf/1000,total=totalLead(arr),spawnMs=total/TARGET/sf*1000;particles.forEach(p=>{if(!p.dead){p.flowTime+=dtFlow;if(p.flowTime>total+.5)p.dead=true;}});let alive=particles.filter(p=>!p.dead);spawnRef.t+=dt;if(spawnRef.t>=spawnMs&&alive.length<TARGET+2){alive.push({flowTime:0,phase:'wait',dead:false});spawnRef.t=0;}return alive;}
+function tick(ts){
+  if(!lastTs)lastTs=ts;const dt=Math.min(ts-lastTs,80);lastTs=ts;
+  if(canvasTab==='flowmap'){
+    if(steps.length>0){cParticles=stepParticles(cParticles,steps,dt,cSpawn);drawVSM(document.getElementById('current-canvas'),steps,cParticles);}
+  }else{
+    if(simRunning&&simState&&simParams){stepSimulation(dt);updateSimCards();updateSimCounters();}
+    drawSimCanvas();
   }
-  return null; // past end
-}
-
-// ─── ANIMATION ───────────────────────────────────────────────────────────────
-
-function totalLead(arr) {
-  return arr.reduce((s, st) => s + (st.waitTime||0) + (st.processTime||0), 0) || 1;
-}
-
-function speedFactor() {
-  // map animSpeed (1-10) to real seconds for one lead-time cycle
-  // speed 1 = 20s per cycle, speed 5 = 10s, speed 10 = 3s
-  const cycleSeconds = 22 - animSpeed * 2; // 20 → 2
-  return totalLead(steps) / cycleSeconds;
-}
-
-const TARGET = 5; // target particles in flight
-
-function stepParticles(particles, arr, dt, spawnRef) {
-  const sf      = speedFactor();
-  const dtFlow  = (dt * sf) / 1000; // delta in time-unit space
-  const total   = totalLead(arr);
-  const spawnMs = (total / TARGET / sf) * 1000;
-
-  // Advance
-  particles.forEach(p => {
-    if (!p.dead) {
-      p.flowTime += dtFlow;
-      if (p.flowTime > total + 0.5) p.dead = true;
-    }
-  });
-
-  let alive = particles.filter(p => !p.dead);
-
-  // Spawn
-  spawnRef.t += dt;
-  if (spawnRef.t >= spawnMs && alive.length < TARGET + 2) {
-    alive.push({ flowTime: 0, phase: 'wait', dead: false });
-    spawnRef.t = 0;
-  }
-
-  return alive;
-}
-
-function tick(ts) {
-  if (!lastTs) lastTs = ts;
-  const dt = Math.min(ts - lastTs, 80);
-  lastTs = ts;
-
-  if (steps.length > 0) {
-    cParticles = stepParticles(cParticles, steps,       dt, cSpawn);
-    drawVSM(document.getElementById('current-canvas'), steps,       cParticles);
-  }
-  if (futureSteps.length > 0) {
-    fParticles = stepParticles(fParticles, futureSteps, dt, fSpawn);
-    drawVSM(document.getElementById('future-canvas'),  futureSteps, fParticles);
-  }
-
+  if(futureSteps.length>0){fParticles=stepParticles(fParticles,futureSteps,dt,fSpawn);drawVSM(document.getElementById('future-canvas'),futureSteps,fParticles);}
   requestAnimationFrame(tick);
 }
-
-// ─── CANVAS SIZING ───────────────────────────────────────────────────────────
-
-function resizeCanvases() {
-  ['current-canvas', 'future-canvas'].forEach(id => {
-    const canvas  = document.getElementById(id);
-    const wrapper = canvas.parentElement;
-    const cW      = wrapper.clientWidth || 800;
-    const minW    = steps.length > 0 ? minCanvasW(steps) : 700;
-    const w       = Math.max(cW, minW);
-    canvas.width  = w;
-    canvas.height = CANVAS_H;
-  });
-  resetParticles();
-}
-
-function resetParticles() {
-  cParticles = []; fParticles = [];
-  cSpawn.t   = 0;  fSpawn.t   = 0;
-}
-
-// ─── CONTROLS ────────────────────────────────────────────────────────────────
-
-function onSpeedChange() {
-  animSpeed = parseInt(document.getElementById('anim-speed').value);
-  const lbl = ['Very Slow','Slow','Slow','Normal','Normal','Fast','Fast','Very Fast','Very Fast','Max'];
-  document.getElementById('speed-label').textContent = lbl[animSpeed - 1] || 'Normal';
-  resetParticles();
-}
-
-// ─── EXAMPLE DATA ────────────────────────────────────────────────────────────
-
-function loadExample() {
-  if (steps.length > 0 && !confirm('Replace current steps with the example?')) return;
-  steps       = [];
-  futureSteps = [];
-  nextId      = 1;
-
-  const ex = [
-    { name: 'Receive',  processTime: 20,  waitTime: 0,   inventory: 0  },
-    { name: 'Inspect',  processTime: 15,  waitTime: 120, inventory: 45 },
-    { name: 'Assemble', processTime: 40,  waitTime: 240, inventory: 80 },
-    { name: 'Test',     processTime: 25,  waitTime: 60,  inventory: 20 },
-    { name: 'Pack',     processTime: 10,  waitTime: 180, inventory: 55 },
-    { name: 'Ship',     processTime: 12,  waitTime: 480, inventory: 120},
-  ];
-  ex.forEach(e => {
-    const s = { id: nextId++, ...e };
-    steps.push(s);
-    futureSteps.push({ ...s });
-  });
-  refresh();
-}
-
-// ─── UTILS ───────────────────────────────────────────────────────────────────
-
-function rr(ctx, x, y, w, h, r) {
-  ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.lineTo(x + w - r, y);
-  ctx.quadraticCurveTo(x + w, y,     x + w, y + r);
-  ctx.lineTo(x + w, y + h - r);
-  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-  ctx.lineTo(x + r, y + h);
-  ctx.quadraticCurveTo(x, y + h,     x, y + h - r);
-  ctx.lineTo(x, y + r);
-  ctx.quadraticCurveTo(x, y,         x + r, y);
-  ctx.closePath();
-}
-
-function arrow(ctx, x1, y1, x2, y2, color, lw) {
-  const hLen = 7, ang = Math.atan2(y2 - y1, x2 - x1);
-  ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = lw;
-  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(x2, y2);
-  ctx.lineTo(x2 - hLen * Math.cos(ang - Math.PI/7), y2 - hLen * Math.sin(ang - Math.PI/7));
-  ctx.lineTo(x2 - hLen * Math.cos(ang + Math.PI/7), y2 - hLen * Math.sin(ang + Math.PI/7));
-  ctx.closePath(); ctx.fill();
-}
-
-function trunc(s, max) {
-  if (!max || max < 3) return s.substring(0, 3);
-  return s.length > max ? s.substring(0, max - 1) + '\u2026' : s;
-}
-
-function fmt(n) {
-  if (n >= 1000) return (n / 1000).toFixed(1) + 'k';
-  if (n >= 100)  return Math.round(n).toString();
-  return parseFloat(n.toFixed(1)).toString();
-}
-
-function unit() { return document.getElementById('time-unit').value; }
-
-function esc(s) {
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-function highlight(id) {
-  const el = document.getElementById(id);
-  el.style.borderColor = 'var(--coral)';
-  setTimeout(() => el.style.borderColor = '', 1200);
-}
-
-// ─── INIT ────────────────────────────────────────────────────────────────────
-
-window.addEventListener('resize', () => {
-  if (steps.length > 0) resizeCanvases();
-});
-
-document.getElementById('time-unit').addEventListener('change', () => {
-  renderStepsList();
-  renderFutureTable();
-  updateMetrics();
-  renderComparison();
-});
-
-['avail-time', 'demand'].forEach(id => {
-  document.getElementById(id).addEventListener('input', () => {
-    updateMetrics();
-    renderComparison();
-  });
-});
-
-// Enter key on step name -> move to CT field
-document.getElementById('new-name').addEventListener('keydown', e => {
-  if (e.key === 'Enter') document.getElementById('new-ct').focus();
-});
-document.getElementById('new-ct').addEventListener('keydown', e => {
-  if (e.key === 'Enter') document.getElementById('new-wt').focus();
-});
-document.getElementById('new-wt').addEventListener('keydown', e => {
-  if (e.key === 'Enter') document.getElementById('new-inv').focus();
-});
-document.getElementById('new-inv').addEventListener('keydown', e => {
-  if (e.key === 'Enter') addStep();
-});
-
-// Kick off animation loop
+// =====================================================================
+// CANVAS SIZING
+// =====================================================================
+function resizeCanvases(){['current-canvas','future-canvas'].forEach(id=>{const canvas=document.getElementById(id),wrapper=canvas.parentElement,cW=wrapper.clientWidth||800,minW=steps.length>0?minCanvasW(steps):700;canvas.width=Math.max(cW,minW);canvas.height=CANVAS_H;});resetParticles();resizeSimCanvas();}
+function resetParticles(){cParticles=[];fParticles=[];cSpawn.t=0;fSpawn.t=0;}
+// =====================================================================
+// CONTROLS + EXAMPLE
+// =====================================================================
+function onSpeedChange(){animSpeed=parseInt(document.getElementById('anim-speed').value);const lbl=['Very Slow','Slow','Slow','Normal','Normal','Fast','Fast','Very Fast','Very Fast','Max'];document.getElementById('speed-label').textContent=lbl[animSpeed-1]||'Normal';resetParticles();}
+function loadExample(){if(steps.length>0&&!confirm('Replace current steps?'))return;steps=[];futureSteps=[];nextId=1;document.getElementById('process-name').value='Widget Fulfillment';document.getElementById('avail-time').value='480';document.getElementById('demand').value='100';document.getElementById('time-unit').value='min';[{name:'Receive',processTime:20,waitTime:0,inventory:0},{name:'Inspect',processTime:15,waitTime:120,inventory:45},{name:'Assemble',processTime:40,waitTime:240,inventory:80},{name:'Test',processTime:25,waitTime:60,inventory:20},{name:'Pack',processTime:10,waitTime:180,inventory:55},{name:'Ship',processTime:12,waitTime:480,inventory:120}].forEach(e=>{const s={id:nextId++,...e};steps.push(s);futureSteps.push({...s});});refresh();}
+// =====================================================================
+// UTILS
+// =====================================================================
+function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
+function arrow(ctx,x1,y1,x2,y2,color,lw){const hLen=7,ang=Math.atan2(y2-y1,x2-x1);ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=lw;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();ctx.beginPath();ctx.moveTo(x2,y2);ctx.lineTo(x2-hLen*Math.cos(ang-Math.PI/7),y2-hLen*Math.sin(ang-Math.PI/7));ctx.lineTo(x2-hLen*Math.cos(ang+Math.PI/7),y2-hLen*Math.sin(ang+Math.PI/7));ctx.closePath();ctx.fill();}
+function trunc(s,max){if(!max||max<3)return s.substring(0,3);return s.length>max?s.substring(0,max-1)+'\u2026':s;}
+function fmt(n){if(n>=1000)return(n/1000).toFixed(1)+'k';if(n>=100)return Math.round(n).toString();return parseFloat(n.toFixed(3)).toString();}
+function unit(){return document.getElementById('time-unit').value;}
+function esc(s){if(s===null||s===undefined)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function highlight(id){const el=document.getElementById(id);el.style.borderColor='var(--coral)';setTimeout(()=>el.style.borderColor='',1200);}
+// =====================================================================
+// INIT
+// =====================================================================
+window.addEventListener('resize',()=>{if(steps.length>0)resizeCanvases();});
+document.getElementById('time-unit').addEventListener('change',()=>{renderStepsList();renderFutureTable();updateMetrics();renderComparison();});
+['avail-time','demand'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{updateMetrics();renderComparison();}));
+document.getElementById('new-name').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('new-ct').focus();});
+document.getElementById('new-ct').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('new-wt').focus();});
+document.getElementById('new-wt').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('new-inv').focus();});
+document.getElementById('new-inv').addEventListener('keydown',e=>{if(e.key==='Enter')addStep();});
 requestAnimationFrame(tick);
 </script>
 </body>
