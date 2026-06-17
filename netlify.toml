@@ -1,0 +1,8 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/api/parse"
+  to = "/.netlify/functions/parse"
+  status = 200
+  force = true
