@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Keep the Oven Cooking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{ --ink:#283139; --teal:#2a9d8f; --red:#d1495b; --amber:#c98a00; --gray:#9aa5ad; --bg:#fbfbf8; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:
+      radial-gradient(circle, #dfe3e6 1.4px, transparent 1.5px) 0 0 / 26px 26px, var(--bg);
+    font-family:'Kalam', cursive; color:var(--ink); padding:22px; }
+  .wrap{ max-width:1040px; margin:0 auto; }
+  h1{ font-family:'Caveat', cursive; font-weight:700; font-size:40px; margin:0; line-height:1; }
+  .sub{ font-size:16px; color:#5b6770; margin:2px 0 0; max-width:640px; }
+  .controls{ display:flex; flex-wrap:wrap; gap:20px; align-items:center; margin:16px 0 4px; }
+  .seg{ display:inline-flex; border:2.5px solid var(--ink); border-radius:30px; overflow:hidden; }
+  .seg button{ font-family:'Caveat', cursive; font-weight:700; font-size:20px;
+    border:none; background:#fff; color:var(--ink); padding:5px 15px; cursor:pointer; }
+  .seg button.on{ background:var(--ink); color:#fff; }
+  .slide{ display:flex; align-items:center; gap:9px; font-size:15px; }
+  .slide input{ accent-color:var(--red); width:150px; }
+  .slide b{ font-family:'Caveat', cursive; font-size:22px; min-width:50px; }
+  .slide.dim{ opacity:.35; }
+  .board{ background:#fff; border:2.5px solid #e7e9e4; border-radius:16px; padding:6px; margin-top:8px; }
+  svg{ width:100%; height:auto; display:block; }
+  .readout{ display:flex; flex-wrap:wrap; align-items:baseline; gap:14px; margin:16px 4px 0; }
+  .big{ font-family:'Caveat', cursive; font-weight:700; font-size:32px; line-height:1; }
+  .lesson{ font-size:16px; color:#5b6770; max-width:660px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Keep the oven cooking</h1>
+  <p class="sub">The oven is the constraint, so it sets the pace. Everything upstream and down exists to keep it fed and clear. A buffer can absorb a stop, but only until it runs dry.</p>
+
+  <div class="controls">
+    <div class="seg" id="seg">
+      <button data-m="Press">Press stops</button>
+      <button data-m="Oven" class="on">Oven stops</button>
+      <button data-m="Assembly">Assembly stops</button>
+      <button data-m="Test">Test stops</button>
+    </div>
+    <div class="slide"><span>Stop length</span>
+      <input id="dur" type="range" min="0" max="90" step="5" value="40" /><b id="durV">40 min</b></div>
+    <div class="slide" id="bufWrap"><span>Oven buffer</span>
+      <input id="buf" type="range" min="0" max="60" step="5" value="20" /><b id="bufV">20 u</b></div>
+  </div>
+
+  <div class="board">
+    <svg id="art" viewBox="0 0 1040 300" role="img" aria-label="Value stream flow with WIP buffers"></svg>
+  </div>
+
+  <div class="readout">
+    <span class="big" id="big"></span>
+    <span class="lesson" id="lesson"></span>
+  </div>
+</div>
+
+<script>
+const SVGNS="http://www.w3.org/2000/svg";
+const art=document.getElementById("art");
+const ink="#283139", teal="#2a9d8f", red="#d1495b", amber="#c98a00", gray="#9aa5ad";
+
+function rng(s){ return function(){ s|=0; s=(s+0x6D2B79F5)|0;
+  var t=Math.imul(s^s>>>15,1|s); t=(t+Math.imul(t^t>>>7,61|t))^t;
+  return ((t^t>>>14)>>>0)/4294967296; }; }
+function el(tag,a){ const e=document.createElementNS(SVGNS,tag); for(const k in a) e.setAttribute(k,a[k]); return e; }
+function line(x1,y1,x2,y2,stroke,o={}){
+  const r=rng(o.seed||((x1+y2)*9|0));
+  const mx=(x1+x2)/2+(r()-0.5)*3, my=(y1+y2)/2+(r()-0.5)*3;
+  art.appendChild(el("path",{ d:`M${x1} ${y1} Q${mx} ${my} ${x2} ${y2}`, fill:"none",
+    stroke, "stroke-width":o.sw||2.6, "stroke-linecap":"round", "stroke-dasharray":o.dash||"none" }));
+}
+function poly(pts,stroke,o={}){ for(let i=0;i<pts.length-1;i++)
+  line(pts[i][0],pts[i][1],pts[i+1][0],pts[i+1][1],stroke,{sw:o.sw||2.6,seed:i*53+(o.seed||1)}); }
+function arrow(x1,y1,x2,y2,stroke,sw){
+  line(x1,y1,x2,y2,stroke,{sw:sw||2.6});
+  const a=Math.atan2(y2-y1,x2-x1), h=11;
+  line(x2,y2,x2-h*Math.cos(a-0.5),y2-h*Math.sin(a-0.5),stroke,{sw:sw||2.6,seed:x2|0});
+  line(x2,y2,x2-h*Math.cos(a+0.5),y2-h*Math.sin(a+0.5),stroke,{sw:sw||2.6,seed:(x2+7)|0});
+}
+function rect(x,y,w,h,stroke,o={}){
+  if(o.fill) art.appendChild(el("rect",{x,y,width:w,height:h,rx:8,fill:o.fill,stroke:"none"}));
+  poly([[x,y],[x+w,y],[x+w,y+h],[x,y+h],[x,y]],stroke,{sw:o.sw||2.5,seed:o.seed||(x+y)});
+}
+function tri(cx,baseY,hw,ht,stroke,o={}){
+  if(o.fill) art.appendChild(el("path",{ d:`M${cx-hw} ${baseY} L${cx+hw} ${baseY} L${cx} ${baseY-ht} Z`,
+    fill:o.fill, "fill-opacity":o.fo||1, stroke:"none" }));
+  poly([[cx-hw,baseY],[cx+hw,baseY],[cx,baseY-ht],[cx-hw,baseY]],stroke,{sw:o.sw||2.4,seed:o.seed||cx});
+}
+function text(x,y,str,o={}){
+  const t=el("text",{x,y,"font-family":o.font||"'Kalam', cursive","font-size":o.size||14,
+    "font-weight":o.weight||400, fill:o.fill||ink, "text-anchor":o.anchor||"start"});
+  t.textContent=str; art.appendChild(t);
+}
+
+const BY=128, BH=70;
+const boxes={
+  Press:{x:30,w:128,rate:"90 / hr"},
+  Oven:{x:272,w:128,rate:"60 / hr"},
+  Assembly:{x:512,w:140,rate:"80 / hr"},
+  Test:{x:724,w:118,rate:"100 / hr"},
+};
+const SUP=210, SPACE=456; // triangle centers
+
+function draw(state){
+  art.innerHTML="";
+  const {machine,T,B,starve} = state;
+
+  // flow arrows
+  arrow(158,BY+BH/2, 186, BY+BH/2, ink); arrow(234,BY+BH/2, 272, BY+BH/2, ink);
+  arrow(400,BY+BH/2, 432, BY+BH/2, ink); arrow(480,BY+BH/2, 512, BY+BH/2, ink);
+  arrow(652,BY+BH/2, 724, BY+BH/2, ink); arrow(842,BY+BH/2, 900, BY+BH/2, ink);
+  text(905, BY+BH/2+5, "shipped", {size:15, fill:"#5b6770"});
+
+  // boxes
+  for(const k in boxes){
+    const b=boxes[k], isOven=k==="Oven";
+    const stopped = (machine===k && T>0);
+    const col = isOven ? red : (stopped ? amber : ink);
+    const fill = isOven ? "#fdecef" : (stopped ? "#fff7e6" : "#fff");
+    rect(b.x,BY,b.w,BH,col,{fill,seed:b.x,sw:isOven?3:2.5});
+    text(b.x+b.w/2, BY+30, k, {anchor:"middle", font:"'Caveat', cursive", weight:700, size:23, fill:col});
+    text(b.x+b.w/2, BY+52, b.rate, {anchor:"middle", size:12, fill:"#6b7780"});
+    if(stopped) text(b.x+b.w/2, BY-12, "stopped "+T+"m", {anchor:"middle", size:13, fill:amber, weight:700});
+  }
+  text(336, BY-12, "constraint (drum)", {anchor:"middle", size:13, fill:red, weight:700});
+
+  // buffers
+  const relSup = (machine==="Press");
+  const relSpace = (machine==="Assembly"||machine==="Test");
+  drawBuf(SUP, "supply", relSup, state);
+  drawBuf(SPACE, "space", relSpace, state);
+
+  // oven status badge
+  let badge="COOKING", bcol=teal;
+  if(machine==="Oven" && T>0){ badge="DOWN "+T+"m"; bcol=red; }
+  else if(starve>0){ badge="STARVED "+starve+"m"; bcol=red; }
+  text(336, BY+BH+28, "oven: "+badge, {anchor:"middle", font:"'Caveat', cursive", size:22, weight:700, fill:bcol});
+
+  // legend
+  text(30, 290, "\u25B3 = WIP buffer (units waiting). A buffer protects the oven only for as many minutes as it holds.", {size:12.5, fill:gray});
+}
+
+function drawBuf(cx, kind, relevant, state){
+  const {T,B,starve,machine}=state;
+  let col=gray, fillCol="#eef1f2", label=B+" u";
+  if(relevant && T>0){
+    if(starve>0){ col=red; fillCol="#fdecef"; label="drained"; }
+    else { col=teal; fillCol="#e9f6f4"; label=Math.max(0,B-T)+" u left"; }
+  }
+  tri(cx,200,26,52,col,{fill:fillCol,fo:1,seed:cx,sw:2.6});
+  text(cx,238,label,{anchor:"middle",size:13,fill:col, weight: relevant&&T>0?700:400});
+  if(relevant && T>0)
+    text(cx,256, starve>0?"buffer ran dry":"holding the line", {anchor:"middle",size:12,fill:col});
+}
+
+// ---- state ----
+let machine="Oven", T=40, B=20;
+const segBtns=[...document.querySelectorAll("#seg button")];
+const durEl=document.getElementById("dur"), bufEl=document.getElementById("buf");
+const durV=document.getElementById("durV"), bufV=document.getElementById("bufV");
+const bufWrap=document.getElementById("bufWrap");
+const big=document.getElementById("big"), lesson=document.getElementById("lesson");
+
+function compute(){
+  // oven rate = 1 unit/min; buffer cover = B minutes
+  if(machine==="Oven") return {starve:T, lost:T, mode:"drum"};
+  const starve=Math.max(0,T-B);
+  return {starve, lost:starve, mode:"feeder"};
+}
+
+function render(){
+  const c=compute();
+  durV.textContent=T+" min"; bufV.textContent=B+" u";
+  bufWrap.classList.toggle("dim", machine==="Oven");
+  draw({machine,T,B,starve:c.starve});
+
+  if(c.mode==="drum"){
+    if(T===0){ big.style.color=teal; big.textContent="Oven running. 0 lost."; lesson.textContent="Keep it exactly here."; }
+    else{
+      big.style.color=red; big.textContent=`${c.lost} units gone for good`;
+      lesson.textContent="This is the drum stopping. A buffer in front of it cannot protect the constraint from its own downtime. Every idle minute on the oven is a unit you never ship, and the line can never make it back.";
+    }
+  } else {
+    if(T===0){ big.style.color=teal; big.textContent="Nothing stopped. 0 lost."; lesson.textContent="The oven keeps cooking."; }
+    else if(c.starve===0){
+      big.style.color=teal; big.textContent="0 units lost";
+      lesson.textContent=`${machine} stopped for ${T} min, but the ${B}-unit buffer kept the oven fed the whole time, so throughput held. The buffer then refills as the faster machine catches up.`;
+    } else {
+      big.style.color=red; big.textContent=`${c.lost} units gone for good`;
+      lesson.textContent=`${machine} stopped for ${T} min. The buffer covered the first ${B} min, then ran dry and the oven starved for ${c.starve} min. A non-constraint stop costs nothing until it drains the buffer and stops the oven, then it is lost just the same.`;
+    }
+  }
+}
+segBtns.forEach(b=> b.addEventListener("click", ()=>{
+  machine=b.dataset.m; segBtns.forEach(x=>x.classList.toggle("on",x===b)); render(); }));
+durEl.addEventListener("input", e=>{ T=+e.target.value; render(); });
+bufEl.addEventListener("input", e=>{ B=+e.target.value; render(); });
+render();
+</script>
+</body>
+</html>
