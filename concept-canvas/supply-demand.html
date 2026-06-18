@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Supply, Demand, and the Move Afterward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{ --ink:#283139; --demand:#3a6ea5; --supply:#2a9d8f; --eq:#d1495b; --past:#b4bbc1; --bg:#fbfbf8; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:
+      radial-gradient(circle,#dfe3e6 1.4px,transparent 1.5px) 0 0 / 26px 26px, var(--bg);
+    font-family:'Kalam', cursive; color:var(--ink); padding:22px; }
+  .wrap{ max-width:980px; margin:0 auto; }
+  h1{ font-family:'Caveat', cursive; font-weight:700; font-size:38px; margin:0; line-height:1; }
+  .sub{ font-size:16px; color:#5b6770; margin:2px 0 0; max-width:620px; }
+  .controls{ display:flex; flex-wrap:wrap; gap:20px; align-items:center; margin:16px 0 4px; }
+  .seg{ display:inline-flex; border:2.5px solid var(--ink); border-radius:30px; overflow:hidden; }
+  .seg button{ font-family:'Caveat', cursive; font-weight:700; font-size:19px;
+    border:none; background:#fff; color:var(--ink); padding:5px 15px; cursor:pointer; }
+  .seg button.on{ background:var(--ink); color:#fff; }
+  .slide{ display:flex; align-items:center; gap:9px; font-size:15px; }
+  .slide input{ accent-color:var(--demand); width:150px; }
+  .slide b{ font-family:'Caveat', cursive; font-size:22px; min-width:64px; }
+  .board{ background:#fff; border:2.5px solid #e7e9e4; border-radius:16px; padding:6px; margin-top:8px; }
+  svg{ width:100%; height:auto; display:block; }
+  .readout{ margin:16px 4px 0; }
+  .big{ font-family:'Caveat', cursive; font-weight:700; font-size:30px; line-height:1.05; }
+  .lesson{ font-size:16px; color:#5b6770; max-width:660px; margin-top:4px; }
+  .relabel{ font-size:14px; color:#8a929a; margin-top:12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>The crossing is the easy part. Watch the move.</h1>
+  <p class="sub">A demand surge does not just reset the price once. It spikes, the spike pays for capacity, and the capacity slides it back. Dotted lines are where each curve used to be.</p>
+
+  <div class="controls">
+    <div class="seg" id="seg">
+      <button data-s="0" class="on">Start</button>
+      <button data-s="1">Demand jumps</button>
+      <button data-s="2">Capacity responds</button>
+    </div>
+    <div class="slide"><span>Size of the demand jump</span>
+      <input id="delta" type="range" min="10" max="30" step="2" value="20" /><b id="deltaV">medium</b></div>
+  </div>
+
+  <div class="board">
+    <svg id="art" viewBox="0 0 940 540" role="img" aria-label="Supply and demand chart with dynamic adjustment"></svg>
+  </div>
+
+  <div class="readout">
+    <div class="big" id="big"></div>
+    <div class="lesson" id="lesson"></div>
+    <div class="relabel">Same X, new story: relabel the axes Wage / Workers for a tight labor market, or Rate / Capacity for ocean freight. The move afterward is identical.</div>
+  </div>
+</div>
+
+<script>
+const SVGNS="http://www.w3.org/2000/svg";
+const art=document.getElementById("art");
+const ink="#283139", demandC="#3a6ea5", supplyC="#2a9d8f", eqC="#d1495b", past="#b4bbc1";
+
+function rng(s){ return function(){ s|=0; s=(s+0x6D2B79F5)|0;
+  var t=Math.imul(s^s>>>15,1|s); t=(t+Math.imul(t^t>>>7,61|t))^t;
+  return ((t^t>>>14)>>>0)/4294967296; }; }
+function el(tag,a){ const e=document.createElementNS(SVGNS,tag); for(const k in a) e.setAttribute(k,a[k]); return e; }
+function rawline(x1,y1,x2,y2,stroke,o={}){
+  const r=rng(o.seed||((x1+y2)*9|0));
+  const mx=(x1+x2)/2+(r()-0.5)*(o.wob??3), my=(y1+y2)/2+(r()-0.5)*(o.wob??3);
+  art.appendChild(el("path",{ d:`M${x1} ${y1} Q${mx} ${my} ${x2} ${y2}`, fill:"none",
+    stroke, "stroke-width":o.sw||2.6, "stroke-linecap":"round", "stroke-dasharray":o.dash||"none", "stroke-opacity":o.op||1 }));
+}
+function arrowDotted(x1,y1,x2,y2,stroke){
+  rawline(x1,y1,x2,y2,stroke,{sw:2.4,dash:"2 6",wob:6});
+  const a=Math.atan2(y2-y1,x2-x1),h=12;
+  rawline(x2,y2,x2-h*Math.cos(a-0.5),y2-h*Math.sin(a-0.5),stroke,{sw:2.4,seed:x2|0});
+  rawline(x2,y2,x2-h*Math.cos(a+0.5),y2-h*Math.sin(a+0.5),stroke,{sw:2.4,seed:(x2+5)|0});
+}
+function text(x,y,str,o={}){
+  const t=el("text",{x,y,"font-family":o.font||"'Kalam', cursive","font-size":o.size||14,
+    "font-weight":o.weight||400, fill:o.fill||ink, "text-anchor":o.anchor||"start", opacity:o.op||1});
+  if(o.rotate) t.setAttribute("transform",`rotate(${o.rotate} ${x} ${y})`);
+  t.textContent=str; art.appendChild(t);
+}
+function dot(x,y,c,r){ art.appendChild(el("circle",{cx:x,cy:y,r:r||6,fill:c})); }
+
+// world -> px
+const L=100,R=840,TOP=60,BOT=460;
+const sx=Q=> L+(Q/100)*(R-L);
+const sy=P=> BOT-(P/100)*(BOT-TOP);
+
+// economics
+const b=0.7, d=0.6, a0=90, c0=15;
+function eq(aD,kS){ const Q=(aD-kS)/(b+d); return {Q, P:kS+d*Q}; }
+function clip(m,k){
+  let pts=[[0,k],[100,k+m*100]];
+  pts=pts.map(([Q,P])=>{ if(P<0){P=0;Q=(0-k)/m;} else if(P>100){P=100;Q=(100-k)/m;} return [Q,P]; });
+  pts=pts.map(([Q,P])=>{ if(Q<0){Q=0;P=k;} else if(Q>100){Q=100;P=k+m*100;} return [Q,P]; });
+  return pts;
+}
+function curve(m,k,color,o={}){
+  const p=clip(m,k);
+  rawline(sx(p[0][0]),sy(p[0][1]),sx(p[1][0]),sy(p[1][1]),color,{sw:o.sw||3, dash:o.dash, op:o.op||1, wob:2.2});
+}
+function guides(E,label,color){
+  rawline(sx(E.Q),sy(E.P),sx(E.Q),sy(0),color,{sw:1.8,dash:"2 5",wob:1});
+  rawline(sx(E.Q),sy(E.P),sx(0)*0+L,sy(E.P),color,{sw:1.8,dash:"2 5",wob:1});
+  text(L+6, sy(E.P)-7, label, {size:14, fill:color, weight:700});
+}
+
+function draw(step, delta){
+  art.innerHTML="";
+  const a1=a0+delta, c1=c0-0.5*delta;
+  const E0=eq(a0,c0), E1=eq(a1,c0), E2=eq(a1,c1);
+
+  // axes
+  rawline(L,BOT,R+15,BOT,ink,{sw:3}); rawline(L,BOT,L,TOP-12,ink,{sw:3});
+  const ah=11;
+  rawline(R+15,BOT,R+15-ah,BOT-7,ink,{sw:3,seed:1}); rawline(R+15,BOT,R+15-ah,BOT+7,ink,{sw:3,seed:2});
+  rawline(L,TOP-12,L-7,TOP-12+ah,ink,{sw:3,seed:3}); rawline(L,TOP-12,L+7,TOP-12+ah,ink,{sw:3,seed:4});
+  text(R-10,BOT+30,"Quantity \u2192",{anchor:"end",size:15,fill:"#5b6770"});
+  text(L-18,TOP+40,"Price",{anchor:"end",size:15,fill:"#5b6770",rotate:-90});
+
+  // legend
+  rawline(640,86,672,86,demandC,{sw:3}); text(678,91,"Demand",{size:13,fill:demandC});
+  rawline(640,108,672,108,supplyC,{sw:3}); text(678,113,"Supply",{size:13,fill:supplyC});
+  rawline(640,130,672,130,past,{sw:2.4,dash:"3 5"}); text(678,135,"where it was",{size:13,fill:past});
+
+  // curves by step
+  if(step===0){
+    curve(-b,a0,demandC); curve(d,c0,supplyC);
+    text(sx(8),sy(a0-b*8)-8,"D",{size:18,fill:demandC,weight:700});
+    text(sx(92)+6,sy(c0+d*92),"S",{size:18,fill:supplyC,weight:700});
+    dot(sx(E0.Q),sy(E0.P),eqC); guides(E0,"start price",eqC);
+  } else if(step===1){
+    curve(-b,a0,past,{dash:"3 6",sw:2.4}); curve(d,c0,supplyC);
+    curve(-b,a1,demandC);
+    text(sx(20),sy(a1-b*20)-8,"D\u2032",{size:18,fill:demandC,weight:700});
+    dot(sx(E0.Q),sy(E0.P),past,5);
+    arrowDotted(sx(E0.Q),sy(E0.P),sx(E1.Q),sy(E1.P),eqC);
+    dot(sx(E1.Q),sy(E1.P),eqC); guides(E1,"spike",eqC);
+    guides(E0,"",past);
+  } else {
+    curve(-b,a1,demandC);
+    curve(d,c0,past,{dash:"3 6",sw:2.4}); curve(d,c1,supplyC);
+    text(sx(92)+6,sy(c1+d*92),"S\u2032",{size:18,fill:supplyC,weight:700});
+    dot(sx(E0.Q),sy(E0.P),past,5);
+    dot(sx(E1.Q),sy(E1.P),past,5);
+    arrowDotted(sx(E1.Q),sy(E1.P),sx(E2.Q),sy(E2.P),eqC);
+    dot(sx(E2.Q),sy(E2.P),eqC); guides(E2,"settled",eqC);
+    rawline(sx(E1.Q),sy(E1.P),sx(E1.Q),sy(E1.P),past); // noop keep
+    guides(E1,"was the spike",past);
+  }
+}
+
+let step=0, delta=20;
+const segBtns=[...document.querySelectorAll("#seg button")];
+const deltaEl=document.getElementById("delta"), deltaV=document.getElementById("deltaV");
+const big=document.getElementById("big"), lesson=document.getElementById("lesson");
+
+function sizeWord(v){ return v<=14?"small":v<=22?"medium":"large"; }
+
+function render(){
+  deltaV.textContent=sizeWord(delta);
+  draw(step,delta);
+  if(step===0){
+    big.style.color=eqC; big.textContent="One price, one quantity. Equilibrium.";
+    lesson.textContent="Demand slopes down, supply slopes up, they cross once. This is the part everyone already pictures. The teaching is in what happens next.";
+  } else if(step===1){
+    big.style.color=eqC; big.textContent="Demand jumps. Price spikes, volume barely moves.";
+    lesson.textContent="A new program or a market surge pushes demand out. Supply cannot grow overnight, so the curve is steep here and the new crossing is mostly price, not volume. The spike is real, but it is a short-run crossing, not the resting point.";
+  } else {
+    big.style.color=eqC; big.textContent="Capacity arrives. The price slides back down.";
+    lesson.textContent="That high price is exactly what makes new capacity worth building. Supply shifts out, the crossing moves down and right: price eases below the spike, volume climbs. Plan and negotiate around this settled point, not the panic number.";
+  }
+}
+segBtns.forEach(btn=> btn.addEventListener("click", ()=>{
+  step=+btn.dataset.s; segBtns.forEach(x=>x.classList.toggle("on",x===btn)); render(); }));
+deltaEl.addEventListener("input", e=>{ delta=+e.target.value; render(); });
+render();
+</script>
+</body>
+</html>
