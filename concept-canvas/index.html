@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Concept Canvas - StrayStation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{ --ink:#283139; --teal:#2a9d8f; --red:#d1495b; --bg:#fbfbf8; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:
+      radial-gradient(circle,#dfe3e6 1.4px,transparent 1.5px) 0 0 / 26px 26px, var(--bg);
+    font-family:'Kalam', cursive; color:var(--ink); padding:30px 22px 60px; }
+  .wrap{ max-width:980px; margin:0 auto; }
+  .kicker{ font-size:12px; letter-spacing:1.6px; text-transform:uppercase; color:var(--red); font-weight:700; }
+  h1{ font-family:'Caveat', cursive; font-weight:700; font-size:52px; margin:4px 0 6px; line-height:1; }
+  .lede{ font-size:17px; color:#5b6770; max-width:680px; line-height:1.55; margin:0 0 6px; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:18px; margin-top:28px; }
+  a.card{ display:block; text-decoration:none; color:inherit; background:#fff;
+    border:2.5px solid #e7e9e4; border-radius:16px; padding:20px 20px 18px;
+    transition:transform .12s, border-color .12s, box-shadow .12s; }
+  a.card:hover{ transform:translateY(-3px); border-color:var(--ink); box-shadow:0 8px 22px rgba(0,0,0,.07); }
+  .ctitle{ font-family:'Caveat', cursive; font-weight:700; font-size:30px; line-height:1; margin:0 0 8px; }
+  .cdesc{ font-size:15px; color:#5b6770; line-height:1.5; margin:0 0 14px; }
+  .tag{ display:inline-block; font-size:12px; color:var(--teal); border:1.5px solid var(--teal);
+    border-radius:999px; padding:2px 10px; }
+  .open{ float:right; font-family:'Caveat', cursive; font-weight:700; font-size:20px; color:var(--ink); }
+  .foot{ margin-top:34px; font-size:14px; color:#8a929a; }
+  .foot a{ color:var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">StrayStation Lab</div>
+  <h1>Concept Canvas</h1>
+  <p class="lede">A test bench for one idea: that most operations and supply chain concepts already carry a picture inside how the field talks about them. The job is to listen for that hidden geometry and draw it plainly, whiteboard style, no consulting gloss. Each piece below is interactive. Tap, drag, and watch the concept move.</p>
+  <div class="grid">
+    <a class="card" href="collapsing-the-circles.html">
+      <div class="ctitle">Collapsing the circles <span class="open">open &rarr;</span></div>
+      <div class="cdesc">Senior leaders living in junior work. The bottom crowds, the top goes empty.</div>
+      <span class="tag">invented from scratch</span>
+    </a>
+    <a class="card" href="bottleneck-oven.html">
+      <div class="ctitle">Keep the oven cooking <span class="open">open &rarr;</span></div>
+      <div class="cdesc">Theory of Constraints. Idle time on the bottleneck is throughput you never get back.</div>
+      <span class="tag">field's native diagram</span>
+    </a>
+    <a class="card" href="supply-demand.html">
+      <div class="ctitle">The move after the X <span class="open">open &rarr;</span></div>
+      <div class="cdesc">A demand surge spikes price, the spike buys capacity, capacity settles it back.</div>
+      <span class="tag">one archetype, many stories</span>
+    </a>
+  </div>
+  <p class="foot">Built in conversation, deployed by an agent. &nbsp;|&nbsp; <a href="/">back to StrayStation</a></p>
+</div>
+</body>
+</html>
