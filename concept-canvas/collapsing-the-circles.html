@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Collapsing the Circles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #283139;
+    --teal: #2a9d8f;
+    --red: #d1495b;
+    --gray: #9aa5ad;
+    --bg: #fbfbf8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(circle, #dfe3e6 1.4px, transparent 1.5px) 0 0 / 26px 26px,
+      var(--bg);
+    font-family: 'Kalam', cursive;
+    color: var(--ink);
+    padding: 22px;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; }
+  .head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px; margin-bottom: 8px;
+  }
+  h1 {
+    font-family: 'Caveat', cursive; font-weight: 700;
+    font-size: 40px; margin: 0; line-height: 1;
+  }
+  .sub { font-size: 16px; color: #5b6770; margin: 2px 0 0; max-width: 560px; }
+  button {
+    font-family: 'Caveat', cursive; font-weight: 700; font-size: 22px;
+    border: 2.5px solid var(--ink); background: #fff; color: var(--ink);
+    border-radius: 30px; padding: 6px 20px; cursor: pointer;
+    transition: background .15s, color .15s; white-space: nowrap;
+  }
+  button:hover { background: var(--ink); color: #fff; }
+  button:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+  .board {
+    background: #fff;
+    border: 2.5px solid #e7e9e4;
+    border-radius: 16px;
+    padding: 8px 6px;
+    margin-top: 12px;
+  }
+  svg { width: 100%; height: auto; display: block; }
+  .caption {
+    font-size: 15px; color: #5b6770; margin: 14px 4px 0; line-height: 1.5;
+  }
+  .caption b { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div>
+      <h1>Collapsing the circles</h1>
+      <p class="sub">When seniors live in junior work, the bottom gets crowded and the top goes empty.</p>
+    </div>
+    <button id="toggle">Show the collapse</button>
+  </div>
+
+  <div class="board">
+    <svg id="art" viewBox="0 0 1040 640" role="img" aria-label="Diagram of procurement roles by altitude"></svg>
+  </div>
+
+  <p class="caption" id="cap"></p>
+</div>
+
+<script>
+const SVGNS = "http://www.w3.org/2000/svg";
+const art = document.getElementById("art");
+const ink = "#283139", teal = "#2a9d8f", red = "#d1495b", gray = "#9aa5ad";
+
+const roles = [
+  { key:"VP",  name:"VP Procurement", duty:"strategy · capacity · exec suppliers", cy:104 },
+  { key:"DIR", name:"Director",       duty:"category plans · supplier base",        cy:208 },
+  { key:"MGR", name:"Manager",        duty:"process health · escalations",          cy:312 },
+  { key:"SUP", name:"Supervisor",     duty:"daily flow · exceptions · coaching",    cy:416 },
+  { key:"BUY", name:"Buyer",          duty:"place POs · expedite · chase past-dues",cy:520 },
+];
+const CX = 215, R = 46;
+
+function rng(seed){ return function(){ seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+  var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+  t = (t + Math.imul(t ^ t >>> 7, 61 | t)) ^ t;
+  return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+function el(tag, attrs){ const e = document.createElementNS(SVGNS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+
+function roughCirclePath(cx, cy, r, seed){
+  const rnd = rng(seed), segs = 26;
+  const start = -0.25, end = Math.PI*2 + 0.28;
+  let d = "";
+  for (let i=0;i<=segs;i++){
+    const a = start + (end-start)*(i/segs);
+    const jr = r * (1 + (rnd()-0.5)*0.06);
+    const x = cx + Math.cos(a)*jr + (rnd()-0.5)*1.6;
+    const y = cy + Math.sin(a)*jr + (rnd()-0.5)*1.6;
+    d += (i===0 ? "M" : "L") + x.toFixed(1) + " " + y.toFixed(1) + " ";
+  }
+  return d;
+}
+function circle(cx, cy, r, stroke, opts={}){
+  const seed = opts.seed || Math.floor(cx*7+cy*13+r);
+  if (opts.fill) art.appendChild(el("path",{ d:roughCirclePath(cx,cy,r,seed),
+    fill:opts.fill, "fill-opacity":opts.fillOpacity||1, stroke:"none" }));
+  const mk = s => art.appendChild(el("path",{ d:roughCirclePath(cx,cy,r,s),
+    fill:"none", stroke, "stroke-width":opts.sw||2.6,
+    "stroke-linecap":"round", "stroke-linejoin":"round",
+    "stroke-dasharray":opts.dash||"none", "stroke-opacity":opts.opacity||1 }));
+  mk(seed); if(!opts.dash) mk(seed+101);
+}
+function line(x1,y1,x2,y2,stroke,opts={}){
+  const rnd = rng(opts.seed||((x1+y2)*9|0));
+  const mx=(x1+x2)/2+(rnd()-0.5)*4, my=(y1+y2)/2+(rnd()-0.5)*4;
+  art.appendChild(el("path",{ d:`M${x1} ${y1} Q${mx} ${my} ${x2} ${y2}`,
+    fill:"none", stroke, "stroke-width":opts.sw||2.6, "stroke-linecap":"round" }));
+}
+function arrow(x1,y1,x2,y2,stroke,sw){
+  line(x1,y1,x2,y2,stroke,{sw:sw||4});
+  const ang=Math.atan2(y2-y1,x2-x1), h=15;
+  line(x2,y2,x2-h*Math.cos(ang-0.5),y2-h*Math.sin(ang-0.5),stroke,{sw:sw||4,seed:x2|0});
+  line(x2,y2,x2-h*Math.cos(ang+0.5),y2-h*Math.sin(ang+0.5),stroke,{sw:sw||4,seed:(x2+9)|0});
+}
+function text(x,y,str,opts={}){
+  const t = el("text",{ x, y,
+    "font-family": opts.font || "'Kalam', cursive",
+    "font-size": opts.size || 16, "font-weight": opts.weight || 400,
+    fill: opts.fill || ink, "text-anchor": opts.anchor || "start",
+    "opacity": opts.opacity || 1 });
+  t.textContent = str; art.appendChild(t);
+}
+
+function axis(){
+  arrow(70, 560, 70, 70, ink, 3);
+  const g = el("text",{ x:34, y:330, fill:gray, "font-family":"'Kalam', cursive",
+    "font-size":15, "text-anchor":"middle", transform:"rotate(-90 34 330)" });
+  g.textContent = "seniority · scope · cost"; art.appendChild(g);
+}
+
+function draw(collapsed){
+  art.innerHTML = "";
+  axis();
+
+  if(!collapsed){
+    roles.forEach(r=>{
+      circle(CX, r.cy, R, teal, {seed:(r.cy*3)|0});
+      circle(CX, r.cy, 11, teal, {fill:teal, sw:0, seed:(r.cy*5)|0});
+      text(CX, r.cy+5, r.key, {anchor:"middle", fill:"#fff", weight:700, size:13});
+      text(CX+R+18, r.cy-2, r.name, {font:"'Caveat', cursive", weight:700, size:25});
+      text(CX+R+18, r.cy+20, r.duty, {size:15, fill:"#6b7780"});
+    });
+    text(770, 300, "Everyone at their", {font:"'Caveat', cursive", size:26, fill:teal, weight:700});
+    text(770, 328, "own altitude.", {font:"'Caveat', cursive", size:26, fill:teal, weight:700});
+    text(770, 356, "The whole ladder", {size:15, fill:"#6b7780"});
+    text(770, 376, "is covered.", {size:15, fill:"#6b7780"});
+  } else {
+    // top four go vacant
+    roles.slice(0,4).forEach(r=>{
+      circle(CX, r.cy, R, gray, {dash:"7 7", sw:2.2, opacity:.9, seed:(r.cy*3)|0});
+      text(CX+R+18, r.cy-2, r.name, {font:"'Caveat', cursive", weight:700, size:25, fill:gray, opacity:.85});
+      text(CX+R+18, r.cy+20, "vacant", {size:15, fill:red});
+    });
+    // bottom circle holds everyone
+    circle(CX, 520, 74, red, {seed:520});
+    const pile = [[-30,-20,"VP"],[24,-26,"DIR"],[-34,18,"MGR"],[30,16,"SUP"],[0,2,"BUY"]];
+    pile.forEach((p,i)=>{
+      circle(CX+p[0], 520+p[1], 14, red, {fill:red, sw:0, seed:(i*37+5)});
+      text(CX+p[0], 520+p[1]+5, p[2], {anchor:"middle", fill:"#fff", weight:700, size:12});
+    });
+    text(CX, 520+96, "all chasing shortages & past-due POs", {anchor:"middle", size:16, fill:red, weight:700});
+
+    // the drop
+    arrow(720, 120, 360, 470, red, 5);
+    text(660, 150, "everyone", {font:"'Caveat', cursive", size:30, fill:red, weight:700, anchor:"middle"});
+    text(660, 178, "drops down", {font:"'Caveat', cursive", size:30, fill:red, weight:700, anchor:"middle"});
+
+    // callouts
+    text(770, 250, "Strategy & planning:", {size:16, fill:ink, weight:700});
+    text(770, 272, "nobody home.", {size:16, fill:ink, weight:700});
+    text(770, 540, "4 expensive people", {size:16, fill:ink, weight:700});
+    text(770, 562, "doing 1 junior's job.", {size:16, fill:ink, weight:700});
+  }
+}
+
+let collapsed = false;
+const btn = document.getElementById("toggle");
+const cap = document.getElementById("cap");
+function render(){
+  draw(collapsed);
+  btn.textContent = collapsed ? "Show it healthy" : "Show the collapse";
+  cap.innerHTML = collapsed
+    ? "This is <b>not</b> about an open door. It is senior leaders living in the buyer's work, so the layers above stop getting done."
+    : "Healthy state: each role owns its altitude. Tap the button to see what happens when a VP starts chasing shortages.";
+}
+btn.addEventListener("click", ()=>{ collapsed = !collapsed; render(); });
+render();
+</script>
+</body>
+</html>
