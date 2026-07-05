@@ -913,10 +913,11 @@
           obj.classList.add('selected');
           
           setTimeout(() => {
+            itemsView.classList.remove('fade-in');
             itemsView.classList.add('fade-out');
             setTimeout(() => {
               itemsView.classList.add('hidden');
-              writingView.classList.remove('hidden');
+              writingView.classList.remove('hidden', 'fade-out');
               writingView.classList.add('fade-in');
               messageInput.focus();
             }, 300);
@@ -976,10 +977,11 @@
         const itemsView = document.getElementById('items-view');
         const writingView = document.getElementById('writing-view');
         
+        writingView.classList.remove('fade-in');
         writingView.classList.add('fade-out');
         setTimeout(() => {
           writingView.classList.add('hidden');
-          itemsView.classList.remove('hidden');
+          itemsView.classList.remove('hidden', 'fade-out');
           itemsView.classList.add('fade-in');
           
           document.querySelectorAll('.object-item').forEach(o => o.classList.remove('selected'));
