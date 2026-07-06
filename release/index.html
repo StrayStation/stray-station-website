@@ -749,124 +749,19 @@
     let activeParticles = [];
 
     // ═══════════════════════════════════════════════════════════════
-    // AUDIO ENGINE - Web Audio API
+    // AUDIO ENGINE
     // ═══════════════════════════════════════════════════════════════
     
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
-    let audioCtx = null;
+    const breakAudio = new Audio('glass_smash.mp3');
+    breakAudio.preload = 'auto';
 
-    function initAudio() {
-      if (!audioCtx) {
-        audioCtx = new AudioContext();
-      }
-    }
-
-    function playBreakSound(material) {
-      initAudio();
-      
-      const now = audioCtx.currentTime;
-      
-      if (material === 'glass') {
-        // Glass: bright, crystalline shattering
-        for (let i = 0; i < 8; i++) {
-          const osc = audioCtx.createOscillator();
-          const gain = audioCtx.createGain();
-          
-          osc.frequency.setValueAtTime(800 + Math.random() * 2000, now);
-          osc.frequency.exponentialRampToValueAtTime(100, now + 0.5);
-          
-          gain.gain.setValueAtTime(0.15, now);
-          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
-          
-          osc.connect(gain);
-          gain.connect(audioCtx.destination);
-          
-          osc.start(now + i * 0.02);
-          osc.stop(now + 0.5);
-        }
-        
-        const noise = audioCtx.createBufferSource();
-        const noiseBuffer = audioCtx.createBuffer(1, audioCtx.sampleRate * 0.3, audioCtx.sampleRate);
-        const output = noiseBuffer.getChannelData(0);
-        for (let i = 0; i < output.length; i++) {
-          output[i] = Math.random() * 2 - 1;
-        }
-        noise.buffer = noiseBuffer;
-        
-        const noiseFilter = audioCtx.createBiquadFilter();
-        noiseFilter.type = 'highpass';
-        noiseFilter.frequency.setValueAtTime(2000, now);
-        
-        const noiseGain = audioCtx.createGain();
-        noiseGain.gain.setValueAtTime(0.08, now);
-        noiseGain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
-        
-        noise.connect(noiseFilter);
-        noiseFilter.connect(noiseGain);
-        noiseGain.connect(audioCtx.destination);
-        
-        noise.start(now);
-        noise.stop(now + 0.3);
-        
-      } else if (material === 'ceramic') {
-        // Ceramic: duller, more brittle crack
-        for (let i = 0; i < 6; i++) {
-          const osc = audioCtx.createOscillator();
-          const gain = audioCtx.createGain();
-          
-          osc.frequency.setValueAtTime(300 + Math.random() * 800, now);
-          osc.frequency.exponentialRampToValueAtTime(80, now + 0.4);
-          
-          gain.gain.setValueAtTime(0.2, now);
-          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
-          
-          osc.connect(gain);
-          gain.connect(audioCtx.destination);
-          
-          osc.start(now + i * 0.03);
-          osc.stop(now + 0.4);
-        }
-        
-        const noise = audioCtx.createBufferSource();
-        const noiseBuffer = audioCtx.createBuffer(1, audioCtx.sampleRate * 0.25, audioCtx.sampleRate);
-        const output = noiseBuffer.getChannelData(0);
-        for (let i = 0; i < output.length; i++) {
-          output[i] = Math.random() * 2 - 1;
-        }
-        noise.buffer = noiseBuffer;
-        
-        const noiseFilter = audioCtx.createBiquadFilter();
-        noiseFilter.type = 'bandpass';
-        noiseFilter.frequency.setValueAtTime(600, now);
-        noiseFilter.Q.setValueAtTime(2, now);
-        
-        const noiseGain = audioCtx.createGain();
-        noiseGain.gain.setValueAtTime(0.15, now);
-        noiseGain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
-        
-        noise.connect(noiseFilter);
-        noiseFilter.connect(noiseGain);
-        noiseGain.connect(audioCtx.destination);
-        
-        noise.start(now);
-        noise.stop(now + 0.25);
-      }
-      
-      // Impact thud
-      const thudOsc = audioCtx.createOscillator();
-      const thudGain = audioCtx.createGain();
-      
-      thudOsc.frequency.setValueAtTime(80, now);
-      thudOsc.frequency.exponentialRampToValueAtTime(20, now + 0.15);
-      
-      thudGain.gain.setValueAtTime(0.3, now);
-      thudGain.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
-      
-      thudOsc.connect(thudGain);
-      thudGain.connect(audioCtx.destination);
-      
-      thudOsc.start(now);
-      thudOsc.stop(now + 0.15);
+    function playBreakSound() {
+      // Clone so rapid successive throws each get their own playback instance
+      const sound = breakAudio.cloneNode();
+      sound.volume = 0.85;
+      sound.play().catch(() => {
+        // Autoplay policy blocked it — user hasn't interacted yet, silent fail
+      });
     }
 
     // ═══════════════════════════════════════════════════════════════
@@ -883,8 +778,6 @@
         landing.classList.add('hidden');
         mainApp.classList.remove('hidden');
         mainApp.classList.add('fade-in');
-        
-        initAudio();
       }, 600);
     }
 
@@ -963,7 +856,7 @@
       // Animate throw and explosion
       setTimeout(() => {
         createParticles(impactX, impactY, selectedObject.material);
-        playBreakSound(selectedObject.material);
+        playBreakSound();
         
         throwCount++;
         document.getElementById('throw-count').textContent = throwCount;
